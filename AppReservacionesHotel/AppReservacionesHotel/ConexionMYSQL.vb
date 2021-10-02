@@ -3,15 +3,16 @@
 
 
 Public Class ConexionMYSQL
-    'Creo una variable la cual contendra los parametros que se necesitan para realizar la conexion a la base de datas
-    'MYSQL
-    Private connStr As String = "Server=localhost;user=root;password=159753"
-    'Pasamos los parametros al Constructor MysqlConnectio para realizar una conexion
-    Public MysqlConexion As MySqlConnection = New MySqlConnection(connStr)
+
+    'Direccion del servidor MySQL , Objecto de conexion
+    Private host = "localhost"
+    Public MysqlConexion As New MySqlConnection
 
 
-    'Creo su constructor
-    Public Sub pruebaConn()
+
+    'Subproceso para realizar la conexion
+    Public Sub conectar(user As String, pass As String)
+        MysqlConexion = New MySqlConnection("Server=" + host + ";" + "user=" + user + ";" + "password=" + pass + ";")
         Try
             MysqlConexion.Open()
             MsgBox("Conexion exitosa")

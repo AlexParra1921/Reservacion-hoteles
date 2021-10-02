@@ -34,34 +34,39 @@ Partial Class LoginForm
         '
         'Button_Conectar
         '
-        Me.Button_Conectar.Location = New System.Drawing.Point(244, 118)
+        Me.Button_Conectar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_Conectar.Location = New System.Drawing.Point(229, 104)
         Me.Button_Conectar.Name = "Button_Conectar"
-        Me.Button_Conectar.Size = New System.Drawing.Size(75, 23)
+        Me.Button_Conectar.Size = New System.Drawing.Size(102, 41)
         Me.Button_Conectar.TabIndex = 0
         Me.Button_Conectar.Text = "Conectar"
         Me.Button_Conectar.UseVisualStyleBackColor = True
         '
         'Button_Salir
         '
-        Me.Button_Salir.Location = New System.Drawing.Point(53, 118)
+        Me.Button_Salir.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_Salir.Location = New System.Drawing.Point(48, 104)
         Me.Button_Salir.Name = "Button_Salir"
-        Me.Button_Salir.Size = New System.Drawing.Size(75, 23)
+        Me.Button_Salir.Size = New System.Drawing.Size(83, 41)
         Me.Button_Salir.TabIndex = 1
         Me.Button_Salir.Text = "Salir"
         Me.Button_Salir.UseVisualStyleBackColor = True
         '
         'TextBox_Cuenta
         '
-        Me.TextBox_Cuenta.Location = New System.Drawing.Point(201, 24)
+        Me.TextBox_Cuenta.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_Cuenta.Location = New System.Drawing.Point(201, 28)
         Me.TextBox_Cuenta.Name = "TextBox_Cuenta"
-        Me.TextBox_Cuenta.Size = New System.Drawing.Size(167, 20)
+        Me.TextBox_Cuenta.Size = New System.Drawing.Size(167, 24)
         Me.TextBox_Cuenta.TabIndex = 2
         '
         'TextBox_Contraseña
         '
-        Me.TextBox_Contraseña.Location = New System.Drawing.Point(201, 66)
+        Me.TextBox_Contraseña.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_Contraseña.Location = New System.Drawing.Point(201, 78)
         Me.TextBox_Contraseña.Name = "TextBox_Contraseña"
-        Me.TextBox_Contraseña.Size = New System.Drawing.Size(167, 20)
+        Me.TextBox_Contraseña.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
+        Me.TextBox_Contraseña.Size = New System.Drawing.Size(167, 24)
         Me.TextBox_Contraseña.TabIndex = 3
         '
         'PictureBox_Hotel
@@ -77,18 +82,20 @@ Partial Class LoginForm
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(201, 5)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(197, 5)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(41, 13)
+        Me.Label1.Size = New System.Drawing.Size(61, 20)
         Me.Label1.TabIndex = 5
         Me.Label1.Text = "Cuenta"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(201, 50)
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(197, 55)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(61, 13)
+        Me.Label2.Size = New System.Drawing.Size(92, 20)
         Me.Label2.TabIndex = 6
         Me.Label2.Text = "Contraseña"
         '
@@ -104,7 +111,11 @@ Partial Class LoginForm
         Me.Controls.Add(Me.TextBox_Cuenta)
         Me.Controls.Add(Me.Button_Salir)
         Me.Controls.Add(Me.Button_Conectar)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "LoginForm"
+        Me.ShowIcon = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Login-Reservacion-Hotel"
         CType(Me.PictureBox_Hotel, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
