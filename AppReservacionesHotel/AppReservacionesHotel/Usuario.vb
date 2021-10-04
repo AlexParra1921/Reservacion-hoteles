@@ -2,7 +2,6 @@
     Private cuenta As String
     Private contraseña As String
     Private tipo As Short
-    Private _getSetContraseña As Object
     'Constructor
 
 
