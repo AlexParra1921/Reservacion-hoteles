@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class LoginForm
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,15 +20,15 @@ Partial Class LoginForm
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Button_Conectar = New System.Windows.Forms.Button()
         Me.Button_Salir = New System.Windows.Forms.Button()
         Me.TextBox_Cuenta = New System.Windows.Forms.TextBox()
         Me.TextBox_Contraseña = New System.Windows.Forms.TextBox()
-        Me.PictureBox_Hotel = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.PictureBox_Hotel = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox_Hotel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -69,16 +69,6 @@ Partial Class LoginForm
         Me.TextBox_Contraseña.Size = New System.Drawing.Size(167, 24)
         Me.TextBox_Contraseña.TabIndex = 3
         '
-        'PictureBox_Hotel
-        '
-        Me.PictureBox_Hotel.Image = Global.AppReservacionesHotel.My.Resources.Resources.login_habitacion
-        Me.PictureBox_Hotel.Location = New System.Drawing.Point(26, 16)
-        Me.PictureBox_Hotel.Name = "PictureBox_Hotel"
-        Me.PictureBox_Hotel.Size = New System.Drawing.Size(132, 78)
-        Me.PictureBox_Hotel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox_Hotel.TabIndex = 4
-        Me.PictureBox_Hotel.TabStop = False
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -99,10 +89,21 @@ Partial Class LoginForm
         Me.Label2.TabIndex = 6
         Me.Label2.Text = "Contraseña"
         '
+        'PictureBox_Hotel
+        '
+        Me.PictureBox_Hotel.Image = Global.AppReservacionesHotel.My.Resources.Resources.login_habitacion
+        Me.PictureBox_Hotel.Location = New System.Drawing.Point(26, 16)
+        Me.PictureBox_Hotel.Name = "PictureBox_Hotel"
+        Me.PictureBox_Hotel.Size = New System.Drawing.Size(132, 78)
+        Me.PictureBox_Hotel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox_Hotel.TabIndex = 4
+        Me.PictureBox_Hotel.TabStop = False
+        '
         'LoginForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(428, 166)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
