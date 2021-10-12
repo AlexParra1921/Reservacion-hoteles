@@ -61,12 +61,84 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a Contraseña.
+        '''</summary>
+        Friend ReadOnly Property Label_Contraseña() As String
+            Get
+                Return ResourceManager.GetString("Label_Contraseña", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Cuenta.
+        '''</summary>
+        Friend ReadOnly Property Label_Cuenta() As String
+            Get
+                Return ResourceManager.GetString("Label_Cuenta", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
         Friend ReadOnly Property login_habitacion() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("login-habitacion", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Error en la conexion.
+        '''</summary>
+        Friend ReadOnly Property No_conexion() As String
+            Get
+                Return ResourceManager.GetString("No_conexion", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Contraseña Incorrecta.
+        '''</summary>
+        Friend ReadOnly Property No_Contraseña() As String
+            Get
+                Return ResourceManager.GetString("No_Contraseña", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a No existe el usuario.
+        '''</summary>
+        Friend ReadOnly Property No_Usuario() As String
+            Get
+                Return ResourceManager.GetString("No_Usuario", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Usuario o contraseña incorrecta.
+        '''</summary>
+        Friend ReadOnly Property No_Usuario_contraseña() As String
+            Get
+                Return ResourceManager.GetString("No_Usuario_contraseña", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Introduzca una cotnraseña.
+        '''</summary>
+        Friend ReadOnly Property Vacio_Contraseña() As String
+            Get
+                Return ResourceManager.GetString("Vacio_Contraseña", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Introduzca un usuario.
+        '''</summary>
+        Friend ReadOnly Property Vacio_Usuario() As String
+            Get
+                Return ResourceManager.GetString("Vacio_Usuario", resourceCulture)
             End Get
         End Property
     End Module
