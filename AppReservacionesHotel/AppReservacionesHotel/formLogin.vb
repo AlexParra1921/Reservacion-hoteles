@@ -5,14 +5,32 @@
         'Realizamos la conexion a la base de datos y verificamos que usuario es el que se autentificado
         'Si es empleado abrira el Formulario de control, si es Administrador Abrira el Control para Administrador
         Dim conex As New ConexionMYSQL()
-        If conex.conectar(TextBox_Cuenta.Text, TextBox_Contraseña.Text, "reservaciones_hotel") = True Then
+
+        'Verificamos lo campos si estan vacios 
+        If TextBox_Cuenta.Text.Count < 1 Then
+            label_error_user.Text = My.Resources.Vacio_Usuario.ToString
+            Return
+        End If
+        If TextBox_Contraseña.Text.Count < 1 Then
+            label_error_user.Text = My.Resources.Vacio_Contraseña
+            Return
+        End If
+
+        Try
+            conex.conectar(TextBox_Cuenta.Text, TextBox_Contraseña.Text, "reservaciones_hotel")
             If conex.userAuthenticated.getSetTipo = 0 Then
                 Finalize()
                 ControlEmpleado.Show()
             ElseIf conex.userAuthenticated.getSetTipo = 1 Then
                 MsgBox("Usted es administrador", MsgBoxStyle.Information, "Conexion sastifactoria")
             End If
-        End If
+        Catch ex As Exception
+            label_error_user.Text = My.Resources.No_Usuario_contraseña
+        End Try
+
+
+
+
     End Sub
 
     Private Sub Button_Salir_Click(sender As Object, e As EventArgs) Handles Button_Salir.Click
@@ -26,6 +44,19 @@
 
 
     Private Sub TextBox_Contraseña_TextChanged(sender As Object, e As EventArgs) Handles TextBox_Contraseña.TextChanged
+        label_error_user.Text = ""
+    End Sub
+
+    Private Sub LoginForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles label_error_user.Click
+
+    End Sub
+
+    Private Sub TextBox_Cuenta_TextChanged(sender As Object, e As EventArgs) Handles TextBox_Cuenta.TextChanged
+        label_error_user.Text = ""
 
     End Sub
 End Class

@@ -29,13 +29,15 @@ Partial Class LoginForm
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PictureBox_Hotel = New System.Windows.Forms.PictureBox()
+        Me.label_error_user = New System.Windows.Forms.Label()
         CType(Me.PictureBox_Hotel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button_Conectar
         '
         Me.Button_Conectar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_Conectar.Location = New System.Drawing.Point(229, 104)
+        Me.Button_Conectar.ForeColor = System.Drawing.Color.DarkGreen
+        Me.Button_Conectar.Location = New System.Drawing.Point(389, 45)
         Me.Button_Conectar.Name = "Button_Conectar"
         Me.Button_Conectar.Size = New System.Drawing.Size(102, 41)
         Me.Button_Conectar.TabIndex = 0
@@ -45,7 +47,8 @@ Partial Class LoginForm
         'Button_Salir
         '
         Me.Button_Salir.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_Salir.Location = New System.Drawing.Point(48, 104)
+        Me.Button_Salir.ForeColor = System.Drawing.Color.Crimson
+        Me.Button_Salir.Location = New System.Drawing.Point(310, 143)
         Me.Button_Salir.Name = "Button_Salir"
         Me.Button_Salir.Size = New System.Drawing.Size(83, 41)
         Me.Button_Salir.TabIndex = 1
@@ -92,19 +95,30 @@ Partial Class LoginForm
         'PictureBox_Hotel
         '
         Me.PictureBox_Hotel.Image = Global.AppReservacionesHotel.My.Resources.Resources.login_habitacion
-        Me.PictureBox_Hotel.Location = New System.Drawing.Point(26, 16)
+        Me.PictureBox_Hotel.Location = New System.Drawing.Point(-1, -3)
         Me.PictureBox_Hotel.Name = "PictureBox_Hotel"
-        Me.PictureBox_Hotel.Size = New System.Drawing.Size(132, 78)
+        Me.PictureBox_Hotel.Size = New System.Drawing.Size(196, 187)
         Me.PictureBox_Hotel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox_Hotel.TabIndex = 4
         Me.PictureBox_Hotel.TabStop = False
+        '
+        'label_error_user
+        '
+        Me.label_error_user.AutoSize = True
+        Me.label_error_user.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.label_error_user.ForeColor = System.Drawing.Color.Crimson
+        Me.label_error_user.Location = New System.Drawing.Point(219, 105)
+        Me.label_error_user.Name = "label_error_user"
+        Me.label_error_user.Size = New System.Drawing.Size(0, 24)
+        Me.label_error_user.TabIndex = 7
         '
         'LoginForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(428, 166)
+        Me.ClientSize = New System.Drawing.Size(520, 184)
+        Me.Controls.Add(Me.label_error_user)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox_Hotel)
@@ -131,4 +145,5 @@ Partial Class LoginForm
     Friend WithEvents PictureBox_Hotel As PictureBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents label_error_user As Label
 End Class
