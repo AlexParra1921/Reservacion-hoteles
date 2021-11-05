@@ -140,7 +140,7 @@
     <value>Usuario o contraseña incorrecta</value>
   </data>
   <data name="Vacio_Contraseña" xml:space="preserve">
-    <value>Introduzca una cotnraseña</value>
+    <value>Introduzca una contraseña</value>
   </data>
   <data name="Vacio_Usuario" xml:space="preserve">
     <value>Introduzca un usuario</value>
