@@ -98,19 +98,23 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Usuario.vb" />
-    <Compile Include="ConexionMYSQL.vb" />
+    <Compile Include="Globales.vb" />
+    <Compile Include="Login\Administrador.vb" />
+    <Compile Include="Login\Persona.vb" />
+    <Compile Include="Login\Telefono.vb" />
+    <Compile Include="Login\Usuario.vb" />
+    <Compile Include="Login\ConexionMYSQL.vb" />
     <Compile Include="ControlEmpleado.Designer.vb">
       <DependentUpon>ControlEmpleado.vb</DependentUpon>
     </Compile>
     <Compile Include="ControlEmpleado.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formLogin.vb">
+    <Compile Include="Login\formLogin.vb">
       <SubType>Form</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="formLogin.Designer.vb">
+    <Compile Include="Login\formLogin.Designer.vb">
       <DependentUpon>formLogin.vb</DependentUpon>
       <SubType>Form</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -135,7 +139,7 @@
     <EmbeddedResource Include="ControlEmpleado.resx">
       <DependentUpon>ControlEmpleado.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formLogin.resx">
+    <EmbeddedResource Include="Login\formLogin.resx">
       <DependentUpon>formLogin.vb</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
