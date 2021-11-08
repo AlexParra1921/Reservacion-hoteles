@@ -56,7 +56,7 @@
         End Get
         Set (value As Short )
            Me.edad = value     
-        End
+        End Set
     End Property
 
 End Class
