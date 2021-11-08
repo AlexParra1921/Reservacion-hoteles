@@ -1,6 +1,4 @@
-﻿Imports Microsoft.VisualBasic
-
-Public Class Cliente
+﻿Public Class Cliente
     Inherits Persona
 
     Private id_cliente As Integer
