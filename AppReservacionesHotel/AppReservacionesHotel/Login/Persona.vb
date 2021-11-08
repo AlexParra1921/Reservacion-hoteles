@@ -1,4 +1,11 @@
 ﻿Public Class Persona
+    Public Enum tipoPersona As Integer
+        Administrador = 1
+        Empleado = 2
+        Cliente = 3
+        Huesped = 4
+    End Enum    
+    
     'Atributos de persona     
     Private nombre As String
     Private apellido_paterno As String
