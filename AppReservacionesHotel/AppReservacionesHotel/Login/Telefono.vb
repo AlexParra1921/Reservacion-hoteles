@@ -3,6 +3,7 @@
     Private numero As String
     Private lada As String
     Private idDueño As Short
+    Private tipoDueño As Persona.tipoPersona
 
     Public Sub New()
         numero = ""
@@ -10,10 +11,11 @@
         idDueño = 0
     End Sub
 
-    Public Sub New(IdDueño As String, numero As String, lada As String, tipoDueño As tipoDueño)
+    Public Sub New(IdDueño As String, numero As String, lada As String, tipoDueño As Persona.tipoPersona)
         Me.numero = numero
         Me.lada = lada
         Me.idDueño = IdDueño
+        Me.tipoDueño = tipoDueño
     End Sub
 
     Public Property getSetNumero() As String
