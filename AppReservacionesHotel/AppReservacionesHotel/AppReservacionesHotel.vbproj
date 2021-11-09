@@ -98,6 +98,8 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class1.vb" />
+    <Compile Include="Correo.vb" />
     <Compile Include="Usuario.vb" />
     <Compile Include="ConexionMYSQL.vb" />
     <Compile Include="ControlEmpleado.Designer.vb">
