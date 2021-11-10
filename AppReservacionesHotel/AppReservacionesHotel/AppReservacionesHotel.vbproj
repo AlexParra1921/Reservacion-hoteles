@@ -98,24 +98,25 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Administrador.vb" />
-    <Compile Include="Cliente.vb" />
-    <Compile Include="ConexionMYSQL.vb" />
-    <Compile Include="ControlEmpleado.Designer.vb">
+    <Compile Include="Accesos\Administrador.vb" />
+    <Compile Include="Accesos\Cliente.vb" />
+    <Compile Include="Conexion\ConexionMYSQL.vb" />
+    <Compile Include="Formularios\ControlEmpleado.Designer.vb">
       <DependentUpon>ControlEmpleado.vb</DependentUpon>
     </Compile>
-    <Compile Include="ControlEmpleado.vb">
+    <Compile Include="Formularios\ControlEmpleado.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Correo.vb" />
-    <Compile Include="Empleado.vb" />
-    <Compile Include="formLogin.Designer.vb">
+    <Compile Include="Accesos\Correo.vb" />
+    <Compile Include="Accesos\Empleado.vb" />
+    <Compile Include="Formularios\formLogin.Designer.vb">
       <DependentUpon>formLogin.vb</DependentUpon>
     </Compile>
-    <Compile Include="formLogin.vb">
+    <Compile Include="Formularios\formLogin.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Huesped.vb" />
+    <Compile Include="Accesos\Huesped.vb" />
+    <Compile Include="Globales.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -131,15 +132,15 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Persona.vb" />
-    <Compile Include="Telefono.vb" />
-    <Compile Include="Usuario.vb" />
+    <Compile Include="Accesos\Persona.vb" />
+    <Compile Include="Accesos\Telefono.vb" />
+    <Compile Include="Accesos\Usuario.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ControlEmpleado.resx">
+    <EmbeddedResource Include="Formularios\ControlEmpleado.resx">
       <DependentUpon>ControlEmpleado.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formLogin.resx">
+    <EmbeddedResource Include="Formularios\formLogin.resx">
       <DependentUpon>formLogin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
