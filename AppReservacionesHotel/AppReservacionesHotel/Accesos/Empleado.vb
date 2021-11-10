@@ -9,7 +9,7 @@
         Me.id_login = ""
     End Sub
 
-    Public Sub New(ByVal id_Empleado As Integer, ByVal id_login As Integer, ByVal nombre As String, ByVal apellidoPaterno As String, ByVal apellidoMaterno As String, ByVal edad)
+    Public Sub New(ByVal id_Empleado As Integer, ByVal id_login As Integer, ByVal nombre As String, ByVal apellidoPaterno As String, ByVal apellidoMaterno As String, ByVal edad As Integer)
         MyBase.New(nombre, apellidoPaterno, apellidoMaterno, edad)
         Me.id_Empleado = id_Empleado
         Me.id_login = id_login

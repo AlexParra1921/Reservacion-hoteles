@@ -1,16 +1,16 @@
 ﻿Public Class Correo
     Private Correo As String
     Private id_dueño As Integer
-    Private tipoDueño As Persona.tipoDueño
+    Private tipoDueño As Persona.tipoPersona
 
 
     Public Sub New()
         Correo = 0
         id_dueño = 0
-        tipoDueño = Persona.tipoDueño.NoAssign
+        tipoDueño = Persona.tipoPersona.NoAssign
     End Sub
 
-    Public Sub New(ByVal id_dueño, ByVal correo As String, ByVal tipoDueño As Persona.tipoDueño)
+    Public Sub New(ByVal id_dueño As Integer, ByVal correo As String, ByVal tipoDueño As Persona.tipoPersona)
         Me.id_dueño = id_dueño
         Me.Correo = correo
         Me.tipoDueño = tipoDueño

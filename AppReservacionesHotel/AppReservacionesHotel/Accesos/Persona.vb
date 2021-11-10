@@ -1,11 +1,12 @@
 ﻿Public Class Persona
     Public Enum tipoPersona As Integer
+        NoAssign = 0
         Administrador = 1
         Empleado = 2
         Cliente = 3
         Huesped = 4
-    End Enum    
-    
+    End Enum
+
     'Atributos de persona     
     Private nombre As String
     Private apellido_paterno As String
@@ -21,13 +22,13 @@
     End Sub
 
     'Constructor con parametros
-    Public Sub New(ByVal nombre As String, ByVal apellido_paterno As String, ByVal apellido_materno As String, ByVal edad )
-       Me.nombre = nombre
-       Me.apellido_paterno = apellido_paterno
-       Me.apellido_materno = apellido_materno
-       Me.edad = edad
+    Public Sub New(ByVal nombre As String, ByVal apellido_paterno As String, ByVal apellido_materno As String, ByVal edad As Integer)
+        Me.nombre = nombre
+        Me.apellido_paterno = apellido_paterno
+        Me.apellido_materno = apellido_materno
+        Me.edad = edad
     End Sub
-    
+
     'Getters y Setters 
     Public Property getSetNombre() As String
         Get
