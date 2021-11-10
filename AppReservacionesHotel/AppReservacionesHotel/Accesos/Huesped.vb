@@ -1,6 +1,7 @@
 ﻿Imports Microsoft.VisualBasic
 
 Public Class Huesped
+    Inherits Persona
     'Atributos
     Private id_reservacion As Integer
     Private id_huesped As Integer
