@@ -56,6 +56,7 @@
     End Sub
 
     Private Sub LoginForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        check_remember.Checked = My.Settings.check_usrpass
         If My.Settings.usuario <> "" Then
             TextBox_Cuenta.Text = My.Settings.usuario
         End If
@@ -79,5 +80,9 @@
         If answer = MsgBoxResult.No Then
             e.Cancel = True
         End If
+    End Sub
+
+    Private Sub check_remember_CheckedChanged(sender As Object, e As EventArgs) Handles check_remember.CheckedChanged
+        My.Settings.check_usrpass = check_remember.Checked
     End Sub
 End Class

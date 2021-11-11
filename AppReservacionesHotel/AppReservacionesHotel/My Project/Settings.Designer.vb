@@ -77,6 +77,18 @@ Namespace My
                 Me("contrasena") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property check_usrpass() As Boolean
+            Get
+                Return CType(Me("check_usrpass"),Boolean)
+            End Get
+            Set
+                Me("check_usrpass") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
