@@ -41,7 +41,7 @@ Partial Class LoginForm
         Me.Button_Conectar.Location = New System.Drawing.Point(389, 45)
         Me.Button_Conectar.Name = "Button_Conectar"
         Me.Button_Conectar.Size = New System.Drawing.Size(102, 41)
-        Me.Button_Conectar.TabIndex = 0
+        Me.Button_Conectar.TabIndex = 2
         Me.Button_Conectar.Text = "Conectar"
         Me.Button_Conectar.UseVisualStyleBackColor = True
         '
@@ -52,7 +52,7 @@ Partial Class LoginForm
         Me.Button_Salir.Location = New System.Drawing.Point(206, 132)
         Me.Button_Salir.Name = "Button_Salir"
         Me.Button_Salir.Size = New System.Drawing.Size(83, 41)
-        Me.Button_Salir.TabIndex = 1
+        Me.Button_Salir.TabIndex = 3
         Me.Button_Salir.Text = "Salir"
         Me.Button_Salir.UseVisualStyleBackColor = True
         '
@@ -62,7 +62,7 @@ Partial Class LoginForm
         Me.TextBox_Cuenta.Location = New System.Drawing.Point(201, 28)
         Me.TextBox_Cuenta.Name = "TextBox_Cuenta"
         Me.TextBox_Cuenta.Size = New System.Drawing.Size(167, 24)
-        Me.TextBox_Cuenta.TabIndex = 2
+        Me.TextBox_Cuenta.TabIndex = 0
         '
         'TextBox_Contraseña
         '
@@ -71,7 +71,7 @@ Partial Class LoginForm
         Me.TextBox_Contraseña.Name = "TextBox_Contraseña"
         Me.TextBox_Contraseña.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
         Me.TextBox_Contraseña.Size = New System.Drawing.Size(167, 24)
-        Me.TextBox_Contraseña.TabIndex = 3
+        Me.TextBox_Contraseña.TabIndex = 1
         '
         'Label1
         '
@@ -119,15 +119,17 @@ Partial Class LoginForm
         Me.check_remember.Location = New System.Drawing.Point(332, 146)
         Me.check_remember.Name = "check_remember"
         Me.check_remember.Size = New System.Drawing.Size(176, 17)
-        Me.check_remember.TabIndex = 8
+        Me.check_remember.TabIndex = 4
         Me.check_remember.Text = "Recordar Usuario Y Contraseña"
         Me.check_remember.UseVisualStyleBackColor = True
         '
         'LoginForm
         '
+        Me.AcceptButton = Me.Button_Conectar
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange
         Me.ClientSize = New System.Drawing.Size(520, 184)
         Me.Controls.Add(Me.check_remember)
         Me.Controls.Add(Me.label_error_user)
@@ -138,6 +140,7 @@ Partial Class LoginForm
         Me.Controls.Add(Me.TextBox_Cuenta)
         Me.Controls.Add(Me.Button_Salir)
         Me.Controls.Add(Me.Button_Conectar)
+        Me.KeyPreview = True
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "LoginForm"
