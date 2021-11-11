@@ -49,7 +49,7 @@ Partial Class LoginForm
         '
         Me.Button_Salir.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_Salir.ForeColor = System.Drawing.Color.Crimson
-        Me.Button_Salir.Location = New System.Drawing.Point(310, 143)
+        Me.Button_Salir.Location = New System.Drawing.Point(206, 132)
         Me.Button_Salir.Name = "Button_Salir"
         Me.Button_Salir.Size = New System.Drawing.Size(83, 41)
         Me.Button_Salir.TabIndex = 1
@@ -116,7 +116,7 @@ Partial Class LoginForm
         'check_remember
         '
         Me.check_remember.AutoSize = True
-        Me.check_remember.Location = New System.Drawing.Point(201, 112)
+        Me.check_remember.Location = New System.Drawing.Point(332, 146)
         Me.check_remember.Name = "check_remember"
         Me.check_remember.Size = New System.Drawing.Size(176, 17)
         Me.check_remember.TabIndex = 8

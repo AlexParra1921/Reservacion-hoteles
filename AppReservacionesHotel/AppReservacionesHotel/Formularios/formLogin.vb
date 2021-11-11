@@ -47,12 +47,7 @@
     End Sub
 
     Private Sub Button_Salir_Click(sender As Object, e As EventArgs) Handles Button_Salir.Click
-        Dim answer As MsgBoxResult
-        answer = MsgBox("¿Desea cerrar la aplicacion?", MsgBoxStyle.YesNo)
-        If answer = MsgBoxResult.Yes Then
-            Me.Close()
-        End If
-
+        Me.Close()
     End Sub
 
 
@@ -78,5 +73,11 @@
 
     End Sub
 
-
+    Private Sub FormLogin_Closing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
+        Dim answer As MsgBoxResult
+        answer = MsgBox("¿Desea cerrar la aplicacion?", MsgBoxStyle.YesNo, "Salir")
+        If answer = MsgBoxResult.No Then
+            e.Cancel = True
+        End If
+    End Sub
 End Class
