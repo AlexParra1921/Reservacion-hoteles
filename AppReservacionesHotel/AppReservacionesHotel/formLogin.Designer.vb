@@ -30,6 +30,7 @@ Partial Class LoginForm
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PictureBox_Hotel = New System.Windows.Forms.PictureBox()
         Me.label_error_user = New System.Windows.Forms.Label()
+        Me.check_remember = New System.Windows.Forms.CheckBox()
         CType(Me.PictureBox_Hotel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -112,12 +113,23 @@ Partial Class LoginForm
         Me.label_error_user.Size = New System.Drawing.Size(0, 24)
         Me.label_error_user.TabIndex = 7
         '
+        'check_remember
+        '
+        Me.check_remember.AutoSize = True
+        Me.check_remember.Location = New System.Drawing.Point(201, 112)
+        Me.check_remember.Name = "check_remember"
+        Me.check_remember.Size = New System.Drawing.Size(176, 17)
+        Me.check_remember.TabIndex = 8
+        Me.check_remember.Text = "Recordar Usuario Y Contraseña"
+        Me.check_remember.UseVisualStyleBackColor = True
+        '
         'LoginForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(520, 184)
+        Me.Controls.Add(Me.check_remember)
         Me.Controls.Add(Me.label_error_user)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -146,4 +158,5 @@ Partial Class LoginForm
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents label_error_user As Label
+    Friend WithEvents check_remember As CheckBox
 End Class

@@ -16,6 +16,19 @@
             Return
         End If
 
+        'Guarda usuario y contraseña
+        If check_remember.Checked Then
+            My.Settings.usuario = TextBox_Cuenta.Text
+            My.Settings.contrasena = TextBox_Contraseña.Text
+
+        Else
+            My.Settings.usuario = ""
+            My.Settings.contrasena = ""
+
+        End If
+
+
+
         Try
             conex.conectar(TextBox_Cuenta.Text, TextBox_Contraseña.Text, "reservaciones_hotel")
             If conex.userAuthenticated.getSetTipo = 0 Then
@@ -48,15 +61,22 @@
     End Sub
 
     Private Sub LoginForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If My.Settings.usuario <> "" Then
+            TextBox_Cuenta.Text = My.Settings.usuario
+        End If
+
+        If My.Settings.contrasena <> "" Then
+            TextBox_Contraseña.Text = My.Settings.contrasena
+        End If
+
 
     End Sub
 
-    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles label_error_user.Click
-
-    End Sub
 
     Private Sub TextBox_Cuenta_TextChanged(sender As Object, e As EventArgs) Handles TextBox_Cuenta.TextChanged
         label_error_user.Text = ""
 
     End Sub
+
+
 End Class
