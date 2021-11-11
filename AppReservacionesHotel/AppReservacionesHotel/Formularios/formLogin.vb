@@ -32,7 +32,7 @@
         Try
             conex.conectar(TextBox_Cuenta.Text, TextBox_Contraseña.Text, "reservaciones_hotel")
             If conex.userAuthenticated.getSetTipo = 0 Then
-                Finalize()
+                Me.Hide()
                 ControlEmpleado.Show()
             ElseIf conex.userAuthenticated.getSetTipo = 1 Then
                 MsgBox("Usted es administrador", MsgBoxStyle.Information, "Conexion sastifactoria")
