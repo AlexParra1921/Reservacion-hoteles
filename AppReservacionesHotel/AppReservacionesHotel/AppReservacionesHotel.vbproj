@@ -98,6 +98,13 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CategoriaHabitacion.vb" />
+    <Compile Include="formCategoriaHabitacion.Designer.vb">
+      <DependentUpon>formCategoriaHabitacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="formCategoriaHabitacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Usuario.vb" />
     <Compile Include="ConexionMYSQL.vb" />
     <Compile Include="ControlEmpleado.Designer.vb">
@@ -134,6 +141,9 @@
   <ItemGroup>
     <EmbeddedResource Include="ControlEmpleado.resx">
       <DependentUpon>ControlEmpleado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formCategoriaHabitacion.resx">
+      <DependentUpon>formCategoriaHabitacion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formLogin.resx">
       <DependentUpon>formLogin.vb</DependentUpon>
@@ -175,6 +185,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\No_Usuario.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
