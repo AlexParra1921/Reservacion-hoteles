@@ -100,7 +100,7 @@
   <ItemGroup>
     <Compile Include="Accesos\Administrador.vb" />
     <Compile Include="Accesos\Cliente.vb" />
-    <Compile Include="Conexion\ConexionMYSQL.vb" />
+    <Compile Include="Conexion\Mysql.vb" />
     <Compile Include="Formularios\ControlEmpleado.Designer.vb">
       <DependentUpon>ControlEmpleado.vb</DependentUpon>
     </Compile>
