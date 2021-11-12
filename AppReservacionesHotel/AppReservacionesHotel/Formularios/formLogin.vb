@@ -17,24 +17,30 @@
 
         'Realizamos la conexion a la base de datos y verificamos que usuario es el que se autentificado
         'Si es empleado abrira el Formulario de control, si es Administrador Abrira el Control para Administrador
-        Dim conex As Mysql
+
+
 
         'Realiza la conexion a la base de datos con un usuario
         Try
-            conex = New Mysql(TextBox_Cuenta.Text, TextBox_Contraseña.Text, database_name)
-            If userAuthenticated.getSetTipo = 0 Then
-                Me.Hide()
-                ControlEmpleado.Show()
-            ElseIf userAuthenticated.getSetTipo = 1 Then
-                MsgBox("Usted es administrador", MsgBoxStyle.Information, "Conexion sastifactoria")
+            Dim conex As New Mysql
+            Dim user As New Usuario(TextBox_Cuenta.Text, TextBox_Contraseña.Text)
+
+            If user.loginUsuario(conex) Then
+                userAuthenticated = user
+                If userAuthenticated.getSetTipo = 0 Then
+                    Me.Hide()
+                    ControlEmpleado.Show()
+                ElseIf userAuthenticated.getSetTipo = 1 Then
+                    MsgBox("Usted es administrador", MsgBoxStyle.Information, "Conexion sastifactoria")
+                End If
+            Else
+                label_error_user.Text = My.Resources.No_Usuario_contraseña
+                'Si hay un error en los textbox no guardar valores
+                check_remember.Checked = False
             End If
 
-
         Catch ex As Exception
-            label_error_user.Text = My.Resources.No_Usuario_contraseña
-
-            'Si hay un error en los textbox no guardar valores
-            check_remember.Checked = False
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Advertencia!!")
         End Try
 
 
