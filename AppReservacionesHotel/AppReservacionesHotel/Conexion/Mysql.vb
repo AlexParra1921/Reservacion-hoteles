@@ -9,47 +9,23 @@ Public Class Mysql
     Dim query As MySqlCommand = New MySqlCommand
 
 
+    'Metodo para establecer la conexión a la BD
+    Public Sub New()
+        ' Con esta cadena preparamos la conexión a Oracle con el Usuario  
+        ' y contraseña dueño de las tablas, es quien hizo el CREATE TABLE el usuario isc1 es MI USUARIO
+        'Donde Data Source=XE   Es el nombre de la Base de Datos
+        '          User Id=root Es el nombre del usuario creado por system es el dueño de las tablas
+        '          Password=159753 Es la contraseña del usuario
 
-    'Subproceso para realizar la conexion
-    Sub New(user As String, pass As String, database As String)
-        cnx = New MySqlConnection("Server=" + host + ";" + "database=reservaciones_hotel;" + "user=" + user + ";" + "password=" + pass + ";")
-
+        cnx = New MySqlConnection("Server=" + host + ";" + "database=" + database_name + "; user=root" + "; password=159753" + ";")
 
         If cnx.State <> ConnectionState.Open Then
             Try
-                cnx.Open()
-                'Realizamos un query sobre la base de datos Reservaciones_hotel para dectectar que usuario
-                ' se ha intentado logear
-                query.CommandText = "SELECT TIPO FROM LOGIN WHERE cuenta='" & user & "'"
-
-                'Determinmos en que conexion se realiza el query
-                query.Connection = cnx
-
-                'Se realiza la consulta por medio del adpatador
-                Dim da As MySqlDataAdapter = New MySqlDataAdapter(query)
-
-                'Recuperamos los registros del query realizado
-                Dim dt As DataTable = New DataTable
-                da.Fill(dt)
-
-
-                Dim tipo = CInt(dt.Rows(0)("tipo"))
-                userAuthenticated = New Usuario(user, pass, tipo)
-            Catch ex1 As InvalidOperationException
-                Throw ex1
-            Catch ex2 As MySqlException
-                Throw ex2
-            Catch ex3 As Exception
-                'Excepcion en caso de que no surga algo imprevisto no manejado y lo muestre en la pantalla
-                MsgBox(ex3.Message, MsgBoxStyle.Critical, "No se puedo conectar a la Base de Datos, contacte al D.B.A.")
-            Finally
-                cnx.Close()
+                cnx.Open() 'Abrir la base de datos en caso de que la conexión sea exitosa
+            Catch ex As Exception
+                Throw New Exception("No se puedo conectar a la Base de Datos, contacte al D.B.A.", ex)
             End Try
-
         End If
-
-
-
     End Sub
 
     'METODOS PARA ACCESO A DATOS
