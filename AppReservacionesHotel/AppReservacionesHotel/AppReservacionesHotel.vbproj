@@ -180,6 +180,8 @@
   <ItemGroup>
     <None Include="Resources\No_Usuario.bmp" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="ABD-Reservaciones.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
