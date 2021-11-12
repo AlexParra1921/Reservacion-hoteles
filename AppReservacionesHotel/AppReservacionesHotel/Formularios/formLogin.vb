@@ -17,11 +17,11 @@
 
         'Realizamos la conexion a la base de datos y verificamos que usuario es el que se autentificado
         'Si es empleado abrira el Formulario de control, si es Administrador Abrira el Control para Administrador
-        Dim conex As New Mysql()
+        Dim conex As Mysql
 
         'Realiza la conexion a la base de datos con un usuario
         Try
-            conex.conectar(TextBox_Cuenta.Text, TextBox_Contraseña.Text, database_name)
+            conex = New Mysql(TextBox_Cuenta.Text, TextBox_Contraseña.Text, database_name)
             If userAuthenticated.getSetTipo = 0 Then
                 Me.Hide()
                 ControlEmpleado.Show()
