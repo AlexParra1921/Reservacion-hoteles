@@ -100,7 +100,14 @@
   <ItemGroup>
     <Compile Include="Accesos\Administrador.vb" />
     <Compile Include="Accesos\Cliente.vb" />
+    <Compile Include="CategoriaHabitacion.vb" />
     <Compile Include="Conexion\Mysql.vb" />
+    <Compile Include="formCategoriaHabitacion.Designer.vb">
+      <DependentUpon>formCategoriaHabitacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="formCategoriaHabitacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\ControlEmpleado.Designer.vb">
       <DependentUpon>ControlEmpleado.vb</DependentUpon>
     </Compile>
@@ -137,6 +144,9 @@
     <Compile Include="Accesos\Usuario.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="formCategoriaHabitacion.resx">
+      <DependentUpon>formCategoriaHabitacion.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ControlEmpleado.resx">
       <DependentUpon>ControlEmpleado.vb</DependentUpon>
     </EmbeddedResource>
