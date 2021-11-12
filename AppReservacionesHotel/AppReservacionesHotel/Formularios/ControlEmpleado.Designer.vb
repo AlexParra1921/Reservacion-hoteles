@@ -28,12 +28,13 @@ Partial Class ControlEmpleado
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.FlowLayoutPanel1.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Button3
         '
         Me.Button3.AutoSize = True
-        Me.Button3.Location = New System.Drawing.Point(3, 119)
+        Me.Button3.Location = New System.Drawing.Point(43, 111)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(126, 62)
         Me.Button3.TabIndex = 2
@@ -66,7 +67,6 @@ Partial Class ControlEmpleado
         Me.FlowLayoutPanel1.AutoSize = True
         Me.FlowLayoutPanel1.Controls.Add(Me.Control)
         Me.FlowLayoutPanel1.Controls.Add(Me.Button2)
-        Me.FlowLayoutPanel1.Controls.Add(Me.Button3)
         Me.FlowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
         Me.FlowLayoutPanel1.Location = New System.Drawing.Point(12, 39)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
@@ -75,6 +75,7 @@ Partial Class ControlEmpleado
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.Button3)
         Me.Panel1.Location = New System.Drawing.Point(150, 42)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(638, 359)
@@ -95,6 +96,8 @@ Partial Class ControlEmpleado
         Me.Text = "Control de Reservaciones y Habitaciones"
         Me.FlowLayoutPanel1.ResumeLayout(False)
         Me.FlowLayoutPanel1.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
