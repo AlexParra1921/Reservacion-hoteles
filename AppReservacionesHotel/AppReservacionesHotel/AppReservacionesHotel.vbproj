@@ -99,8 +99,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Accesos\Administrador.vb" />
+    <Compile Include="Accesos\CategoriaHabitacion.vb" />
     <Compile Include="Accesos\Cliente.vb" />
     <Compile Include="Conexion\Mysql.vb" />
+    <Compile Include="Formularios\formCategoriaHabitacion.Designer.vb">
+      <DependentUpon>formCategoriaHabitacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\formCategoriaHabitacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\ControlEmpleado.Designer.vb">
       <DependentUpon>ControlEmpleado.vb</DependentUpon>
     </Compile>
@@ -116,6 +123,24 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Accesos\Huesped.vb" />
+    <Compile Include="Formularios\Form_buscarUsuario.Designer.vb">
+      <DependentUpon>Form_buscarUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Form_buscarUsuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Form_Telefono.Designer.vb">
+      <DependentUpon>Form_Telefono.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Form_Telefono.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Form_cliente.Designer.vb">
+      <DependentUpon>Form_cliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Form_cliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Globales.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -137,11 +162,23 @@
     <Compile Include="Accesos\Usuario.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Formularios\formCategoriaHabitacion.resx">
+      <DependentUpon>formCategoriaHabitacion.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ControlEmpleado.resx">
       <DependentUpon>ControlEmpleado.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\formLogin.resx">
       <DependentUpon>formLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Form_buscarUsuario.resx">
+      <DependentUpon>Form_buscarUsuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Form_Telefono.resx">
+      <DependentUpon>Form_Telefono.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Form_cliente.resx">
+      <DependentUpon>Form_cliente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
