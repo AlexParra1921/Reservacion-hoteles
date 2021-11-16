@@ -29,4 +29,17 @@
     Private Sub CleinteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CleinteToolStripMenuItem.Click
 
     End Sub
+
+    Private Sub bt_cliente_Click(sender As Object, e As EventArgs) Handles bt_cliente.Click
+        'My.Application.OpenForms.Cast(Of Form)().Except((Me)).ToList().ForEach(Sub(Form) Form.Close())
+
+
+        Form_cliente.MdiParent = Me
+        panel_main.Controls.Add(Form_cliente)
+        Form_cliente.Show()
+        Form_cliente.WindowState = FormWindowState.Maximized
+
+
+
+    End Sub
 End Class

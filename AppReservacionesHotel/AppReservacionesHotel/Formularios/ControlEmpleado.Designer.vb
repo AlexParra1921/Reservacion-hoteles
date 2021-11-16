@@ -27,12 +27,11 @@ Partial Class ControlEmpleado
         Me.bt_reservaciones = New System.Windows.Forms.Button()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.bt_cliente = New System.Windows.Forms.Button()
-        Me.FileSystemWatcher1 = New System.IO.FileSystemWatcher()
         Me.bt_salir = New System.Windows.Forms.Button()
+        Me.FileSystemWatcher1 = New System.IO.FileSystemWatcher()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.SistemaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CerrarSesionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -50,11 +49,12 @@ Partial Class ControlEmpleado
         Me.HuespedToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdministrarHuespedesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AgregarUbicacionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AgregarCategoriasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BuscarTelefonoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CleinteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AgregarUbicacionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HuespedToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.panel_main = New System.Windows.Forms.Panel()
         Me.FlowLayoutPanel1.SuspendLayout()
         CType(Me.FileSystemWatcher1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
@@ -119,6 +119,7 @@ Partial Class ControlEmpleado
         '
         'FlowLayoutPanel1
         '
+        Me.FlowLayoutPanel1.AutoSize = True
         Me.FlowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.FlowLayoutPanel1.BackColor = System.Drawing.Color.CornflowerBlue
         Me.FlowLayoutPanel1.Controls.Add(Me.bt_reservaciones)
@@ -130,10 +131,10 @@ Partial Class ControlEmpleado
         Me.FlowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
         Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 24)
         Me.FlowLayoutPanel1.Margin = New System.Windows.Forms.Padding(6)
-        Me.FlowLayoutPanel1.MinimumSize = New System.Drawing.Size(185, 0)
+        Me.FlowLayoutPanel1.MinimumSize = New System.Drawing.Size(194, 611)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
         Me.FlowLayoutPanel1.Padding = New System.Windows.Forms.Padding(5)
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(193, 617)
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(194, 621)
         Me.FlowLayoutPanel1.TabIndex = 4
         Me.FlowLayoutPanel1.WrapContents = False
         '
@@ -156,11 +157,6 @@ Partial Class ControlEmpleado
         Me.bt_cliente.Text = "Clientes"
         Me.bt_cliente.UseVisualStyleBackColor = False
         '
-        'FileSystemWatcher1
-        '
-        Me.FileSystemWatcher1.EnableRaisingEvents = True
-        Me.FileSystemWatcher1.SynchronizingObject = Me
-        '
         'bt_salir
         '
         Me.bt_salir.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
@@ -175,27 +171,32 @@ Partial Class ControlEmpleado
         Me.bt_salir.MinimumSize = New System.Drawing.Size(182, 72)
         Me.bt_salir.Name = "bt_salir"
         Me.bt_salir.Padding = New System.Windows.Forms.Padding(2)
-        Me.bt_salir.Size = New System.Drawing.Size(182, 119)
+        Me.bt_salir.Size = New System.Drawing.Size(182, 121)
         Me.bt_salir.TabIndex = 4
         Me.bt_salir.Text = "Salir"
         Me.bt_salir.UseVisualStyleBackColor = False
+        '
+        'FileSystemWatcher1
+        '
+        Me.FileSystemWatcher1.EnableRaisingEvents = True
+        Me.FileSystemWatcher1.SynchronizingObject = Me
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.LightSteelBlue
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(193, 24)
+        Me.Panel1.Location = New System.Drawing.Point(194, 24)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(761, 52)
+        Me.Panel1.Size = New System.Drawing.Size(760, 52)
         Me.Panel1.TabIndex = 5
         '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.LightSteelBlue
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel2.Location = New System.Drawing.Point(193, 604)
+        Me.Panel2.Location = New System.Drawing.Point(194, 608)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(761, 37)
+        Me.Panel2.Size = New System.Drawing.Size(760, 37)
         Me.Panel2.TabIndex = 6
         '
         'MenuStrip1
@@ -207,15 +208,6 @@ Partial Class ControlEmpleado
         Me.MenuStrip1.TabIndex = 7
         Me.MenuStrip1.Text = "MenuStrip1"
         '
-        'Panel3
-        '
-        Me.Panel3.BackColor = System.Drawing.SystemColors.Control
-        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel3.Location = New System.Drawing.Point(193, 76)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(761, 528)
-        Me.Panel3.TabIndex = 8
-        '
         'SistemaToolStripMenuItem
         '
         Me.SistemaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CerrarSesionToolStripMenuItem, Me.SalirToolStripMenuItem})
@@ -226,13 +218,13 @@ Partial Class ControlEmpleado
         'CerrarSesionToolStripMenuItem
         '
         Me.CerrarSesionToolStripMenuItem.Name = "CerrarSesionToolStripMenuItem"
-        Me.CerrarSesionToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CerrarSesionToolStripMenuItem.Size = New System.Drawing.Size(142, 22)
         Me.CerrarSesionToolStripMenuItem.Text = "Cerrar sesion"
         '
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(142, 22)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'ReservacionesToolStripMenuItem
@@ -245,19 +237,19 @@ Partial Class ControlEmpleado
         'AgregarToolStripMenuItem
         '
         Me.AgregarToolStripMenuItem.Name = "AgregarToolStripMenuItem"
-        Me.AgregarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AgregarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
         Me.AgregarToolStripMenuItem.Text = "Agregar"
         '
         'EliminarToolStripMenuItem
         '
         Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
-        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
         Me.EliminarToolStripMenuItem.Text = "Eliminar"
         '
         'BuscarToolStripMenuItem
         '
         Me.BuscarToolStripMenuItem.Name = "BuscarToolStripMenuItem"
-        Me.BuscarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.BuscarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
         Me.BuscarToolStripMenuItem.Text = "Buscar"
         '
         'ClientesToolStripMenuItem
@@ -270,13 +262,13 @@ Partial Class ControlEmpleado
         'AgregarClienteToolStripMenuItem
         '
         Me.AgregarClienteToolStripMenuItem.Name = "AgregarClienteToolStripMenuItem"
-        Me.AgregarClienteToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AgregarClienteToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
         Me.AgregarClienteToolStripMenuItem.Text = "Agregar cliente"
         '
         'EliminarClienteToolStripMenuItem
         '
         Me.EliminarClienteToolStripMenuItem.Name = "EliminarClienteToolStripMenuItem"
-        Me.EliminarClienteToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.EliminarClienteToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
         Me.EliminarClienteToolStripMenuItem.Text = "Eliminar cliente"
         '
         'HabitacionToolStripMenuItem
@@ -324,52 +316,66 @@ Partial Class ControlEmpleado
         Me.MasToolStripMenuItem.Size = New System.Drawing.Size(41, 20)
         Me.MasToolStripMenuItem.Text = "Mas"
         '
+        'AgregarUbicacionToolStripMenuItem
+        '
+        Me.AgregarUbicacionToolStripMenuItem.Name = "AgregarUbicacionToolStripMenuItem"
+        Me.AgregarUbicacionToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
+        Me.AgregarUbicacionToolStripMenuItem.Text = "Agregar Ubicacion"
+        '
         'AgregarCategoriasToolStripMenuItem
         '
         Me.AgregarCategoriasToolStripMenuItem.Name = "AgregarCategoriasToolStripMenuItem"
-        Me.AgregarCategoriasToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AgregarCategoriasToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
         Me.AgregarCategoriasToolStripMenuItem.Text = "Agregar categorias"
         '
         'BuscarTelefonoToolStripMenuItem
         '
         Me.BuscarTelefonoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CleinteToolStripMenuItem, Me.HuespedToolStripMenuItem1})
         Me.BuscarTelefonoToolStripMenuItem.Name = "BuscarTelefonoToolStripMenuItem"
-        Me.BuscarTelefonoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.BuscarTelefonoToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
         Me.BuscarTelefonoToolStripMenuItem.Text = "Buscar telefono"
         '
         'CleinteToolStripMenuItem
         '
         Me.CleinteToolStripMenuItem.Name = "CleinteToolStripMenuItem"
-        Me.CleinteToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CleinteToolStripMenuItem.Size = New System.Drawing.Size(121, 22)
         Me.CleinteToolStripMenuItem.Text = "Cliente"
-        '
-        'AgregarUbicacionToolStripMenuItem
-        '
-        Me.AgregarUbicacionToolStripMenuItem.Name = "AgregarUbicacionToolStripMenuItem"
-        Me.AgregarUbicacionToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.AgregarUbicacionToolStripMenuItem.Text = "Agregar Ubicacion"
         '
         'HuespedToolStripMenuItem1
         '
         Me.HuespedToolStripMenuItem1.Name = "HuespedToolStripMenuItem1"
-        Me.HuespedToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.HuespedToolStripMenuItem1.Size = New System.Drawing.Size(121, 22)
         Me.HuespedToolStripMenuItem1.Text = "Huesped"
+        '
+        'panel_main
+        '
+        Me.panel_main.AutoSize = True
+        Me.panel_main.BackColor = System.Drawing.SystemColors.Control
+        Me.panel_main.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.panel_main.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.panel_main.Location = New System.Drawing.Point(194, 76)
+        Me.panel_main.Name = "panel_main"
+        Me.panel_main.Padding = New System.Windows.Forms.Padding(5)
+        Me.panel_main.Size = New System.Drawing.Size(760, 532)
+        Me.panel_main.TabIndex = 8
         '
         'ControlEmpleado
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(954, 641)
-        Me.Controls.Add(Me.Panel3)
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.ClientSize = New System.Drawing.Size(954, 645)
+        Me.Controls.Add(Me.panel_main)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.FlowLayoutPanel1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Font = New System.Drawing.Font("Lato", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Margin = New System.Windows.Forms.Padding(4, 2, 4, 2)
-        Me.MaximizeBox = False
+        Me.MinimumSize = New System.Drawing.Size(970, 680)
         Me.Name = "ControlEmpleado"
         Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -390,7 +396,7 @@ Partial Class ControlEmpleado
     Friend WithEvents bt_cliente As Button
     Friend WithEvents FileSystemWatcher1 As IO.FileSystemWatcher
     Friend WithEvents bt_salir As Button
-    Friend WithEvents Panel3 As Panel
+    Friend WithEvents panel_main As Panel
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel1 As Panel
     Friend WithEvents MenuStrip1 As MenuStrip
