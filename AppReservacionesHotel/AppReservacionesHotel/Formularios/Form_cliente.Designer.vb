@@ -37,6 +37,9 @@ Partial Class Form_cliente
         Me.txt_BuscarID = New System.Windows.Forms.MaskedTextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtbox_id = New System.Windows.Forms.MaskedTextBox()
+        Me.txt_numero = New System.Windows.Forms.MaskedTextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.bt_selectTel = New System.Windows.Forms.Button()
         CType(Me.dgv_cliente, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -180,12 +183,45 @@ Partial Class Form_cliente
         Me.txtbox_id.Size = New System.Drawing.Size(184, 20)
         Me.txtbox_id.TabIndex = 0
         '
+        'txt_numero
+        '
+        Me.txt_numero.Enabled = False
+        Me.txt_numero.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_numero.Location = New System.Drawing.Point(12, 114)
+        Me.txt_numero.Mask = "(999)000-00-00"
+        Me.txt_numero.Name = "txt_numero"
+        Me.txt_numero.Size = New System.Drawing.Size(184, 26)
+        Me.txt_numero.TabIndex = 16
+        Me.txt_numero.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(12, 99)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(49, 13)
+        Me.Label6.TabIndex = 17
+        Me.Label6.Text = "Telefono"
+        '
+        'bt_selectTel
+        '
+        Me.bt_selectTel.Enabled = False
+        Me.bt_selectTel.Location = New System.Drawing.Point(256, 117)
+        Me.bt_selectTel.Name = "bt_selectTel"
+        Me.bt_selectTel.Size = New System.Drawing.Size(75, 23)
+        Me.bt_selectTel.TabIndex = 18
+        Me.bt_selectTel.Text = "Agregar telefono"
+        Me.bt_selectTel.UseVisualStyleBackColor = True
+        '
         'Form_cliente
         '
         Me.AcceptButton = Me.bt_agregar
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.bt_selectTel)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.txt_numero)
         Me.Controls.Add(Me.txtbox_id)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.txt_BuscarID)
@@ -229,4 +265,7 @@ Partial Class Form_cliente
     Friend WithEvents txt_BuscarID As MaskedTextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents txtbox_id As MaskedTextBox
+    Friend WithEvents txt_numero As MaskedTextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents bt_selectTel As Button
 End Class

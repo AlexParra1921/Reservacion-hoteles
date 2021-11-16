@@ -11,7 +11,8 @@
             MessageBox.Show("Capturar apellido paterno del cliente!!")
         ElseIf txtbox_apellidoMaterno.Text = "" Then
             MessageBox.Show("Capturar apéllido materno del cliente !!")
-
+        ElseIf txt_numero.Text = "(   )   -  -" Then
+            MessageBox.Show("Seleccione un telefono para el cliente !!")
         Else
             'instanciamos la clase y le pasamos como parámetros los cuatro datos
 
@@ -98,6 +99,19 @@
         txtbox_apellidoPaterno.Text = dgv_cliente.Rows(renglon).Cells(2).Value
         txtbox_apellidoMaterno.Text = dgv_cliente.Rows(renglon).Cells(3).Value
 
+        'Realizamos la busqueda del telefono
+        Dim telefono As New Telefono
+        telefono.getSetIdDueño = txtbox_id.Text
+        telefono.getSetTipoDueño = Persona.tipoPersona.Cliente
+
+        If telefono.consultaTel_tel() Then
+            txt_numero.Text = telefono.getSetNumero
+        Else
+            txt_numero.Text = ""
+        End If
+
+
+
 
     End Sub
 
@@ -126,4 +140,19 @@
         txtbox_apellidoMaterno.Text = ""
 
     End Sub
+
+    Private Sub bt_selectTel_Click(sender As Object, e As EventArgs) Handles bt_selectTel.Click
+        Form_Telefono.Show()
+    End Sub
+
+
+    Private Sub txtbox_id_TextChanged(sender As Object, e As EventArgs) Handles txtbox_id.TextChanged
+        If txtbox_id.Text <> "" Then
+            bt_selectTel.Enabled = True
+        Else
+            bt_selectTel.Enabled = False
+        End If
+    End Sub
+
+
 End Class
