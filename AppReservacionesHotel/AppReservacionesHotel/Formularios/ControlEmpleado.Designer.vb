@@ -134,7 +134,7 @@ Partial Class ControlEmpleado
         Me.FlowLayoutPanel1.MinimumSize = New System.Drawing.Size(194, 611)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
         Me.FlowLayoutPanel1.Padding = New System.Windows.Forms.Padding(5)
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(194, 621)
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(194, 617)
         Me.FlowLayoutPanel1.TabIndex = 4
         Me.FlowLayoutPanel1.WrapContents = False
         '
@@ -184,7 +184,7 @@ Partial Class ControlEmpleado
         Me.Panel1.Location = New System.Drawing.Point(194, 24)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Padding = New System.Windows.Forms.Padding(4)
-        Me.Panel1.Size = New System.Drawing.Size(760, 52)
+        Me.Panel1.Size = New System.Drawing.Size(810, 52)
         Me.Panel1.TabIndex = 5
         '
         'lb_ventana
@@ -201,9 +201,9 @@ Partial Class ControlEmpleado
         '
         Me.Panel2.BackColor = System.Drawing.Color.LightSteelBlue
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel2.Location = New System.Drawing.Point(194, 608)
+        Me.Panel2.Location = New System.Drawing.Point(194, 604)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(760, 37)
+        Me.Panel2.Size = New System.Drawing.Size(810, 37)
         Me.Panel2.TabIndex = 6
         '
         'panel_main
@@ -215,7 +215,7 @@ Partial Class ControlEmpleado
         Me.panel_main.Location = New System.Drawing.Point(194, 76)
         Me.panel_main.Name = "panel_main"
         Me.panel_main.Padding = New System.Windows.Forms.Padding(5)
-        Me.panel_main.Size = New System.Drawing.Size(760, 532)
+        Me.panel_main.Size = New System.Drawing.Size(810, 528)
         Me.panel_main.TabIndex = 8
         '
         'SistemaToolStripMenuItem
@@ -362,17 +362,17 @@ Partial Class ControlEmpleado
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SistemaToolStripMenuItem, Me.ReservacionesToolStripMenuItem, Me.ClientesToolStripMenuItem, Me.HabitacionToolStripMenuItem, Me.HuespedToolStripMenuItem, Me.MasToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(954, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1004, 24)
         Me.MenuStrip1.TabIndex = 7
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'ControlEmpleado
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(954, 645)
+        Me.ClientSize = New System.Drawing.Size(1004, 641)
         Me.Controls.Add(Me.panel_main)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
@@ -382,7 +382,8 @@ Partial Class ControlEmpleado
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Margin = New System.Windows.Forms.Padding(4, 2, 4, 2)
-        Me.MinimumSize = New System.Drawing.Size(970, 680)
+        Me.MaximumSize = New System.Drawing.Size(1020, 680)
+        Me.MinimumSize = New System.Drawing.Size(1020, 680)
         Me.Name = "ControlEmpleado"
         Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

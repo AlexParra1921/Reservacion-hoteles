@@ -39,8 +39,10 @@
     Private Sub bt_huesped_Click(sender As Object, e As EventArgs) Handles bt_huesped.Click
         lb_ventana.Text = ""
         lb_ventana.Text = "Huespedes"
-        For .MdiParent = Me
-        panel_main.Controls.Add(Form_)
+        Form_Huesped.MdiParent = Me
+        panel_main.Controls.Add(Form_Huesped)
+        Form_Huesped.Show()
+        Form_Huesped.WindowState = FormWindowState.Maximized
     End Sub
 
     Private Sub bt_reservaciones_Click(sender As Object, e As EventArgs) Handles bt_reservaciones.Click
