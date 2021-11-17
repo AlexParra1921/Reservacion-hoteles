@@ -98,6 +98,15 @@
 
         GDVcliente.Refresh()
 
+        'Establecer ancho de cada columna del DataGridView, si en el DGV tú requieres mas columnas
+        ' agregas GDVciudades.Columns.Item(consecutivo).Width = 900, el numero de columnas de DGV
+        ' estarán determinadas por el Query (select) de arriba
+        GDVcliente.Columns.Item(0).Width = 30
+        GDVcliente.Columns.Item(1).Width = 250
+        GDVcliente.Columns.Item(2).Width = 250
+        GDVcliente.Columns.Item(3).Width = 250
+
+
     End Sub
 
     Public Sub eliminarCliente()

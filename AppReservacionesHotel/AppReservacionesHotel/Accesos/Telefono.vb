@@ -321,17 +321,17 @@
         If idDueño <> 0 And numero <> "" And tipoDueño <> 0 Then
             Select Case tipoDueño
                 Case Persona.tipoPersona.Administrador
-                    strSql = "DELETE FROM telefono_administrador" &
+                    strSql = "DELETE FROM telefono_administrador " &
                           "where telefono='" & numero & "'"
 
                 Case Persona.tipoPersona.Cliente
-                    strSql = "DELETE FROM telefono_cliente" &
+                    strSql = "DELETE FROM telefono_cliente " &
                           "where telefono='" & numero & "'"
                 Case Persona.tipoPersona.Empleado
-                    strSql = "DELETE FROM telefono_empleado" &
+                    strSql = "DELETE FROM telefono_empleado " &
                           "where telefono='" & numero & "'"
                 Case Persona.tipoPersona.Huesped
-                    strSql = "DELETE FROM telefono_huesped" &
+                    strSql = "DELETE FROM telefono_huesped " &
                           "where telefono='" & numero & "'"
             End Select
 

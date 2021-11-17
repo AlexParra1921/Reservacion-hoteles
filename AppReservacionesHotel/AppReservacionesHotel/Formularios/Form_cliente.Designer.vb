@@ -39,7 +39,7 @@ Partial Class Form_cliente
         Me.txtbox_id = New System.Windows.Forms.MaskedTextBox()
         Me.txt_numero = New System.Windows.Forms.MaskedTextBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.bt_selectTel = New System.Windows.Forms.Button()
+        Me.lb_telefono = New System.Windows.Forms.Label()
         CType(Me.dgv_cliente, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -47,8 +47,6 @@ Partial Class Form_cliente
         '
         Me.dgv_cliente.AllowUserToAddRows = False
         Me.dgv_cliente.AllowUserToDeleteRows = False
-        Me.dgv_cliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
-        Me.dgv_cliente.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgv_cliente.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dgv_cliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_cliente.GridColor = System.Drawing.SystemColors.ActiveCaption
@@ -85,7 +83,7 @@ Partial Class Form_cliente
         Me.bt_agregar.Location = New System.Drawing.Point(658, 22)
         Me.bt_agregar.Name = "bt_agregar"
         Me.bt_agregar.Size = New System.Drawing.Size(75, 23)
-        Me.bt_agregar.TabIndex = 4
+        Me.bt_agregar.TabIndex = 5
         Me.bt_agregar.Text = "Guardar"
         Me.bt_agregar.UseVisualStyleBackColor = True
         '
@@ -95,7 +93,7 @@ Partial Class Form_cliente
         Me.bt_eliminar.Location = New System.Drawing.Point(658, 51)
         Me.bt_eliminar.Name = "bt_eliminar"
         Me.bt_eliminar.Size = New System.Drawing.Size(75, 23)
-        Me.bt_eliminar.TabIndex = 5
+        Me.bt_eliminar.TabIndex = 6
         Me.bt_eliminar.Text = "Eliminar"
         Me.bt_eliminar.UseVisualStyleBackColor = True
         '
@@ -150,7 +148,7 @@ Partial Class Form_cliente
         Me.bt_buscar.Location = New System.Drawing.Point(658, 153)
         Me.bt_buscar.Name = "bt_buscar"
         Me.bt_buscar.Size = New System.Drawing.Size(75, 23)
-        Me.bt_buscar.TabIndex = 13
+        Me.bt_buscar.TabIndex = 9
         Me.bt_buscar.Text = "Buscar"
         Me.bt_buscar.UseVisualStyleBackColor = True
         '
@@ -162,7 +160,7 @@ Partial Class Form_cliente
         Me.txt_BuscarID.Name = "txt_BuscarID"
         Me.txt_BuscarID.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
         Me.txt_BuscarID.Size = New System.Drawing.Size(191, 20)
-        Me.txt_BuscarID.TabIndex = 14
+        Me.txt_BuscarID.TabIndex = 8
         '
         'Label5
         '
@@ -185,13 +183,12 @@ Partial Class Form_cliente
         '
         'txt_numero
         '
-        Me.txt_numero.Enabled = False
         Me.txt_numero.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_numero.Location = New System.Drawing.Point(12, 114)
-        Me.txt_numero.Mask = "(999)000-00-00"
+        Me.txt_numero.Mask = "000-000-0000"
         Me.txt_numero.Name = "txt_numero"
         Me.txt_numero.Size = New System.Drawing.Size(184, 26)
-        Me.txt_numero.TabIndex = 16
+        Me.txt_numero.TabIndex = 4
         Me.txt_numero.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label6
@@ -203,15 +200,15 @@ Partial Class Form_cliente
         Me.Label6.TabIndex = 17
         Me.Label6.Text = "Telefono"
         '
-        'bt_selectTel
+        'lb_telefono
         '
-        Me.bt_selectTel.Enabled = False
-        Me.bt_selectTel.Location = New System.Drawing.Point(256, 117)
-        Me.bt_selectTel.Name = "bt_selectTel"
-        Me.bt_selectTel.Size = New System.Drawing.Size(75, 23)
-        Me.bt_selectTel.TabIndex = 18
-        Me.bt_selectTel.Text = "Agregar telefono"
-        Me.bt_selectTel.UseVisualStyleBackColor = True
+        Me.lb_telefono.AutoSize = True
+        Me.lb_telefono.ForeColor = System.Drawing.Color.Red
+        Me.lb_telefono.Location = New System.Drawing.Point(12, 143)
+        Me.lb_telefono.Name = "lb_telefono"
+        Me.lb_telefono.Size = New System.Drawing.Size(0, 13)
+        Me.lb_telefono.TabIndex = 18
+        Me.lb_telefono.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Form_cliente
         '
@@ -219,7 +216,7 @@ Partial Class Form_cliente
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.bt_selectTel)
+        Me.Controls.Add(Me.lb_telefono)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.txt_numero)
         Me.Controls.Add(Me.txtbox_id)
@@ -267,5 +264,5 @@ Partial Class Form_cliente
     Friend WithEvents txtbox_id As MaskedTextBox
     Friend WithEvents txt_numero As MaskedTextBox
     Friend WithEvents Label6 As Label
-    Friend WithEvents bt_selectTel As Button
+    Friend WithEvents lb_telefono As Label
 End Class

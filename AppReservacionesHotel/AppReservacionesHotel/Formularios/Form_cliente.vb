@@ -15,28 +15,61 @@
             MessageBox.Show("Seleccione un telefono para el cliente !!")
         Else
             'instanciamos la clase y le pasamos como parámetros los cuatro datos
-
+            Dim strTel = limpiar_caracteresCampoTelefono()
             Dim cliente As New Cliente(txtbox_id.Text, txt_nombre.Text, txtbox_apellidoPaterno.Text, txtbox_apellidoMaterno.Text)
-
+            Dim telefono As New Telefono(txtbox_id.Text, strTel, "+52", Persona.tipoPersona.Cliente)
 
             'En el siguiente IF, usamos un método para verificar si la ciudad está registrada
             ' en esa ciudad de ese estado
 
             If cliente.consultaCliente() = False Then
                 'Si la ciudad NO está registrada, la inserta como una nueva
-                cliente.insertarCliente() 'INSERTA NUEVA CIUDAD
-
-                'Con ésta función mandamos una ventana de notificación al usuario final
-                MessageBox.Show("Cliente Registrado ...")
-            Else
-                If MessageBox.Show("¿Esta seguro modifcar el registro con ID=[" & txtbox_id.Text & "]?",
-                                   "CONFIRMAR", MessageBoxButtons.YesNo) = Windows.Forms.DialogResult.Yes Then
-
-                    'Si la ciudad se encuentra registrada, se modifica la información
-                    cliente.actualizaCliente() 'ACTUALIZA LA CIUDAD
+                Try
+                    cliente.insertarCliente() 'INSERTA NUEVA CIUDAD
+                    'Verificamos si los campos estan llenos y si tenemos el id del dueño para indicar de quiens sera el telefono
+                    If telefono.consultaTel_tel() Then
+                        lb_telefono.Text = "Este numero ya pertenece a un cliente"
+                        cliente.eliminarCliente()
+                        Return
+                    Else
+                        telefono.insertarTel()
+                    End If
 
                     'Con ésta función mandamos una ventana de notificación al usuario final
-                    MsgBox("Cliente modificado ...")
+                    MessageBox.Show("Cliente Registrado ...")
+                Catch ex As Exception
+                    MsgBox("Error la realizar el registro del cliente:" & ex.Message)
+                End Try
+
+            Else
+              
+                If MessageBox.Show("¿Esta seguro modifcar el registro con ID=[" & txtbox_id.Text & "]?",
+                                   "CONFIRMAR", MessageBoxButtons.YesNo) = Windows.Forms.DialogResult.Yes Then
+                    Try
+                        'Si el telefono del cliente existe pero pertnece a otro cliente no actualizar cliente
+                        If telefono.consultaTel_id() Then
+                            If telefono.getSetIdDueño <> cliente.getSetidCliente Then
+                                lb_telefono.Text = "Este numero ya pertenece a un cliente"
+                                Return
+                            End If
+                        Else
+                            If telefono.consultaTel_tel() Then
+                                telefono.eliminaTelefono()
+                            End If
+                            telefono.getSetNumero = strTel
+                            'Si el telefono no existe entonces agregar el nuevo 
+                            telefono.insertarTel()
+                        End If
+
+                        'Si el cliente se encuentra registrada, se modifica la información
+                        cliente.actualizaCliente() 'ACTUALIZA LA CIUDAD
+
+                        'Con ésta función mandamos una ventana de notificación al usuario final
+                        MsgBox("Cliente modificado ...")
+                    Catch ex As Exception
+                        MsgBox("Error al realizar la actualizacion del cliente: /n" & ex.Message)
+                    End Try
+
                 End If
 
             End If
@@ -99,15 +132,17 @@
         txtbox_apellidoPaterno.Text = dgv_cliente.Rows(renglon).Cells(2).Value
         txtbox_apellidoMaterno.Text = dgv_cliente.Rows(renglon).Cells(3).Value
 
-        'Realizamos la busqueda del telefono
         Dim telefono As New Telefono
-        telefono.getSetIdDueño = txtbox_id.Text
-        telefono.getSetTipoDueño = Persona.tipoPersona.Cliente
+        If txtbox_id.Text <> "" Then
 
-        If telefono.consultaTel_tel() Then
-            txt_numero.Text = telefono.getSetNumero
-        Else
-            txt_numero.Text = ""
+            telefono.getSetIdDueño = txtbox_id.Text
+            telefono.getSetTipoDueño = Persona.tipoPersona.Cliente
+
+            If telefono.consultaTel_tel() Then
+                txt_numero.Text = telefono.getSetNumero
+            Else
+                txt_numero.Text = ""
+            End If
         End If
 
 
@@ -122,10 +157,19 @@
     'mensaje de que se ha encontrado
     Private Sub bt_buscar_Click(sender As Object, e As EventArgs) Handles bt_buscar.Click
         Dim cliente As New Cliente()
-        cliente.getSetidCliente = CInt(txt_BuscarID.Text)
-
+        Dim telefono As New Telefono
+        If txt_BuscarID.Text <> "" Then
+            cliente.getSetidCliente = CInt(txt_BuscarID.Text)
+            telefono.getSetIdDueño = txt_BuscarID.Text
+            telefono.getSetTipoDueño = Persona.tipoPersona.Cliente
+        End If
         If cliente.consultaCliente() Then
             MsgBox("Cliente encontrado!")
+            If telefono.consultaTel_tel() Then
+                txt_numero.Text = telefono.getSetNumero
+            Else
+                txt_numero.Text = ""
+            End If
         Else
             MsgBox("Cliente no encontrado!")
         End If
@@ -138,21 +182,33 @@
         txt_nombre.Text = ""
         txtbox_apellidoPaterno.Text = ""
         txtbox_apellidoMaterno.Text = ""
-
+        txt_numero.Text = ""
     End Sub
 
-    Private Sub bt_selectTel_Click(sender As Object, e As EventArgs) Handles bt_selectTel.Click
+    Private Sub bt_selectTel_Click(sender As Object, e As EventArgs)
         Form_Telefono.Show()
     End Sub
 
 
-    Private Sub txtbox_id_TextChanged(sender As Object, e As EventArgs) Handles txtbox_id.TextChanged
-        If txtbox_id.Text <> "" Then
-            bt_selectTel.Enabled = True
-        Else
-            bt_selectTel.Enabled = False
-        End If
+
+
+    Private Sub txt_numero_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles txt_numero.MaskInputRejected
+
     End Sub
 
+    Private Sub txt_numero_TextChanged(sender As Object, e As EventArgs) Handles txt_numero.TextChanged
+        'Si se intenta modificar el telefono se borra el mensaje de error
+        lb_telefono.Text = ""
+    End Sub
 
+    Public Function limpiar_caracteresCampoTelefono() As String
+        Return Replace(txt_numero.Text, "-", "")
+    End Function
+
+
+
+    Private Sub txtbox_id_TextChanged(sender As Object, e As EventArgs) Handles txtbox_id.TextChanged
+        'Realizamos la busqueda del telefono
+
+    End Sub
 End Class
