@@ -212,9 +212,9 @@ Partial Class Form_cliente
         '
         'Form_cliente
         '
-        Me.AcceptButton = Me.bt_agregar
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.lb_telefono)
         Me.Controls.Add(Me.Label6)

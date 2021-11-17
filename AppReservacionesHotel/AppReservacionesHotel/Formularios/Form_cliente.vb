@@ -85,7 +85,6 @@
     Private Sub Form_cliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim cliente As New Cliente
         'Poblamos el Data Grid View para los clientes
-
         cliente.PoblarDataGridCliente(dgv_cliente)
 
         cnx.Close()

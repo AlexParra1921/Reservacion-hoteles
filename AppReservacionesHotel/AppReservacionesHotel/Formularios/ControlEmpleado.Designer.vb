@@ -22,16 +22,16 @@ Partial Class ControlEmpleado
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.bt_huesped = New System.Windows.Forms.Button()
         Me.bt_habitaciones = New System.Windows.Forms.Button()
         Me.bt_reservaciones = New System.Windows.Forms.Button()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.bt_cliente = New System.Windows.Forms.Button()
+        Me.bt_clientes = New System.Windows.Forms.Button()
         Me.bt_salir = New System.Windows.Forms.Button()
-        Me.FileSystemWatcher1 = New System.IO.FileSystemWatcher()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lb_ventana = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.panel_main = New System.Windows.Forms.Panel()
         Me.SistemaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CerrarSesionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -54,30 +54,30 @@ Partial Class ControlEmpleado
         Me.BuscarTelefonoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CleinteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HuespedToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.panel_main = New System.Windows.Forms.Panel()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FlowLayoutPanel1.SuspendLayout()
-        CType(Me.FileSystemWatcher1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Button3
+        'bt_huesped
         '
-        Me.Button3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.Button3.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Font = New System.Drawing.Font("Lato Black", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.ForeColor = System.Drawing.Color.LightSlateGray
-        Me.Button3.Location = New System.Drawing.Point(6, 369)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(1)
-        Me.Button3.MaximumSize = New System.Drawing.Size(182, 430)
-        Me.Button3.MinimumSize = New System.Drawing.Size(182, 72)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Padding = New System.Windows.Forms.Padding(5)
-        Me.Button3.Size = New System.Drawing.Size(182, 119)
-        Me.Button3.TabIndex = 2
-        Me.Button3.Text = "Huespedes"
-        Me.Button3.UseVisualStyleBackColor = False
+        Me.bt_huesped.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.bt_huesped.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.bt_huesped.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.bt_huesped.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.bt_huesped.Font = New System.Drawing.Font("Lato Black", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.bt_huesped.ForeColor = System.Drawing.Color.LightSlateGray
+        Me.bt_huesped.Location = New System.Drawing.Point(6, 369)
+        Me.bt_huesped.Margin = New System.Windows.Forms.Padding(1)
+        Me.bt_huesped.MaximumSize = New System.Drawing.Size(182, 430)
+        Me.bt_huesped.MinimumSize = New System.Drawing.Size(182, 72)
+        Me.bt_huesped.Name = "bt_huesped"
+        Me.bt_huesped.Padding = New System.Windows.Forms.Padding(5)
+        Me.bt_huesped.Size = New System.Drawing.Size(182, 119)
+        Me.bt_huesped.TabIndex = 2
+        Me.bt_huesped.Text = "Huespedes"
+        Me.bt_huesped.UseVisualStyleBackColor = False
         '
         'bt_habitaciones
         '
@@ -123,9 +123,9 @@ Partial Class ControlEmpleado
         Me.FlowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.FlowLayoutPanel1.BackColor = System.Drawing.Color.CornflowerBlue
         Me.FlowLayoutPanel1.Controls.Add(Me.bt_reservaciones)
-        Me.FlowLayoutPanel1.Controls.Add(Me.bt_cliente)
+        Me.FlowLayoutPanel1.Controls.Add(Me.bt_clientes)
         Me.FlowLayoutPanel1.Controls.Add(Me.bt_habitaciones)
-        Me.FlowLayoutPanel1.Controls.Add(Me.Button3)
+        Me.FlowLayoutPanel1.Controls.Add(Me.bt_huesped)
         Me.FlowLayoutPanel1.Controls.Add(Me.bt_salir)
         Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.FlowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
@@ -138,24 +138,24 @@ Partial Class ControlEmpleado
         Me.FlowLayoutPanel1.TabIndex = 4
         Me.FlowLayoutPanel1.WrapContents = False
         '
-        'bt_cliente
+        'bt_clientes
         '
-        Me.bt_cliente.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.bt_cliente.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.bt_cliente.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.bt_cliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.bt_cliente.Font = New System.Drawing.Font("Lato Black", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.bt_cliente.ForeColor = System.Drawing.Color.LightSlateGray
-        Me.bt_cliente.Location = New System.Drawing.Point(6, 127)
-        Me.bt_cliente.Margin = New System.Windows.Forms.Padding(1)
-        Me.bt_cliente.MaximumSize = New System.Drawing.Size(182, 430)
-        Me.bt_cliente.MinimumSize = New System.Drawing.Size(182, 72)
-        Me.bt_cliente.Name = "bt_cliente"
-        Me.bt_cliente.Padding = New System.Windows.Forms.Padding(5)
-        Me.bt_cliente.Size = New System.Drawing.Size(182, 119)
-        Me.bt_cliente.TabIndex = 3
-        Me.bt_cliente.Text = "Clientes"
-        Me.bt_cliente.UseVisualStyleBackColor = False
+        Me.bt_clientes.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.bt_clientes.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.bt_clientes.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.bt_clientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.bt_clientes.Font = New System.Drawing.Font("Lato Black", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.bt_clientes.ForeColor = System.Drawing.Color.LightSlateGray
+        Me.bt_clientes.Location = New System.Drawing.Point(6, 127)
+        Me.bt_clientes.Margin = New System.Windows.Forms.Padding(1)
+        Me.bt_clientes.MaximumSize = New System.Drawing.Size(182, 430)
+        Me.bt_clientes.MinimumSize = New System.Drawing.Size(182, 72)
+        Me.bt_clientes.Name = "bt_clientes"
+        Me.bt_clientes.Padding = New System.Windows.Forms.Padding(5)
+        Me.bt_clientes.Size = New System.Drawing.Size(182, 119)
+        Me.bt_clientes.TabIndex = 3
+        Me.bt_clientes.Text = "Clientes"
+        Me.bt_clientes.UseVisualStyleBackColor = False
         '
         'bt_salir
         '
@@ -176,19 +176,26 @@ Partial Class ControlEmpleado
         Me.bt_salir.Text = "Salir"
         Me.bt_salir.UseVisualStyleBackColor = False
         '
-        'FileSystemWatcher1
-        '
-        Me.FileSystemWatcher1.EnableRaisingEvents = True
-        Me.FileSystemWatcher1.SynchronizingObject = Me
-        '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.LightSteelBlue
+        Me.Panel1.Controls.Add(Me.lb_ventana)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(194, 24)
         Me.Panel1.Name = "Panel1"
+        Me.Panel1.Padding = New System.Windows.Forms.Padding(4)
         Me.Panel1.Size = New System.Drawing.Size(760, 52)
         Me.Panel1.TabIndex = 5
+        '
+        'lb_ventana
+        '
+        Me.lb_ventana.AutoSize = True
+        Me.lb_ventana.Font = New System.Drawing.Font("Lato Black", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lb_ventana.Location = New System.Drawing.Point(296, 10)
+        Me.lb_ventana.Name = "lb_ventana"
+        Me.lb_ventana.Size = New System.Drawing.Size(0, 33)
+        Me.lb_ventana.TabIndex = 0
+        Me.lb_ventana.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Panel2
         '
@@ -199,14 +206,17 @@ Partial Class ControlEmpleado
         Me.Panel2.Size = New System.Drawing.Size(760, 37)
         Me.Panel2.TabIndex = 6
         '
-        'MenuStrip1
+        'panel_main
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SistemaToolStripMenuItem, Me.ReservacionesToolStripMenuItem, Me.ClientesToolStripMenuItem, Me.HabitacionToolStripMenuItem, Me.HuespedToolStripMenuItem, Me.MasToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(954, 24)
-        Me.MenuStrip1.TabIndex = 7
-        Me.MenuStrip1.Text = "MenuStrip1"
+        Me.panel_main.AutoSize = True
+        Me.panel_main.BackColor = System.Drawing.SystemColors.Control
+        Me.panel_main.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.panel_main.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.panel_main.Location = New System.Drawing.Point(194, 76)
+        Me.panel_main.Name = "panel_main"
+        Me.panel_main.Padding = New System.Windows.Forms.Padding(5)
+        Me.panel_main.Size = New System.Drawing.Size(760, 532)
+        Me.panel_main.TabIndex = 8
         '
         'SistemaToolStripMenuItem
         '
@@ -347,17 +357,14 @@ Partial Class ControlEmpleado
         Me.HuespedToolStripMenuItem1.Size = New System.Drawing.Size(121, 22)
         Me.HuespedToolStripMenuItem1.Text = "Huesped"
         '
-        'panel_main
+        'MenuStrip1
         '
-        Me.panel_main.AutoSize = True
-        Me.panel_main.BackColor = System.Drawing.SystemColors.Control
-        Me.panel_main.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.panel_main.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.panel_main.Location = New System.Drawing.Point(194, 76)
-        Me.panel_main.Name = "panel_main"
-        Me.panel_main.Padding = New System.Windows.Forms.Padding(5)
-        Me.panel_main.Size = New System.Drawing.Size(760, 532)
-        Me.panel_main.TabIndex = 8
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SistemaToolStripMenuItem, Me.ReservacionesToolStripMenuItem, Me.ClientesToolStripMenuItem, Me.HabitacionToolStripMenuItem, Me.HuespedToolStripMenuItem, Me.MasToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(954, 24)
+        Me.MenuStrip1.TabIndex = 7
+        Me.MenuStrip1.Text = "MenuStrip1"
         '
         'ControlEmpleado
         '
@@ -381,7 +388,8 @@ Partial Class ControlEmpleado
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Control de Reservaciones y Habitaciones"
         Me.FlowLayoutPanel1.ResumeLayout(False)
-        CType(Me.FileSystemWatcher1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
@@ -389,17 +397,16 @@ Partial Class ControlEmpleado
 
     End Sub
 
-    Friend WithEvents Button3 As Button
+    Friend WithEvents bt_huesped As Button
     Friend WithEvents bt_habitaciones As Button
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
     Friend WithEvents bt_reservaciones As Button
-    Friend WithEvents bt_cliente As Button
-    Friend WithEvents FileSystemWatcher1 As IO.FileSystemWatcher
+    Friend WithEvents bt_clientes As Button
     Friend WithEvents bt_salir As Button
     Friend WithEvents panel_main As Panel
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents lb_ventana As Label
     Friend WithEvents SistemaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CerrarSesionToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SalirToolStripMenuItem As ToolStripMenuItem
@@ -422,4 +429,5 @@ Partial Class ControlEmpleado
     Friend WithEvents BuscarTelefonoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CleinteToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents HuespedToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents MenuStrip1 As MenuStrip
 End Class
