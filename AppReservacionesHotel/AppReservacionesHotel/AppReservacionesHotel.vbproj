@@ -100,7 +100,12 @@
   <ItemGroup>
     <Compile Include="Accesos\Administrador.vb" />
     <Compile Include="Accesos\CategoriaHabitacion.vb" />
+    <Compile Include="Accesos\Ciudad.vb" />
     <Compile Include="Accesos\Cliente.vb" />
+    <Compile Include="Accesos\Colonia.vb" />
+    <Compile Include="Accesos\Estado.vb" />
+    <Compile Include="Accesos\Pais.vb" />
+    <Compile Include="Accesos\Ubicacion.vb" />
     <Compile Include="Conexion\Mysql.vb" />
     <Compile Include="Formularios\formCategoriaHabitacion.Designer.vb">
       <DependentUpon>formCategoriaHabitacion.vb</DependentUpon>
@@ -116,6 +121,24 @@
     </Compile>
     <Compile Include="Accesos\Correo.vb" />
     <Compile Include="Accesos\Empleado.vb" />
+    <Compile Include="Formularios\formCiudad.Designer.vb">
+      <DependentUpon>formCiudad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\formCiudad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\formColonia.Designer.vb">
+      <DependentUpon>formColonia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\formColonia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\formEstado.Designer.vb">
+      <DependentUpon>formEstado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\formEstado.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\formLogin.Designer.vb">
       <DependentUpon>formLogin.vb</DependentUpon>
     </Compile>
@@ -123,6 +146,18 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Accesos\Huesped.vb" />
+    <Compile Include="Formularios\formPais.Designer.vb">
+      <DependentUpon>formPais.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\formPais.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\formUbicacion.Designer.vb">
+      <DependentUpon>formUbicacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\formUbicacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\Form_buscarUsuario.Designer.vb">
       <DependentUpon>Form_buscarUsuario.vb</DependentUpon>
     </Compile>
@@ -168,8 +203,23 @@
     <EmbeddedResource Include="Formularios\ControlEmpleado.resx">
       <DependentUpon>ControlEmpleado.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\formCiudad.resx">
+      <DependentUpon>formCiudad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\formColonia.resx">
+      <DependentUpon>formColonia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\formEstado.resx">
+      <DependentUpon>formEstado.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\formLogin.resx">
       <DependentUpon>formLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\formPais.resx">
+      <DependentUpon>formPais.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\formUbicacion.resx">
+      <DependentUpon>formUbicacion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Form_buscarUsuario.resx">
       <DependentUpon>Form_buscarUsuario.vb</DependentUpon>
