@@ -129,6 +129,12 @@
     <Compile Include="Formularios\Form_buscarUsuario.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\Form_Huesped.Designer.vb">
+      <DependentUpon>Form_Huesped.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Form_Huesped.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\Form_Telefono.Designer.vb">
       <DependentUpon>Form_Telefono.vb</DependentUpon>
     </Compile>
@@ -173,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Form_buscarUsuario.resx">
       <DependentUpon>Form_buscarUsuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Form_Huesped.resx">
+      <DependentUpon>Form_Huesped.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Form_Telefono.resx">
       <DependentUpon>Form_Telefono.vb</DependentUpon>
