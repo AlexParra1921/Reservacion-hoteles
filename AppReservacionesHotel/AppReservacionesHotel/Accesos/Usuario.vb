@@ -10,7 +10,11 @@
         Me.contraseña = ""
         Me.tipo = 0
     End Sub
-
+    Public Sub New(cuenta As String, contraseña As String)
+        Me.cuenta = cuenta
+        Me.contraseña = contraseña
+        Me.tipo = 0
+    End Sub
     Public Sub New(cuenta As String, contraseña As String, tipo As Short)
         Me.cuenta = cuenta
         Me.contraseña = contraseña
@@ -46,4 +50,22 @@
             tipo = value
         End Set
     End Property
+
+
+    Public Function loginUsuario(ByVal conexion As Mysql) As Boolean
+        Dim strSQL As String
+        Dim xDT As DataTable
+
+        strSQL = "SELECT cuenta, contraseña, tipo FROM login WHERE cuenta='" & cuenta & "'"
+
+        loginUsuario = False
+        xDT = conexion.objetoDataAdapter(strSQL)
+        If xDT.Rows.Count = 1 Then
+            If cuenta = CStr(xDT.Rows(0)("cuenta")) And contraseña = CStr(xDT.Rows(0)("contraseña")) Then
+                tipo = CStr(xDT.Rows(0)("tipo"))
+                loginUsuario = True
+            End If
+        End If
+    End Function
+
 End Class

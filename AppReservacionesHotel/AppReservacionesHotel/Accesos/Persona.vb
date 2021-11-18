@@ -11,8 +11,8 @@
     Private nombre As String
     Private apellido_paterno As String
     Private apellido_materno As String
-    Private edad As Short
-    
+    Private edad As Integer
+
     'Constructor Default
     Public Sub New()
        nombre = ""
@@ -57,13 +57,13 @@
             Me.apellido_materno = value
         End Set
     End Property
-        
-    Public Property getSetEdad() As Short
+
+    Public Property getSetEdad() As Integer
         Get
             Return edad
         End Get
-        Set (value As Short )
-           Me.edad = value     
+        Set(value As Integer)
+            Me.edad = value
         End Set
     End Property
 

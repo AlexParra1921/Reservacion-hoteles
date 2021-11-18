@@ -266,3 +266,6 @@ storage.ide-wal
 AppReservacionesHotel/.vs/AppReservacionesHotel/v15/Server/sqlite3/storage.ide
 AppReservacionesHotel/.vs/AppReservacionesHotel/v15/Server/sqlite3/storage.ide-shm
 AppReservacionesHotel/.vs/AppReservacionesHotel/v15/Server/sqlite3/storage.ide-wal
+AppReservacionesHotel/.vs/AppReservacionesHotel/v15/.suo
+*.cache
+*.cache
