@@ -127,14 +127,14 @@
 
         Dim strSQL As String
         Dim xCnx As New Mysql
-        Dim xDT As DataTable
+        Dim xDT As New DataTable
 
         Select Case tipoDueño
             Case Persona.tipoPersona.Administrador
 
                 strSQL = "SELECT tel.id_administrador as id, telefono, nombre, paterno, materno " &
                           "FROM telefono_administrador as tel, administrador as ad " &
-                          "WHERE tel.id_administrador=ad.id_cliente and ad.id_cliente=" & idDueño
+                          "WHERE tel.id_administrador=ad.id_cliente and ad.id_administrador=" & idDueño
 
             Case Persona.tipoPersona.Cliente
                 strSQL = "SELECT tel.id_cliente as id, telefono, nombre, paterno, materno " &
@@ -145,13 +145,13 @@
 
                 strSQL = "SELECT tel.id_empleado as id, telefono, nombre, paterno, materno " &
                           "FROM telefono_empleado as tel, empleado as ep " &
-                          "WHERE tel.id_empleado=ep.id_empleado  and ep.id_cliente=" & idDueño
+                          "WHERE tel.id_empleado=ep.id_empleado  and ep.id_empleado=" & idDueño
 
             Case Persona.tipoPersona.Huesped
 
                 strSQL = "SELECT tel.id_huesped as id, telefono, nombre, paterno, materno " &
-                          "FROM telefono_huesped as tel, huesped as hp " &
-                          "WHERE tel.id_huesped=hp.id_huesped  and hp.id_cliente=" & idDueño
+                          " FROM telefono_huesped as tel, huesped as hp " &
+                          " WHERE tel.id_huesped=hp.id_huesped  and hp.id_huesped=" & idDueño
 
         End Select
 
