@@ -1,3 +1,6 @@
+
+alter table reservacion modify column costo float;
+Alter table hotel modify column telefono varchar(10);
 --Modficacion columna de telefono de tablas de telefono 12/11/2021 17:29 - Kevin Duran
 Alter table telefono_administrador modify telefono varchar(10);
 Alter table telefono_cliente modify telefono varchar(10);
