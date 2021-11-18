@@ -1,4 +1,4 @@
-﻿Public Class Cliente
+﻿Public Class huespeda
     Inherits Persona
 
     Private id_cliente As Integer

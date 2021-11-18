@@ -101,6 +101,7 @@
     <Compile Include="Accesos\Administrador.vb" />
     <Compile Include="Accesos\CategoriaHabitacion.vb" />
     <Compile Include="Accesos\Cliente.vb" />
+    <Compile Include="Accesos\Huesped.vb" />
     <Compile Include="Conexion\Mysql.vb" />
     <Compile Include="Formularios\formCategoriaHabitacion.Designer.vb">
       <DependentUpon>formCategoriaHabitacion.vb</DependentUpon>
@@ -122,7 +123,6 @@
     <Compile Include="Formularios\formLogin.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Accesos\Huesped.vb" />
     <Compile Include="Formularios\Form_buscarUsuario.Designer.vb">
       <DependentUpon>Form_buscarUsuario.vb</DependentUpon>
     </Compile>

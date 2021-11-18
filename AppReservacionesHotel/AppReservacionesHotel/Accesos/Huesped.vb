@@ -13,8 +13,8 @@ Public Class Huesped
     End Sub
 
     'Constructor
-    Public Sub New(id_huesped As Integer, id_reservacion As Integer, ByVal nombre As String, ByVal apellido_paterno As String, ByVal apellido_materno As String, ByVal edad As Integer)
-        MyBase.New(nombre, apellido_paterno, apellido_materno, edad)
+    Public Sub New(id_huesped As Integer, id_reservacion As Integer, ByVal nombre As String, ByVal apellido_paterno As String, ByVal apellido_materno As String)
+        MyBase.New(nombre, apellido_paterno, apellido_materno, 0)
         Me.id_huesped = id_huesped
         Me.id_reservacion = id_reservacion
     End Sub

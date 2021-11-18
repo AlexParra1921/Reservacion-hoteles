@@ -62,21 +62,21 @@ Partial Class Form_cliente
         Me.txt_nombre.Location = New System.Drawing.Point(12, 72)
         Me.txt_nombre.Name = "txt_nombre"
         Me.txt_nombre.Size = New System.Drawing.Size(184, 20)
-        Me.txt_nombre.TabIndex = 1
+        Me.txt_nombre.TabIndex = 2
         '
         'txtbox_apellidoPaterno
         '
         Me.txtbox_apellidoPaterno.Location = New System.Drawing.Point(202, 72)
         Me.txtbox_apellidoPaterno.Name = "txtbox_apellidoPaterno"
         Me.txtbox_apellidoPaterno.Size = New System.Drawing.Size(184, 20)
-        Me.txtbox_apellidoPaterno.TabIndex = 2
+        Me.txtbox_apellidoPaterno.TabIndex = 3
         '
         'txtbox_apellidoMaterno
         '
         Me.txtbox_apellidoMaterno.Location = New System.Drawing.Point(392, 72)
         Me.txtbox_apellidoMaterno.Name = "txtbox_apellidoMaterno"
         Me.txtbox_apellidoMaterno.Size = New System.Drawing.Size(191, 20)
-        Me.txtbox_apellidoMaterno.TabIndex = 3
+        Me.txtbox_apellidoMaterno.TabIndex = 4
         '
         'bt_agregar
         '
@@ -178,8 +178,8 @@ Partial Class Form_cliente
         Me.txtbox_id.Mask = "99999999999999999999999"
         Me.txtbox_id.Name = "txtbox_id"
         Me.txtbox_id.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
-        Me.txtbox_id.Size = New System.Drawing.Size(184, 20)
-        Me.txtbox_id.TabIndex = 0
+        Me.txtbox_id.Size = New System.Drawing.Size(181, 20)
+        Me.txtbox_id.TabIndex = 1
         '
         'txt_numero
         '
