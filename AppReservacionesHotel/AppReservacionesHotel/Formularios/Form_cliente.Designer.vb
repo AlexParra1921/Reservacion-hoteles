@@ -53,7 +53,9 @@ Partial Class Form_cliente
         Me.dgv_cliente.Location = New System.Drawing.Point(12, 185)
         Me.dgv_cliente.Name = "dgv_cliente"
         Me.dgv_cliente.ReadOnly = True
+        Me.dgv_cliente.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken
         Me.dgv_cliente.RowHeadersVisible = False
+        Me.dgv_cliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgv_cliente.Size = New System.Drawing.Size(776, 253)
         Me.dgv_cliente.TabIndex = 7
         '

@@ -24,9 +24,7 @@ Partial Class Form_Huesped
     Private Sub InitializeComponent()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txt_numero = New System.Windows.Forms.MaskedTextBox()
-        Me.txtbox_id = New System.Windows.Forms.MaskedTextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.txt_BuscarID = New System.Windows.Forms.MaskedTextBox()
         Me.bt_buscar = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -43,13 +41,17 @@ Partial Class Form_Huesped
         Me.cb_reservaciones = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.lb_telefono = New System.Windows.Forms.Label()
+        Me.txtbox_id = New System.Windows.Forms.TextBox()
+        Me.txt_BuscarID = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.txt_edad = New System.Windows.Forms.TextBox()
         CType(Me.dgv_huesped, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(15, 127)
+        Me.Label6.Location = New System.Drawing.Point(9, 162)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(49, 13)
         Me.Label6.TabIndex = 33
@@ -57,23 +59,13 @@ Partial Class Form_Huesped
         '
         'txt_numero
         '
-        Me.txt_numero.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_numero.Location = New System.Drawing.Point(15, 142)
+        Me.txt_numero.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_numero.Location = New System.Drawing.Point(12, 178)
         Me.txt_numero.Mask = "000-000-0000"
         Me.txt_numero.Name = "txt_numero"
-        Me.txt_numero.Size = New System.Drawing.Size(184, 26)
-        Me.txt_numero.TabIndex = 22
+        Me.txt_numero.Size = New System.Drawing.Size(184, 22)
+        Me.txt_numero.TabIndex = 5
         Me.txt_numero.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'txtbox_id
-        '
-        Me.txtbox_id.BackColor = System.Drawing.Color.White
-        Me.txtbox_id.Location = New System.Drawing.Point(205, 60)
-        Me.txtbox_id.Mask = "99999999999999999999999"
-        Me.txtbox_id.Name = "txtbox_id"
-        Me.txtbox_id.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
-        Me.txtbox_id.Size = New System.Drawing.Size(181, 20)
-        Me.txtbox_id.TabIndex = 18
         '
         'Label5
         '
@@ -84,22 +76,12 @@ Partial Class Form_Huesped
         Me.Label5.TabIndex = 32
         Me.Label5.Text = "Introduce el ID"
         '
-        'txt_BuscarID
-        '
-        Me.txt_BuscarID.BackColor = System.Drawing.Color.White
-        Me.txt_BuscarID.Location = New System.Drawing.Point(395, 181)
-        Me.txt_BuscarID.Mask = "99999999999999999999999"
-        Me.txt_BuscarID.Name = "txt_BuscarID"
-        Me.txt_BuscarID.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
-        Me.txt_BuscarID.Size = New System.Drawing.Size(191, 20)
-        Me.txt_BuscarID.TabIndex = 27
-        '
         'bt_buscar
         '
         Me.bt_buscar.Location = New System.Drawing.Point(658, 178)
         Me.bt_buscar.Name = "bt_buscar"
         Me.bt_buscar.Size = New System.Drawing.Size(75, 23)
-        Me.bt_buscar.TabIndex = 29
+        Me.bt_buscar.TabIndex = 11
         Me.bt_buscar.Text = "Buscar"
         Me.bt_buscar.UseVisualStyleBackColor = True
         '
@@ -136,7 +118,7 @@ Partial Class Form_Huesped
         Me.bt_limpiar.Location = New System.Drawing.Point(658, 97)
         Me.bt_limpiar.Name = "bt_limpiar"
         Me.bt_limpiar.Size = New System.Drawing.Size(75, 23)
-        Me.bt_limpiar.TabIndex = 24
+        Me.bt_limpiar.TabIndex = 9
         Me.bt_limpiar.Text = "Limpiar"
         Me.bt_limpiar.UseVisualStyleBackColor = True
         '
@@ -146,7 +128,7 @@ Partial Class Form_Huesped
         Me.bt_eliminar.Location = New System.Drawing.Point(658, 68)
         Me.bt_eliminar.Name = "bt_eliminar"
         Me.bt_eliminar.Size = New System.Drawing.Size(75, 23)
-        Me.bt_eliminar.TabIndex = 25
+        Me.bt_eliminar.TabIndex = 8
         Me.bt_eliminar.Text = "Eliminar"
         Me.bt_eliminar.UseVisualStyleBackColor = True
         '
@@ -155,7 +137,7 @@ Partial Class Form_Huesped
         Me.bt_agregar.Location = New System.Drawing.Point(658, 39)
         Me.bt_agregar.Name = "bt_agregar"
         Me.bt_agregar.Size = New System.Drawing.Size(75, 23)
-        Me.bt_agregar.TabIndex = 23
+        Me.bt_agregar.TabIndex = 7
         Me.bt_agregar.Text = "Guardar"
         Me.bt_agregar.UseVisualStyleBackColor = True
         '
@@ -164,21 +146,21 @@ Partial Class Form_Huesped
         Me.txtbox_apellidoMaterno.Location = New System.Drawing.Point(395, 100)
         Me.txtbox_apellidoMaterno.Name = "txtbox_apellidoMaterno"
         Me.txtbox_apellidoMaterno.Size = New System.Drawing.Size(191, 20)
-        Me.txtbox_apellidoMaterno.TabIndex = 21
+        Me.txtbox_apellidoMaterno.TabIndex = 4
         '
         'txtbox_apellidoPaterno
         '
         Me.txtbox_apellidoPaterno.Location = New System.Drawing.Point(205, 100)
         Me.txtbox_apellidoPaterno.Name = "txtbox_apellidoPaterno"
         Me.txtbox_apellidoPaterno.Size = New System.Drawing.Size(184, 20)
-        Me.txtbox_apellidoPaterno.TabIndex = 20
+        Me.txtbox_apellidoPaterno.TabIndex = 3
         '
         'txt_nombre
         '
-        Me.txt_nombre.Location = New System.Drawing.Point(15, 100)
+        Me.txt_nombre.Location = New System.Drawing.Point(12, 100)
         Me.txt_nombre.Name = "txt_nombre"
-        Me.txt_nombre.Size = New System.Drawing.Size(184, 20)
-        Me.txt_nombre.TabIndex = 19
+        Me.txt_nombre.Size = New System.Drawing.Size(187, 20)
+        Me.txt_nombre.TabIndex = 2
         '
         'dgv_huesped
         '
@@ -191,6 +173,7 @@ Partial Class Form_Huesped
         Me.dgv_huesped.Name = "dgv_huesped"
         Me.dgv_huesped.ReadOnly = True
         Me.dgv_huesped.RowHeadersVisible = False
+        Me.dgv_huesped.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgv_huesped.Size = New System.Drawing.Size(776, 226)
         Me.dgv_huesped.TabIndex = 26
         '
@@ -220,7 +203,7 @@ Partial Class Form_Huesped
         Me.cb_reservaciones.Location = New System.Drawing.Point(12, 59)
         Me.cb_reservaciones.Name = "cb_reservaciones"
         Me.cb_reservaciones.Size = New System.Drawing.Size(187, 21)
-        Me.cb_reservaciones.TabIndex = 36
+        Me.cb_reservaciones.TabIndex = 0
         '
         'Label8
         '
@@ -235,17 +218,51 @@ Partial Class Form_Huesped
         '
         Me.lb_telefono.AutoSize = True
         Me.lb_telefono.ForeColor = System.Drawing.Color.Red
-        Me.lb_telefono.Location = New System.Drawing.Point(15, 171)
+        Me.lb_telefono.Location = New System.Drawing.Point(205, 181)
         Me.lb_telefono.Name = "lb_telefono"
         Me.lb_telefono.Size = New System.Drawing.Size(0, 13)
         Me.lb_telefono.TabIndex = 38
         Me.lb_telefono.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'txtbox_id
+        '
+        Me.txtbox_id.Location = New System.Drawing.Point(205, 59)
+        Me.txtbox_id.Name = "txtbox_id"
+        Me.txtbox_id.Size = New System.Drawing.Size(184, 20)
+        Me.txtbox_id.TabIndex = 2
+        '
+        'txt_BuscarID
+        '
+        Me.txt_BuscarID.Location = New System.Drawing.Point(398, 181)
+        Me.txt_BuscarID.Name = "txt_BuscarID"
+        Me.txt_BuscarID.Size = New System.Drawing.Size(188, 20)
+        Me.txt_BuscarID.TabIndex = 10
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(12, 123)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(32, 13)
+        Me.Label9.TabIndex = 39
+        Me.Label9.Text = "Edad"
+        '
+        'txt_edad
+        '
+        Me.txt_edad.Location = New System.Drawing.Point(12, 139)
+        Me.txt_edad.Name = "txt_edad"
+        Me.txt_edad.Size = New System.Drawing.Size(184, 20)
+        Me.txt_edad.TabIndex = 40
         '
         'Form_Huesped
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.txt_edad)
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.txt_BuscarID)
+        Me.Controls.Add(Me.txtbox_id)
         Me.Controls.Add(Me.lb_telefono)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.cb_reservaciones)
@@ -253,9 +270,7 @@ Partial Class Form_Huesped
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.txt_numero)
-        Me.Controls.Add(Me.txtbox_id)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.txt_BuscarID)
         Me.Controls.Add(Me.bt_buscar)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -283,9 +298,7 @@ Partial Class Form_Huesped
 
     Friend WithEvents Label6 As Label
     Friend WithEvents txt_numero As MaskedTextBox
-    Friend WithEvents txtbox_id As MaskedTextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents txt_BuscarID As MaskedTextBox
     Friend WithEvents bt_buscar As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
@@ -302,4 +315,8 @@ Partial Class Form_Huesped
     Friend WithEvents cb_reservaciones As ComboBox
     Friend WithEvents Label8 As Label
     Friend WithEvents lb_telefono As Label
+    Friend WithEvents txtbox_id As TextBox
+    Friend WithEvents txt_BuscarID As TextBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents txt_edad As TextBox
 End Class
