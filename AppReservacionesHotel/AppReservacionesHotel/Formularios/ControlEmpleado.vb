@@ -20,6 +20,10 @@
 
     Private Sub Control_Click(sender As Object, e As EventArgs) Handles bt_reservaciones.Click
 
+        Form_reservaciones.MdiParent = Me
+        panel_main.Controls.Add(Form_reservaciones)
+        Form_reservaciones.Show()
+        Form_reservaciones.WindowState = FormWindowState.Maximized
     End Sub
 
     Private Sub HabitacionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HabitacionToolStripMenuItem.Click
