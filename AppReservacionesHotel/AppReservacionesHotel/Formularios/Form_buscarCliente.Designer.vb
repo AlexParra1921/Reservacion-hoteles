@@ -28,6 +28,7 @@ Partial Class Form_buscarCliente
         Me.bt_seleccionar = New System.Windows.Forms.Button()
         Me.bt_Buscar = New System.Windows.Forms.Button()
         Me.lb_error = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
         CType(Me.dgv_BusquedaCliente, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -102,12 +103,23 @@ Partial Class Form_buscarCliente
         Me.lb_error.Size = New System.Drawing.Size(0, 13)
         Me.lb_error.TabIndex = 6
         '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(332, 6)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(127, 18)
+        Me.Label9.TabIndex = 15
+        Me.Label9.Text = "Buscar Clientes"
+        '
         'Form_buscarCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.bt_cancelar
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.lb_error)
         Me.Controls.Add(Me.bt_Buscar)
         Me.Controls.Add(Me.bt_seleccionar)
@@ -121,7 +133,7 @@ Partial Class Form_buscarCliente
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Form_buscarCliente"
+        Me.Text = "Buscar Cliente"
         Me.TopMost = True
         CType(Me.dgv_BusquedaCliente, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -135,4 +147,5 @@ Partial Class Form_buscarCliente
     Friend WithEvents bt_seleccionar As Button
     Friend WithEvents bt_Buscar As Button
     Friend WithEvents lb_error As Label
+    Friend WithEvents Label9 As Label
 End Class
