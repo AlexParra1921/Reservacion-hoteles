@@ -130,6 +130,12 @@
     <Compile Include="Formularios\Form_buscarCliente.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\Form_BuscarHabitaciones.Designer.vb">
+      <DependentUpon>Form_BuscarHabitaciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Form_BuscarHabitaciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\Form_buscarUsuario.Designer.vb">
       <DependentUpon>Form_buscarUsuario.vb</DependentUpon>
     </Compile>
@@ -186,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Form_buscarCliente.resx">
       <DependentUpon>Form_buscarCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Form_BuscarHabitaciones.resx">
+      <DependentUpon>Form_BuscarHabitaciones.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Form_buscarUsuario.resx">
       <DependentUpon>Form_buscarUsuario.vb</DependentUpon>
