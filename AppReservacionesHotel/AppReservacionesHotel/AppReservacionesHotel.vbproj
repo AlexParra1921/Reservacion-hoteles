@@ -102,6 +102,7 @@
     <Compile Include="Accesos\Administrador.vb" />
     <Compile Include="Accesos\CategoriaHabitacion.vb" />
     <Compile Include="Accesos\Cliente.vb" />
+    <Compile Include="Accesos\Habitaciones.vb" />
     <Compile Include="Conexion\Mysql.vb" />
     <Compile Include="Formularios\formCategoriaHabitacion.Designer.vb">
       <DependentUpon>formCategoriaHabitacion.vb</DependentUpon>
