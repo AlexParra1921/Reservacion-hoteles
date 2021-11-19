@@ -120,7 +120,7 @@ Partial Class Form_buscarCliente
         Me.Name = "Form_buscarCliente"
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form_buscarCliente"
         Me.TopMost = True
         CType(Me.dgv_BusquedaCliente, System.ComponentModel.ISupportInitialize).EndInit()

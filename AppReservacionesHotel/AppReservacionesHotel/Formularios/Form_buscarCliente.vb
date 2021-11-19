@@ -1,6 +1,6 @@
 ﻿Public Class Form_buscarCliente
 
-    Dim cliente As New Cliente
+    Public cliente As New Cliente
     Dim clienteSeleccionado As Boolean = False
     Private Sub txt_idcliente_Enter(sender As Object, e As EventArgs) Handles txt_idcliente.Enter
         If txt_idcliente.Text = "Buscar ID" Then
@@ -46,11 +46,14 @@
         If clienteSeleccionado = False Then
             MsgBox("Seleccione un cliente para continuar")
         Else
+            Me.DialogResult = DialogResult.OK
             Me.Close()
         End If
     End Sub
 
     Private Sub dgv_BusquedaCliente_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_BusquedaCliente.CellClick
+        lb_error.Text = ""
+
         Dim renglon As Integer
         'Con éste código podemos seleccionar los datos que están mostrados
         'en un DGV, la variable renglón no sirve para saber en qué renglón se da clic
@@ -73,6 +76,7 @@
 
     Private Sub Form_buscarCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cliente.PoblarDataGridCliente(dgv_BusquedaCliente)
+        lb_error.Text = ""
 
     End Sub
 End Class
