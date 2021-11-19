@@ -4,6 +4,7 @@
     Private id_cliente As Integer
 
     Public Sub New()
+        MyBase.New("", "", "", 0)
         id_cliente = 0
     End Sub
 
@@ -141,5 +142,46 @@
 
     End Function
 
+    Public Function consultaClientePoblarDGV(ByVal DGVcliente As DataGridView) As Boolean
+        Dim strSQL As String
+        Dim xCnx As New Mysql
+        Dim xDT As DataTable
 
+
+
+        strSQL = "Select id_cliente as ID, nombre, paterno as 'apellido paterno', materno as 'apellido materno' FROM cliente" &
+                    " WHERE id_cliente=" & getSetidCliente
+        consultaClientePoblarDGV = False
+        xDT = xCnx.objetoDataAdapter(strSQL)
+        If xDT.Rows.Count = 1 Then
+            If IsDBNull(xDT.Rows(0)("ID")) Then
+                'Mantiene los campos limpios en caso de que el ID sea nu
+                id_cliente = 0
+                getSetNombre = ""
+                getSetApellidoPaterno = ""
+                getSetApellidoMaterno = ""
+
+            Else
+                'Guardar la busqueda del cliente en el DGVCliente
+                id_cliente = xDT.Rows(0)("ID")
+                getSetNombre = xDT.Rows(0)("nombre")
+                getSetApellidoPaterno = xDT.Rows(0)("apellido paterno")
+                getSetApellidoMaterno = xDT.Rows(0)("apellido materno")
+
+
+                DGVcliente.DataSource = xDT
+                DGVcliente.Refresh()
+
+                'Establecer ancho de cada columna del DataGridView, si en el DGV tú requieres mas columnas
+                ' agregas GDVciudades.Columns.Item(consecutivo).Width = 900, el numero de columnas de DGV
+                ' estarán determinadas por el Query (select) de arriba
+                DGVcliente.Columns.Item(0).Width = 30
+                DGVcliente.Columns.Item(1).Width = 250
+                DGVcliente.Columns.Item(2).Width = 250
+                DGVcliente.Columns.Item(3).Width = 250
+
+            End If
+            consultaClientePoblarDGV = True
+        End If
+    End Function
 End Class
