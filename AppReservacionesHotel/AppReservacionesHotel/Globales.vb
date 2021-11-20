@@ -12,5 +12,15 @@ Module Globales
     Public cnx As New MySqlConnection
     Public userAuthenticated As Usuario
 
+    'Globales para uso de formulario de busqueda de habitacion
+    Public mihotel As String
+    Public micategoria As String
+    Public mihabitacion As Integer
+
+
+
+
+
+
 
 End Module
