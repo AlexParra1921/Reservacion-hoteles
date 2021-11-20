@@ -51,12 +51,7 @@ Partial Class Form_reservaciones
         Me.label = New System.Windows.Forms.Label()
         Me.lb_no_habitaciones = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.date_salida = New System.Windows.Forms.DateTimePicker()
-        Me.date_entrada = New System.Windows.Forms.DateTimePicker()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.dgv_habitacionesCostos = New System.Windows.Forms.DataGridView()
         Me.No_habitacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Capacidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.camas_m = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -64,10 +59,15 @@ Partial Class Form_reservaciones
         Me.precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Hotel = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Tipo_Habitacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.date_salida = New System.Windows.Forms.DateTimePicker()
+        Me.date_entrada = New System.Windows.Forms.DateTimePicker()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.panel_habitaciones.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgv_habitacionesCostos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -274,7 +274,7 @@ Partial Class Form_reservaciones
         Me.panel_habitaciones.Controls.Add(Me.label)
         Me.panel_habitaciones.Controls.Add(Me.lb_no_habitaciones)
         Me.panel_habitaciones.Controls.Add(Me.Label9)
-        Me.panel_habitaciones.Controls.Add(Me.DataGridView1)
+        Me.panel_habitaciones.Controls.Add(Me.dgv_habitacionesCostos)
         Me.panel_habitaciones.Controls.Add(Me.Label8)
         Me.panel_habitaciones.Controls.Add(Me.Label7)
         Me.panel_habitaciones.Controls.Add(Me.date_salida)
@@ -367,12 +367,12 @@ Partial Class Form_reservaciones
         Me.Label9.TabIndex = 14
         Me.Label9.Text = "HABITACIONES"
         '
-        'DataGridView1
+        'dgv_habitacionesCostos
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.BackgroundColor = System.Drawing.Color.AliceBlue
-        Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken
+        Me.dgv_habitacionesCostos.AllowUserToAddRows = False
+        Me.dgv_habitacionesCostos.AllowUserToDeleteRows = False
+        Me.dgv_habitacionesCostos.BackgroundColor = System.Drawing.Color.AliceBlue
+        Me.dgv_habitacionesCostos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -380,15 +380,61 @@ Partial Class Form_reservaciones
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlLight
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.No_habitacion, Me.Capacidad, Me.camas_m, Me.camas_i, Me.precio, Me.Hotel, Me.Tipo_Habitacion})
-        Me.DataGridView1.Location = New System.Drawing.Point(8, 72)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.RowHeadersVisible = False
-        Me.DataGridView1.Size = New System.Drawing.Size(803, 162)
-        Me.DataGridView1.TabIndex = 19
+        Me.dgv_habitacionesCostos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgv_habitacionesCostos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_habitacionesCostos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.No_habitacion, Me.Capacidad, Me.camas_m, Me.camas_i, Me.precio, Me.Hotel, Me.Tipo_Habitacion})
+        Me.dgv_habitacionesCostos.Location = New System.Drawing.Point(8, 72)
+        Me.dgv_habitacionesCostos.Name = "dgv_habitacionesCostos"
+        Me.dgv_habitacionesCostos.ReadOnly = True
+        Me.dgv_habitacionesCostos.RowHeadersVisible = False
+        Me.dgv_habitacionesCostos.Size = New System.Drawing.Size(803, 162)
+        Me.dgv_habitacionesCostos.TabIndex = 19
+        '
+        'No_habitacion
+        '
+        Me.No_habitacion.HeaderText = "#Habitacion"
+        Me.No_habitacion.Name = "No_habitacion"
+        Me.No_habitacion.ReadOnly = True
+        '
+        'Capacidad
+        '
+        Me.Capacidad.HeaderText = "Capacidad"
+        Me.Capacidad.Name = "Capacidad"
+        Me.Capacidad.ReadOnly = True
+        Me.Capacidad.Width = 120
+        '
+        'camas_m
+        '
+        Me.camas_m.HeaderText = "Camas Matrimoniales"
+        Me.camas_m.Name = "camas_m"
+        Me.camas_m.ReadOnly = True
+        Me.camas_m.Width = 120
+        '
+        'camas_i
+        '
+        Me.camas_i.HeaderText = "Camas Individuales"
+        Me.camas_i.Name = "camas_i"
+        Me.camas_i.ReadOnly = True
+        Me.camas_i.Width = 120
+        '
+        'precio
+        '
+        Me.precio.HeaderText = "Precio"
+        Me.precio.Name = "precio"
+        Me.precio.ReadOnly = True
+        '
+        'Hotel
+        '
+        Me.Hotel.HeaderText = "Hotel"
+        Me.Hotel.Name = "Hotel"
+        Me.Hotel.ReadOnly = True
+        '
+        'Tipo_Habitacion
+        '
+        Me.Tipo_Habitacion.HeaderText = "Tipo Habitacion"
+        Me.Tipo_Habitacion.Name = "Tipo_Habitacion"
+        Me.Tipo_Habitacion.ReadOnly = True
+        Me.Tipo_Habitacion.Width = 140
         '
         'Label8
         '
@@ -441,52 +487,6 @@ Partial Class Form_reservaciones
         Me.Button1.Text = "Buscar Habitaciones"
         Me.Button1.UseVisualStyleBackColor = False
         '
-        'No_habitacion
-        '
-        Me.No_habitacion.HeaderText = "#Habitacion"
-        Me.No_habitacion.Name = "No_habitacion"
-        Me.No_habitacion.ReadOnly = True
-        '
-        'Capacidad
-        '
-        Me.Capacidad.HeaderText = "Capacidad"
-        Me.Capacidad.Name = "Capacidad"
-        Me.Capacidad.ReadOnly = True
-        Me.Capacidad.Width = 120
-        '
-        'camas_m
-        '
-        Me.camas_m.HeaderText = "Camas Matrimoniales"
-        Me.camas_m.Name = "camas_m"
-        Me.camas_m.ReadOnly = True
-        Me.camas_m.Width = 120
-        '
-        'camas_i
-        '
-        Me.camas_i.HeaderText = "Camas Individuales"
-        Me.camas_i.Name = "camas_i"
-        Me.camas_i.ReadOnly = True
-        Me.camas_i.Width = 120
-        '
-        'precio
-        '
-        Me.precio.HeaderText = "Precio"
-        Me.precio.Name = "precio"
-        Me.precio.ReadOnly = True
-        '
-        'Hotel
-        '
-        Me.Hotel.HeaderText = "Hotel"
-        Me.Hotel.Name = "Hotel"
-        Me.Hotel.ReadOnly = True
-        '
-        'Tipo_Habitacion
-        '
-        Me.Tipo_Habitacion.HeaderText = "Tipo Habitacion"
-        Me.Tipo_Habitacion.Name = "Tipo_Habitacion"
-        Me.Tipo_Habitacion.ReadOnly = True
-        Me.Tipo_Habitacion.Width = 140
-        '
         'Form_reservaciones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -506,7 +506,7 @@ Partial Class Form_reservaciones
         Me.Panel2.PerformLayout()
         Me.panel_habitaciones.ResumeLayout(False)
         Me.panel_habitaciones.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgv_habitacionesCostos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -534,7 +534,7 @@ Partial Class Form_reservaciones
     Friend WithEvents Button1 As Button
     Friend WithEvents date_entrada As DateTimePicker
     Friend WithEvents Label9 As Label
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dgv_habitacionesCostos As DataGridView
     Friend WithEvents Label8 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents date_salida As DateTimePicker

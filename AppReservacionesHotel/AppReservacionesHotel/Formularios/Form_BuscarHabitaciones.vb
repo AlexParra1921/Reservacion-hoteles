@@ -70,15 +70,15 @@
 
     Private Sub bt_cancelar_Click(sender As Object, e As EventArgs) Handles bt_cancelar.Click
         'Limpia todo el dataGridView
-        Form_reservaciones.DataGridView1.Rows.Clear()
+        Form_reservaciones.dgv_habitacionesCostos.Rows.Clear()
 
         'Copia las filas del dataGridView de habitaciones seleccionadas al DGV de formulario de reservaciones
         For Each row As DataGridViewRow In dgv_habitacionSeleccionadas.Rows.Cast(Of DataGridViewRow)().Reverse()
 
-            Dim index As Integer = Form_reservaciones.DataGridView1.Rows.Add(DirectCast(row.Clone(), DataGridViewRow))
+            Dim index As Integer = Form_reservaciones.dgv_habitacionesCostos.Rows.Add(DirectCast(row.Clone(), DataGridViewRow))
 
             For Each cell As DataGridViewCell In row.Cells
-                Form_reservaciones.DataGridView1.Rows(index).Cells(cell.ColumnIndex).Value = cell.Value
+                Form_reservaciones.dgv_habitacionesCostos.Rows(index).Cells(cell.ColumnIndex).Value = cell.Value
             Next
         Next
 
