@@ -51,7 +51,5 @@
 
     End Sub
 
-    Private Sub date_entrada_ValueChanged(sender As Object, e As EventArgs) Handles date_entrada.ValueChanged
-        MsgBox(date_entrada.Text)
-    End Sub
+
 End Class
