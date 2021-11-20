@@ -1,4 +1,8 @@
 
+--Modifacion en la tabla de categoria se ha agregado una columna para añadir discripcion en cada categoria
+ALTER TABLE `reservaciones_hotel`.`categoria` 
+ADD COLUMN `Descripcion` VARCHAR(45) NULL DEFAULT NULL AFTER `ID_Categoria`;
+
 alter table reservacion modify column costo float;
 Alter table hotel modify column telefono varchar(10);
 --Modficacion columna de telefono de tablas de telefono 12/11/2021 17:29 - Kevin Duran

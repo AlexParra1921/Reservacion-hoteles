@@ -79,4 +79,5 @@
         lb_error.Text = ""
 
     End Sub
+
 End Class

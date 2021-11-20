@@ -22,7 +22,6 @@ Partial Class Form_BuscarHabitaciones
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.bt_seleccionar = New System.Windows.Forms.Button()
         Me.bt_cancelar = New System.Windows.Forms.Button()
         Me.dgv_BusquedaHabitacion = New System.Windows.Forms.DataGridView()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -33,31 +32,24 @@ Partial Class Form_BuscarHabitaciones
         Me.cb_categoria = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cb_hotel = New System.Windows.Forms.ComboBox()
+        Me.dgv_habitacionSeleccionadas = New System.Windows.Forms.DataGridView()
+        Me.bt_agregar = New System.Windows.Forms.Button()
+        Me.bt_eliminar = New System.Windows.Forms.Button()
         CType(Me.dgv_BusquedaHabitacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.dgv_habitacionSeleccionadas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'bt_seleccionar
-        '
-        Me.bt_seleccionar.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue
-        Me.bt_seleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.bt_seleccionar.Location = New System.Drawing.Point(676, 402)
-        Me.bt_seleccionar.Name = "bt_seleccionar"
-        Me.bt_seleccionar.Size = New System.Drawing.Size(106, 37)
-        Me.bt_seleccionar.TabIndex = 9
-        Me.bt_seleccionar.Text = "Seleccionar"
-        Me.bt_seleccionar.UseVisualStyleBackColor = True
         '
         'bt_cancelar
         '
         Me.bt_cancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.bt_cancelar.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue
+        Me.bt_cancelar.FlatAppearance.BorderColor = System.Drawing.SystemColors.AppWorkspace
         Me.bt_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.bt_cancelar.Location = New System.Drawing.Point(555, 402)
+        Me.bt_cancelar.Location = New System.Drawing.Point(670, 489)
         Me.bt_cancelar.Name = "bt_cancelar"
         Me.bt_cancelar.Size = New System.Drawing.Size(106, 37)
         Me.bt_cancelar.TabIndex = 10
-        Me.bt_cancelar.Text = "Cancelar"
+        Me.bt_cancelar.Text = "Salir"
         Me.bt_cancelar.UseVisualStyleBackColor = True
         '
         'dgv_BusquedaHabitacion
@@ -69,12 +61,12 @@ Partial Class Form_BuscarHabitaciones
         Me.dgv_BusquedaHabitacion.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText
         Me.dgv_BusquedaHabitacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_BusquedaHabitacion.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke
-        Me.dgv_BusquedaHabitacion.Location = New System.Drawing.Point(18, 117)
+        Me.dgv_BusquedaHabitacion.Location = New System.Drawing.Point(6, 86)
         Me.dgv_BusquedaHabitacion.Name = "dgv_BusquedaHabitacion"
         Me.dgv_BusquedaHabitacion.ReadOnly = True
         Me.dgv_BusquedaHabitacion.RowHeadersVisible = False
         Me.dgv_BusquedaHabitacion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgv_BusquedaHabitacion.Size = New System.Drawing.Size(764, 279)
+        Me.dgv_BusquedaHabitacion.Size = New System.Drawing.Size(752, 160)
         Me.dgv_BusquedaHabitacion.TabIndex = 6
         '
         'Label9
@@ -93,12 +85,13 @@ Partial Class Form_BuscarHabitaciones
         Me.GroupBox1.Controls.Add(Me.cb_habitacion)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.cb_categoria)
+        Me.GroupBox1.Controls.Add(Me.dgv_BusquedaHabitacion)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.cb_hotel)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(18, 30)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(764, 81)
+        Me.GroupBox1.Size = New System.Drawing.Size(764, 252)
         Me.GroupBox1.TabIndex = 17
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Busqueda"
@@ -107,7 +100,7 @@ Partial Class Form_BuscarHabitaciones
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(534, 22)
+        Me.Label3.Location = New System.Drawing.Point(531, 22)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(73, 16)
         Me.Label3.TabIndex = 5
@@ -117,9 +110,9 @@ Partial Class Form_BuscarHabitaciones
         '
         Me.cb_habitacion.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.cb_habitacion.FormattingEnabled = True
-        Me.cb_habitacion.Location = New System.Drawing.Point(537, 41)
+        Me.cb_habitacion.Location = New System.Drawing.Point(534, 41)
         Me.cb_habitacion.Name = "cb_habitacion"
-        Me.cb_habitacion.Size = New System.Drawing.Size(200, 24)
+        Me.cb_habitacion.Size = New System.Drawing.Size(214, 24)
         Me.cb_habitacion.TabIndex = 4
         '
         'Label2
@@ -138,7 +131,7 @@ Partial Class Form_BuscarHabitaciones
         Me.cb_categoria.FormattingEnabled = True
         Me.cb_categoria.Location = New System.Drawing.Point(258, 41)
         Me.cb_categoria.Name = "cb_categoria"
-        Me.cb_categoria.Size = New System.Drawing.Size(200, 24)
+        Me.cb_categoria.Size = New System.Drawing.Size(214, 24)
         Me.cb_categoria.TabIndex = 2
         '
         'Label1
@@ -155,21 +148,61 @@ Partial Class Form_BuscarHabitaciones
         '
         Me.cb_hotel.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.cb_hotel.FormattingEnabled = True
-        Me.cb_hotel.Location = New System.Drawing.Point(6, 41)
+        Me.cb_hotel.Location = New System.Drawing.Point(9, 41)
         Me.cb_hotel.Name = "cb_hotel"
-        Me.cb_hotel.Size = New System.Drawing.Size(173, 24)
+        Me.cb_hotel.Size = New System.Drawing.Size(214, 24)
         Me.cb_hotel.TabIndex = 0
+        '
+        'dgv_habitacionSeleccionadas
+        '
+        Me.dgv_habitacionSeleccionadas.AllowUserToAddRows = False
+        Me.dgv_habitacionSeleccionadas.AllowUserToDeleteRows = False
+        Me.dgv_habitacionSeleccionadas.BackgroundColor = System.Drawing.SystemColors.ControlLight
+        Me.dgv_habitacionSeleccionadas.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dgv_habitacionSeleccionadas.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText
+        Me.dgv_habitacionSeleccionadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_habitacionSeleccionadas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke
+        Me.dgv_habitacionSeleccionadas.Location = New System.Drawing.Point(24, 331)
+        Me.dgv_habitacionSeleccionadas.Name = "dgv_habitacionSeleccionadas"
+        Me.dgv_habitacionSeleccionadas.ReadOnly = True
+        Me.dgv_habitacionSeleccionadas.RowHeadersVisible = False
+        Me.dgv_habitacionSeleccionadas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgv_habitacionSeleccionadas.Size = New System.Drawing.Size(752, 152)
+        Me.dgv_habitacionSeleccionadas.TabIndex = 7
+        '
+        'bt_agregar
+        '
+        Me.bt_agregar.FlatAppearance.BorderColor = System.Drawing.SystemColors.AppWorkspace
+        Me.bt_agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.bt_agregar.Location = New System.Drawing.Point(670, 288)
+        Me.bt_agregar.Name = "bt_agregar"
+        Me.bt_agregar.Size = New System.Drawing.Size(106, 37)
+        Me.bt_agregar.TabIndex = 18
+        Me.bt_agregar.Text = "Agregar"
+        Me.bt_agregar.UseVisualStyleBackColor = True
+        '
+        'bt_eliminar
+        '
+        Me.bt_eliminar.FlatAppearance.BorderColor = System.Drawing.SystemColors.AppWorkspace
+        Me.bt_eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.bt_eliminar.Location = New System.Drawing.Point(539, 288)
+        Me.bt_eliminar.Name = "bt_eliminar"
+        Me.bt_eliminar.Size = New System.Drawing.Size(106, 37)
+        Me.bt_eliminar.TabIndex = 19
+        Me.bt_eliminar.Text = "Eliminar"
+        Me.bt_eliminar.UseVisualStyleBackColor = True
         '
         'Form_BuscarHabitaciones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(800, 541)
+        Me.Controls.Add(Me.bt_eliminar)
+        Me.Controls.Add(Me.bt_agregar)
+        Me.Controls.Add(Me.dgv_habitacionSeleccionadas)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.bt_seleccionar)
         Me.Controls.Add(Me.bt_cancelar)
-        Me.Controls.Add(Me.dgv_BusquedaHabitacion)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.MaximizeBox = False
         Me.MinimizeBox = False
@@ -181,11 +214,11 @@ Partial Class Form_BuscarHabitaciones
         CType(Me.dgv_BusquedaHabitacion, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.dgv_habitacionSeleccionadas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents bt_seleccionar As Button
     Friend WithEvents bt_cancelar As Button
     Friend WithEvents dgv_BusquedaHabitacion As DataGridView
     Friend WithEvents Label9 As Label
@@ -196,4 +229,7 @@ Partial Class Form_BuscarHabitaciones
     Friend WithEvents cb_habitacion As ComboBox
     Friend WithEvents Label2 As Label
     Friend WithEvents cb_categoria As ComboBox
+    Friend WithEvents dgv_habitacionSeleccionadas As DataGridView
+    Friend WithEvents bt_agregar As Button
+    Friend WithEvents bt_eliminar As Button
 End Class
