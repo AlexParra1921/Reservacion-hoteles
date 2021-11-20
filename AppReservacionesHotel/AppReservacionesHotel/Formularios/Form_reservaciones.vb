@@ -24,9 +24,30 @@
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Form_BuscarHabitaciones.ShowDialog()
+    Private Sub bt_buscarHabitaciones_Click(sender As Object, e As EventArgs) Handles bt_buscarHabitaciones.Click
+        If Form_BuscarHabitaciones.ShowDialog() Then
+            Dim numeroHabitaciones As Integer
+            Dim costo As Decimal
+            Dim costoTotal As Decimal
+            numeroHabitaciones = dgv_habitacionesCostos.Rows.Count
+
+            For Each row As DataGridViewRow In dgv_habitacionesCostos.Rows.Cast(Of DataGridViewRow)
+                costo += row.Cells(4).Value
+            Next
+
+            Dim iva = costo * 0.16
+            costoTotal = iva + costo
+
+            lb_no_habitaciones.Text = String.Format("No. Habitaciones: {0}", numeroHabitaciones)
+            lb_costoTotal.Text = String.Format("$ {0}", costo)
+            lb_costIva.Text = String.Format("$ {0} + ${1}", costo, iva)
+            lb_costoTotal.Text = String.Format("$ {0}", costoTotal)
+
+
+        End If
     End Sub
 
+    Private Sub Form_reservaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
 End Class

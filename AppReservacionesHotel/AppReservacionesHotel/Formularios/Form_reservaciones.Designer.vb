@@ -63,7 +63,7 @@ Partial Class Form_reservaciones
         Me.Label7 = New System.Windows.Forms.Label()
         Me.date_salida = New System.Windows.Forms.DateTimePicker()
         Me.date_entrada = New System.Windows.Forms.DateTimePicker()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.bt_buscarHabitaciones = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.panel_habitaciones.SuspendLayout()
@@ -279,7 +279,7 @@ Partial Class Form_reservaciones
         Me.panel_habitaciones.Controls.Add(Me.Label7)
         Me.panel_habitaciones.Controls.Add(Me.date_salida)
         Me.panel_habitaciones.Controls.Add(Me.date_entrada)
-        Me.panel_habitaciones.Controls.Add(Me.Button1)
+        Me.panel_habitaciones.Controls.Add(Me.bt_buscarHabitaciones)
         Me.panel_habitaciones.Enabled = False
         Me.panel_habitaciones.Location = New System.Drawing.Point(12, 164)
         Me.panel_habitaciones.Name = "panel_habitaciones"
@@ -293,9 +293,9 @@ Partial Class Form_reservaciones
         Me.lb_costoTotal.Font = New System.Drawing.Font("Microsoft YaHei UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lb_costoTotal.Location = New System.Drawing.Point(599, 253)
         Me.lb_costoTotal.Name = "lb_costoTotal"
-        Me.lb_costoTotal.Size = New System.Drawing.Size(45, 20)
+        Me.lb_costoTotal.Size = New System.Drawing.Size(31, 20)
         Me.lb_costoTotal.TabIndex = 25
-        Me.lb_costoTotal.Text = "$650"
+        Me.lb_costoTotal.Text = "$ 0"
         '
         'lb_costIva
         '
@@ -303,9 +303,9 @@ Partial Class Form_reservaciones
         Me.lb_costIva.Font = New System.Drawing.Font("Microsoft YaHei UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lb_costIva.Location = New System.Drawing.Point(360, 261)
         Me.lb_costIva.Name = "lb_costIva"
-        Me.lb_costIva.Size = New System.Drawing.Size(91, 20)
+        Me.lb_costIva.Size = New System.Drawing.Size(31, 20)
         Me.lb_costIva.TabIndex = 24
-        Me.lb_costIva.Text = "$500 + 150"
+        Me.lb_costIva.Text = "$ 0"
         '
         'lb_costo
         '
@@ -313,9 +313,9 @@ Partial Class Form_reservaciones
         Me.lb_costo.Font = New System.Drawing.Font("Microsoft YaHei UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lb_costo.Location = New System.Drawing.Point(360, 235)
         Me.lb_costo.Name = "lb_costo"
-        Me.lb_costo.Size = New System.Drawing.Size(45, 20)
+        Me.lb_costo.Size = New System.Drawing.Size(31, 20)
         Me.lb_costo.TabIndex = 14
-        Me.lb_costo.Text = "$500"
+        Me.lb_costo.Text = "$ 0"
         '
         'Label11
         '
@@ -353,9 +353,9 @@ Partial Class Form_reservaciones
         Me.lb_no_habitaciones.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lb_no_habitaciones.Location = New System.Drawing.Point(7, 255)
         Me.lb_no_habitaciones.Name = "lb_no_habitaciones"
-        Me.lb_no_habitaciones.Size = New System.Drawing.Size(132, 16)
+        Me.lb_no_habitaciones.Size = New System.Drawing.Size(144, 16)
         Me.lb_no_habitaciones.TabIndex = 20
-        Me.lb_no_habitaciones.Text = "No. Habitaciones:"
+        Me.lb_no_habitaciones.Text = "No. Habitaciones: 0"
         '
         'Label9
         '
@@ -475,17 +475,17 @@ Partial Class Form_reservaciones
         Me.date_entrada.TabIndex = 15
         Me.date_entrada.Value = New Date(2021, 11, 19, 0, 0, 0, 0)
         '
-        'Button1
+        'bt_buscarHabitaciones
         '
-        Me.Button1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button1.Location = New System.Drawing.Point(677, 23)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(5)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(132, 34)
-        Me.Button1.TabIndex = 14
-        Me.Button1.Text = "Buscar Habitaciones"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.bt_buscarHabitaciones.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.bt_buscarHabitaciones.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.bt_buscarHabitaciones.Location = New System.Drawing.Point(677, 23)
+        Me.bt_buscarHabitaciones.Margin = New System.Windows.Forms.Padding(5)
+        Me.bt_buscarHabitaciones.Name = "bt_buscarHabitaciones"
+        Me.bt_buscarHabitaciones.Size = New System.Drawing.Size(132, 34)
+        Me.bt_buscarHabitaciones.TabIndex = 14
+        Me.bt_buscarHabitaciones.Text = "Buscar Habitaciones"
+        Me.bt_buscarHabitaciones.UseVisualStyleBackColor = False
         '
         'Form_reservaciones
         '
@@ -531,7 +531,7 @@ Partial Class Form_reservaciones
     Friend WithEvents bt_limpiar As Button
     Friend WithEvents bt_res_guar As Button
     Friend WithEvents panel_habitaciones As Panel
-    Friend WithEvents Button1 As Button
+    Friend WithEvents bt_buscarHabitaciones As Button
     Friend WithEvents date_entrada As DateTimePicker
     Friend WithEvents Label9 As Label
     Friend WithEvents dgv_habitacionesCostos As DataGridView
