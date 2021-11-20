@@ -228,19 +228,33 @@ Public Class Habitaciones
 
 
         Dim strSQL As String
-            Dim xCnx As New Mysql
-            strSQL = String.Format("select no_habitacion,capacidad, no_camas_m as 'Camas Matrimoniales', no_camas_i as 'Camas Individuales', precio, nombre as Hotel,descripcion 'Tipo Habitacion' 
+        Dim xCnx As New Mysql
+        strSQL = String.Format("select no_habitacion,capacidad, no_camas_m as 'Camas Matrimoniales', no_camas_i as 'Camas Individuales', precio, nombre as Hotel,descripcion 'Tipo Habitacion' 
                                     from categoria as ca, hotel as ht, habitacion as hb 
                                     where ht.id_hotel=hb.id_hotel and ca.id_categoria=hb.id_categoria 
                                     and hb.id_hotel={0} and hb.id_categoria={1}", id_hotel, id_categoria)
 
-            consultarTodasHabitaciones = xCnx.objetoDataAdapter(strSQL)
+        consultarTodasHabitaciones = xCnx.objetoDataAdapter(strSQL)
 
     End Function
 
-    'METODO PARA POBLAR EL DATAVIEWGRID DE HABITACIONES
+    'SOLO USO EN FORMULARIO DE BUSQUEDA DE HABITACIONES
+    Private Function consultarTodasLasHabitacionesDisponibles() As Object
+        Dim strSQL As String
+        Dim xCnx As New Mysql
+        strSQL = String.Format("select no_habitacion,capacidad, no_camas_m as 'Camas Matrimoniales', no_camas_i as 'Camas Individuales', precio, nombre as Hotel,descripcion 'Tipo Habitacion' 
+                                    from categoria as ca, hotel as ht, habitacion as hb 
+                                    where ht.id_hotel=hb.id_hotel and ca.id_categoria=hb.id_categoria and hb.disponibilidad=1 
+                                    and hb.id_hotel={0} and hb.id_categoria={1};", id_hotel, id_categoria)
+
+        consultarTodasLasHabitacionesDisponibles = xCnx.objetoDataAdapter(strSQL)
+    End Function
+
+
+
+    'METODO PARA POBLAR EL DATAVIEWGRID DE HABITACIONES - SOLO USO EN FORMULARIO DE BUSQUEDA DE HABITACIONES
     Public Sub poblarDGVBusquedaHabitacion(ByVal dgv_bh As DataGridView)
-        dgv_bh.DataSource = consultarTodasHabitaciones()
+        dgv_bh.DataSource = consultarTodasLasHabitacionesDisponibles()
         dgv_bh.Refresh()
 
         dgv_bh.Columns.Item(5).Width = 150
