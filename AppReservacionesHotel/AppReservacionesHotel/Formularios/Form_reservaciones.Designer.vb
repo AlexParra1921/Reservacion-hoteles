@@ -22,7 +22,7 @@ Partial Class Form_reservaciones
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lb_fecha = New System.Windows.Forms.Label()
         Me.lb_idreservacion = New System.Windows.Forms.Label()
@@ -373,14 +373,14 @@ Partial Class Form_reservaciones
         Me.dgv_habitacionesCostos.AllowUserToDeleteRows = False
         Me.dgv_habitacionesCostos.BackgroundColor = System.Drawing.Color.AliceBlue
         Me.dgv_habitacionesCostos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlLight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgv_habitacionesCostos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ControlLight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgv_habitacionesCostos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.dgv_habitacionesCostos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_habitacionesCostos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.No_habitacion, Me.Capacidad, Me.camas_m, Me.camas_i, Me.precio, Me.Hotel, Me.Tipo_Habitacion})
         Me.dgv_habitacionesCostos.Location = New System.Drawing.Point(8, 72)
@@ -457,7 +457,8 @@ Partial Class Form_reservaciones
         'date_salida
         '
         Me.date_salida.Checked = False
-        Me.date_salida.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.date_salida.CustomFormat = "yyyy-MM-dd"
+        Me.date_salida.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.date_salida.Location = New System.Drawing.Point(234, 37)
         Me.date_salida.Name = "date_salida"
         Me.date_salida.Size = New System.Drawing.Size(168, 20)
@@ -468,7 +469,8 @@ Partial Class Form_reservaciones
         '
         Me.date_entrada.CalendarFont = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.date_entrada.Checked = False
-        Me.date_entrada.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.date_entrada.CustomFormat = "yyyy-MM-dd"
+        Me.date_entrada.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.date_entrada.Location = New System.Drawing.Point(8, 37)
         Me.date_entrada.Name = "date_entrada"
         Me.date_entrada.Size = New System.Drawing.Size(166, 20)
