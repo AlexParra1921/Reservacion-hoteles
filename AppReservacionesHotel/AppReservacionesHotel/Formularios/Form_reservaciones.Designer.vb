@@ -22,7 +22,7 @@ Partial Class Form_reservaciones
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lb_fecha = New System.Windows.Forms.Label()
         Me.lb_idreservacion = New System.Windows.Forms.Label()
@@ -43,6 +43,9 @@ Partial Class Form_reservaciones
         Me.bt_limpiar = New System.Windows.Forms.Button()
         Me.bt_res_guar = New System.Windows.Forms.Button()
         Me.panel_habitaciones = New System.Windows.Forms.Panel()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.txt_dias = New System.Windows.Forms.TextBox()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.lb_costoTotal = New System.Windows.Forms.Label()
         Me.lb_costIva = New System.Windows.Forms.Label()
         Me.lb_costo = New System.Windows.Forms.Label()
@@ -266,6 +269,9 @@ Partial Class Form_reservaciones
         '
         'panel_habitaciones
         '
+        Me.panel_habitaciones.Controls.Add(Me.Label13)
+        Me.panel_habitaciones.Controls.Add(Me.txt_dias)
+        Me.panel_habitaciones.Controls.Add(Me.Label12)
         Me.panel_habitaciones.Controls.Add(Me.lb_costoTotal)
         Me.panel_habitaciones.Controls.Add(Me.lb_costIva)
         Me.panel_habitaciones.Controls.Add(Me.lb_costo)
@@ -286,6 +292,34 @@ Partial Class Form_reservaciones
         Me.panel_habitaciones.Padding = New System.Windows.Forms.Padding(5)
         Me.panel_habitaciones.Size = New System.Drawing.Size(819, 288)
         Me.panel_habitaciones.TabIndex = 16
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(426, 40)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(40, 13)
+        Me.Label13.TabIndex = 28
+        Me.Label13.Text = "Dias :"
+        '
+        'txt_dias
+        '
+        Me.txt_dias.Enabled = False
+        Me.txt_dias.Location = New System.Drawing.Point(472, 37)
+        Me.txt_dias.Multiline = True
+        Me.txt_dias.Name = "txt_dias"
+        Me.txt_dias.Size = New System.Drawing.Size(103, 20)
+        Me.txt_dias.TabIndex = 27
+        Me.txt_dias.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(11, 240)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(0, 13)
+        Me.Label12.TabIndex = 26
         '
         'lb_costoTotal
         '
@@ -351,7 +385,7 @@ Partial Class Form_reservaciones
         '
         Me.lb_no_habitaciones.AutoSize = True
         Me.lb_no_habitaciones.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lb_no_habitaciones.Location = New System.Drawing.Point(7, 255)
+        Me.lb_no_habitaciones.Location = New System.Drawing.Point(8, 262)
         Me.lb_no_habitaciones.Name = "lb_no_habitaciones"
         Me.lb_no_habitaciones.Size = New System.Drawing.Size(144, 16)
         Me.lb_no_habitaciones.TabIndex = 20
@@ -373,14 +407,14 @@ Partial Class Form_reservaciones
         Me.dgv_habitacionesCostos.AllowUserToDeleteRows = False
         Me.dgv_habitacionesCostos.BackgroundColor = System.Drawing.Color.AliceBlue
         Me.dgv_habitacionesCostos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ControlLight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgv_habitacionesCostos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ControlLight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgv_habitacionesCostos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dgv_habitacionesCostos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_habitacionesCostos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.No_habitacion, Me.Capacidad, Me.camas_m, Me.camas_i, Me.precio, Me.Hotel, Me.Tipo_Habitacion})
         Me.dgv_habitacionesCostos.Location = New System.Drawing.Point(8, 72)
@@ -554,4 +588,7 @@ Partial Class Form_reservaciones
     Friend WithEvents precio As DataGridViewTextBoxColumn
     Friend WithEvents Hotel As DataGridViewTextBoxColumn
     Friend WithEvents Tipo_Habitacion As DataGridViewTextBoxColumn
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Label13 As Label
+    Friend WithEvents txt_dias As TextBox
 End Class
