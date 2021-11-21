@@ -16,7 +16,7 @@
         Else
             'instanciamos la clase y le pasamos como parámetros los cuatro datos
             Dim strTel = limpiar_caracteresCampoTelefono()
-            Dim cliente As New Cliente(txtbox_id.Text, txt_nombre.Text, txtbox_apellidoPaterno.Text, txtbox_apellidoMaterno.Text)
+            Dim cliente As New huespeda(txtbox_id.Text, txt_nombre.Text, txtbox_apellidoPaterno.Text, txtbox_apellidoMaterno.Text)
             Dim telefono As New Telefono(txtbox_id.Text, strTel, "+52", Persona.tipoPersona.Cliente)
 
             'En el siguiente IF, usamos un método para verificar si la ciudad está registrada
@@ -42,7 +42,7 @@
                 End Try
 
             Else
-              
+
                 If MessageBox.Show("¿Esta seguro modifcar el registro con ID=[" & txtbox_id.Text & "]?",
                                    "CONFIRMAR", MessageBoxButtons.YesNo) = Windows.Forms.DialogResult.Yes Then
                     Try
@@ -83,9 +83,8 @@
     End Sub
 
     Private Sub Form_cliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim cliente As New Cliente
+        Dim cliente As New huespeda
         'Poblamos el Data Grid View para los clientes
-
         cliente.PoblarDataGridCliente(dgv_cliente)
 
         cnx.Close()
@@ -97,7 +96,7 @@
         'Si tu BD tiene las reglas de integridad referencial, el DBMS hará la validación, pero
         'hay que controlar esa validación y mandar un mensaje apropiado al usuario final
 
-        Dim cliente As New Cliente(txtbox_id.Text, txt_nombre.Text, txtbox_apellidoPaterno.Text, txtbox_apellidoMaterno.Text)
+        Dim cliente As New huespeda(txtbox_id.Text, txt_nombre.Text, txtbox_apellidoPaterno.Text, txtbox_apellidoMaterno.Text)
 
         If cliente.validarClientes() = True Then
             MsgBox("No se puede dar de baja el cliente seleccionado, tiene reservaciones registradas...")
@@ -156,7 +155,7 @@
     'Realiza una busqueda en la base de datos y si encuentra el cliente con ese id rellena los campos y muestra el me
     'mensaje de que se ha encontrado
     Private Sub bt_buscar_Click(sender As Object, e As EventArgs) Handles bt_buscar.Click
-        Dim cliente As New Cliente()
+        Dim cliente As New huespeda()
         Dim telefono As New Telefono
         If txt_BuscarID.Text <> "" Then
             cliente.getSetidCliente = CInt(txt_BuscarID.Text)
@@ -209,6 +208,10 @@
 
     Private Sub txtbox_id_TextChanged(sender As Object, e As EventArgs) Handles txtbox_id.TextChanged
         'Realizamos la busqueda del telefono
+
+    End Sub
+
+    Private Sub txtbox_apellidoMaterno_TextChanged(sender As Object, e As EventArgs) Handles txtbox_apellidoMaterno.TextChanged
 
     End Sub
 End Class

@@ -53,7 +53,9 @@ Partial Class Form_cliente
         Me.dgv_cliente.Location = New System.Drawing.Point(12, 185)
         Me.dgv_cliente.Name = "dgv_cliente"
         Me.dgv_cliente.ReadOnly = True
+        Me.dgv_cliente.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken
         Me.dgv_cliente.RowHeadersVisible = False
+        Me.dgv_cliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgv_cliente.Size = New System.Drawing.Size(776, 253)
         Me.dgv_cliente.TabIndex = 7
         '
@@ -62,21 +64,21 @@ Partial Class Form_cliente
         Me.txt_nombre.Location = New System.Drawing.Point(12, 72)
         Me.txt_nombre.Name = "txt_nombre"
         Me.txt_nombre.Size = New System.Drawing.Size(184, 20)
-        Me.txt_nombre.TabIndex = 1
+        Me.txt_nombre.TabIndex = 2
         '
         'txtbox_apellidoPaterno
         '
         Me.txtbox_apellidoPaterno.Location = New System.Drawing.Point(202, 72)
         Me.txtbox_apellidoPaterno.Name = "txtbox_apellidoPaterno"
         Me.txtbox_apellidoPaterno.Size = New System.Drawing.Size(184, 20)
-        Me.txtbox_apellidoPaterno.TabIndex = 2
+        Me.txtbox_apellidoPaterno.TabIndex = 3
         '
         'txtbox_apellidoMaterno
         '
         Me.txtbox_apellidoMaterno.Location = New System.Drawing.Point(392, 72)
         Me.txtbox_apellidoMaterno.Name = "txtbox_apellidoMaterno"
         Me.txtbox_apellidoMaterno.Size = New System.Drawing.Size(191, 20)
-        Me.txtbox_apellidoMaterno.TabIndex = 3
+        Me.txtbox_apellidoMaterno.TabIndex = 4
         '
         'bt_agregar
         '
@@ -178,8 +180,8 @@ Partial Class Form_cliente
         Me.txtbox_id.Mask = "99999999999999999999999"
         Me.txtbox_id.Name = "txtbox_id"
         Me.txtbox_id.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
-        Me.txtbox_id.Size = New System.Drawing.Size(184, 20)
-        Me.txtbox_id.TabIndex = 0
+        Me.txtbox_id.Size = New System.Drawing.Size(181, 20)
+        Me.txtbox_id.TabIndex = 1
         '
         'txt_numero
         '
@@ -212,9 +214,9 @@ Partial Class Form_cliente
         '
         'Form_cliente
         '
-        Me.AcceptButton = Me.bt_agregar
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.lb_telefono)
         Me.Controls.Add(Me.Label6)
