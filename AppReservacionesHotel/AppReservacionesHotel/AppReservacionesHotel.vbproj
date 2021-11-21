@@ -75,6 +75,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Windows.Forms" />
@@ -101,7 +102,8 @@
     <Compile Include="Accesos\Administrador.vb" />
     <Compile Include="Accesos\CategoriaHabitacion.vb" />
     <Compile Include="Accesos\Cliente.vb" />
-    <Compile Include="Accesos\Huesped.vb" />
+    <Compile Include="Accesos\Habitaciones.vb" />
+    <Compile Include="Accesos\Reservaciones.vb" />
     <Compile Include="Conexion\Mysql.vb" />
     <Compile Include="Formularios\formCategoriaHabitacion.Designer.vb">
       <DependentUpon>formCategoriaHabitacion.vb</DependentUpon>
@@ -123,16 +125,29 @@
     <Compile Include="Formularios\formLogin.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Accesos\Huesped.vb" />
+    <Compile Include="Formularios\Form_buscarCliente.Designer.vb">
+      <DependentUpon>Form_buscarCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Form_buscarCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Form_BuscarHabitaciones.Designer.vb">
+      <DependentUpon>Form_BuscarHabitaciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Form_BuscarHabitaciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\Form_buscarUsuario.Designer.vb">
       <DependentUpon>Form_buscarUsuario.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Form_buscarUsuario.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Form_Huesped.Designer.vb">
-      <DependentUpon>Form_Huesped.vb</DependentUpon>
+    <Compile Include="Formularios\Form_reservaciones.Designer.vb">
+      <DependentUpon>Form_reservaciones.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form_Huesped.vb">
+    <Compile Include="Formularios\Form_reservaciones.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Form_Telefono.Designer.vb">
@@ -177,11 +192,17 @@
     <EmbeddedResource Include="Formularios\formLogin.resx">
       <DependentUpon>formLogin.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Form_buscarCliente.resx">
+      <DependentUpon>Form_buscarCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Form_BuscarHabitaciones.resx">
+      <DependentUpon>Form_BuscarHabitaciones.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Form_buscarUsuario.resx">
       <DependentUpon>Form_buscarUsuario.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Form_Huesped.resx">
-      <DependentUpon>Form_Huesped.vb</DependentUpon>
+    <EmbeddedResource Include="Formularios\Form_reservaciones.resx">
+      <DependentUpon>Form_reservaciones.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Form_Telefono.resx">
       <DependentUpon>Form_Telefono.vb</DependentUpon>
