@@ -17,13 +17,6 @@
 
     End Sub
 
-
-        Form_reservaciones.MdiParent = Me
-        panel_main.Controls.Add(Form_reservaciones)
-        Form_reservaciones.Show()
-        Form_reservaciones.WindowState = FormWindowState.Maximized
-    End Sub
-
     Private Sub HabitacionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HabitacionToolStripMenuItem.Click
 
     End Sub
@@ -57,6 +50,10 @@
     Private Sub bt_reservaciones_Click(sender As Object, e As EventArgs) Handles bt_reservaciones.Click
         lb_ventana.Text = ""
         lb_ventana.Text = "Reservaciones"
+        Form_reservaciones.MdiParent = Me
+        panel_main.Controls.Add(Form_reservaciones)
+        Form_reservaciones.Show()
+        Form_reservaciones.WindowState = FormWindowState.Maximized
     End Sub
 
     Private Sub bt_habitaciones_Click(sender As Object, e As EventArgs) Handles bt_habitaciones.Click

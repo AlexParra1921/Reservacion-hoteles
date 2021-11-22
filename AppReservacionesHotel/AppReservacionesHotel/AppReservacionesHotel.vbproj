@@ -144,6 +144,12 @@
     <Compile Include="Formularios\Form_buscarUsuario.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\Form_Huesped.Designer.vb">
+      <DependentUpon>Form_Huesped.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Form_Huesped.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\Form_reservaciones.Designer.vb">
       <DependentUpon>Form_reservaciones.vb</DependentUpon>
     </Compile>
@@ -200,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Form_buscarUsuario.resx">
       <DependentUpon>Form_buscarUsuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Form_Huesped.resx">
+      <DependentUpon>Form_Huesped.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Form_reservaciones.resx">
       <DependentUpon>Form_reservaciones.vb</DependentUpon>

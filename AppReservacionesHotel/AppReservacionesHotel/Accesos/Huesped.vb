@@ -103,8 +103,8 @@ Public Class Huesped
         'Si llega haber una excepcion la atrapara al realizar el query
 
         xDT = xCnx.objetoDataAdapter(strSql)
-            If xDT.Rows.Count = 1 Then
-                If IsDBNull(xDT.Rows(0)("ID")) Then
+        If xDT.Rows.Count = 1 Then
+            If IsDBNull(xDT.Rows(0)("ID")) Then
                 'Mantiene los campos limpios en caso de que el ID sea nu
                 id_huesped = 0
                 id_reservacion = 0
@@ -114,15 +114,15 @@ Public Class Huesped
                 getSetApellidoMaterno = ""
 
             Else
-                    ' Actualiza los txt box en caso de que el registro recibido concida con el ID y sea real
-                    Form_Huesped.txtbox_id.Text = xDT.Rows(0)("ID")
-                    Form_Huesped.txt_nombre.Text = xDT.Rows(0)("nombre")
-                    Form_Huesped.txtbox_apellidoPaterno.Text = xDT.Rows(0)("Apellido paterno")
-                    Form_Huesped.txtbox_apellidoMaterno.Text = xDT.Rows(0)("Apellido materno")
+                ' Actualiza los txt box en caso de que el registro recibido concida con el ID y sea real
+                Form_Huesped.txtbox_id.Text = xDT.Rows(0)("ID")
+                Form_Huesped.txt_nombre.Text = xDT.Rows(0)("nombre")
+                Form_Huesped.txtbox_apellidoPaterno.Text = xDT.Rows(0)("Apellido paterno")
+                Form_Huesped.txtbox_apellidoMaterno.Text = xDT.Rows(0)("Apellido materno")
                 Form_Huesped.txt_edad.Text = xDT.Rows(0)("Edad")
             End If
-                consultaHuesped = True
-            End If
+            consultaHuesped = True
+        End If
 
 
     End Function

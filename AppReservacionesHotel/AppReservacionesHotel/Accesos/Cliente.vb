@@ -1,12 +1,9 @@
-﻿Public Class huespeda
+﻿Public Class Cliente
     Inherits Persona
 
     Private id_cliente As Integer
 
-    Public Sub New()
-        MyBase.New("", "", "", 0)
-        id_cliente = 0
-    End Sub
+
 
     Public Sub New(id_cliente As Integer, nombre As String, apellidoPaterno As String, apellidoMaterno As String)
         MyBase.New(nombre, apellidoPaterno, apellidoMaterno, 0)
@@ -14,6 +11,8 @@
 
     End Sub
 
+    Public Sub New()
+    End Sub
 
     Public Property getSetidCliente() As Integer
         Get
