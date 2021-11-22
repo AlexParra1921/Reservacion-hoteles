@@ -382,7 +382,7 @@ Partial Class ControlEmpleado
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Margin = New System.Windows.Forms.Padding(4, 2, 4, 2)
-        Me.MaximumSize = New System.Drawing.Size(1020, 680)
+        Me.MaximumSize = New System.Drawing.Size(1080, 680)
         Me.MinimumSize = New System.Drawing.Size(1020, 680)
         Me.Name = "ControlEmpleado"
         Me.ShowIcon = False

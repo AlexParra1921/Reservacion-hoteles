@@ -1,4 +1,13 @@
 
+
+ALTER TABLE `reservaciones_hotel`.`cancelacion` 
+CHANGE COLUMN `ID_Cancelacion` `ID_Cancelacion` INT NOT NULL AUTO_INCREMENT ;
+--Modifcacion en la tabla de reservacion para distinguir de las Reservaciones canceladas facilmente
+
+ALTER TABLE `reservaciones_hotel`.`reservacion` 
+ADD COLUMN `cancelada` TINYINT(1) NULL DEFAULT 0 AFTER `No_habitaciones`;
+
+
 --Modifacion en la tabla de categoria se ha agregado una columna para añadir discripcion en cada categoria
 ALTER TABLE `reservaciones_hotel`.`categoria` 
 ADD COLUMN `Descripcion` VARCHAR(45) NULL DEFAULT NULL AFTER `ID_Categoria`;
