@@ -152,6 +152,7 @@ Partial Class Form_AdminRese
         Me.Name = "Form_AdminRese"
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Administracion Reservacion"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
