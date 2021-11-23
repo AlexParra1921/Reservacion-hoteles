@@ -10,7 +10,7 @@ Public Class Reservaciones
     Private costo As Decimal
     Private num_dias As Integer
     Private no_habitaciones As Integer
-
+    Public Property cancelada As Int16
 
 
     Public Sub New(id_reservaciones As Integer, id_empleado As Integer, id_cliente As Integer, fechaEntrada As Date, fechaSalida As Date, fechaReservacion As Date, costo As Decimal, num_dias As Integer, no_habitaciones As Integer)
@@ -23,6 +23,7 @@ Public Class Reservaciones
         Me.costo = costo
         Me.num_dias = num_dias
         Me.no_habitaciones = no_habitaciones
+
     End Sub
 
     Public Sub New()
@@ -109,6 +110,37 @@ Public Class Reservaciones
         End Set
     End Property
 
+    'METOD PARA CONSULTAR RESERVACION
+    Public Function consultarReservacion() As Boolean
+        Dim strSql As String
+        Dim xCnx As New Mysql
+        Dim xDT As DataTable
+        If id_reservaciones = 0 Then
+            Return False
+        End If
+        strSql = String.Format("select * from reservacion where id_reservacion={0}", id_reservaciones)
+
+        xDT = xCnx.objetoDataAdapter(strSql)
+        consultarReservacion = False
+        If xDT.Rows.Count = 1 Then
+            id_reservaciones = xDT.Rows(0)("ID_Reservacion")
+            id_empleado = xDT.Rows(0)("ID_Empleado")
+            id_cliente = xDT.Rows(0)("ID_Cliente")
+            fechaEntrada = xDT.Rows(0)("Fecha_Entrada")
+            fechaSalida = xDT.Rows(0)("Fecha_Salida")
+            fechaReservacion = xDT.Rows(0)("Fecha_Reservacion")
+            costo = xDT.Rows(0)("costo")
+            num_dias = xDT.Rows(0)("No_Dias")
+            no_habitaciones = xDT.Rows(0)("No_habitaciones")
+            cancelada = xDT.Rows(0)("cancelada")
+            consultarReservacion = True
+        End If
+    End Function
+
+
+
+
+
     Private Function validarCampos() As Boolean
         If gs_id_reservacion = 0 Then
             Throw New ArgumentException("Id de reservacion invalido")
@@ -136,79 +168,6 @@ Public Class Reservaciones
 
 
 
-
-
-    'METODO PARA REALIZAR INSERCCION DE RESERVACIONES
-
-    Public Sub insertarReservacion()
-        Dim strSQL As String
-        Dim xCnx As Mysql
-
-        Try
-            validarCampos()
-
-            strSQL = String.Format("insert into reservacion values({0},{1},{2},'{3}','{4}','{5}',{6},{7},{8})", id_reservaciones, id_empleado, id_cliente,
-                                   fechaEntrada.ToString, fechaSalida.ToString, fechaReservacion.ToString, costo, num_dias, no_habitaciones)
-
-            xCnx.objetoCommand(strSQL)
-        Catch ex As ArgumentException
-            MsgBox(ex.Message, MsgBoxStyle.Information, "Invalido Campo")
-        Catch ex As Exception
-            MsgBox("Error al realizar la inserccion", MsgBoxStyle.Information, "Advertencia")
-        End Try
-
-    End Sub
-
-    'METODO PARA REALIZAR INSERCCION EN TABLA HABITACION_HAS_RESERVACION
-
-    Public Sub reservarHabitaciones(ByVal listaId_habitaciones As List(Of Integer))
-        Dim strSQL As String
-        Dim xCnx As New Mysql
-
-        Try
-            If listaId_habitaciones.Count = 0 Then
-                Throw New ArgumentException("Habitaciones ingresadas '0'")
-            End If
-            validarCampos()
-            For Each id_habitacion As Integer In listaId_habitaciones
-                strSQL = String.Format("insert into habitacion_has_reservacion values({0},{1})", id_reservaciones, id_habitacion)
-                Try
-                    xCnx.objetoCommand(strSQL)
-                Catch ex As Exception
-                    MsgBox(String.Format("Error al reservar habitacion {0} \n {1}", id_habitacion, ex.Message))
-                End Try
-            Next
-
-        Catch ex As ArgumentException
-            MsgBox(ex.Message, MsgBoxStyle.Information, "Invalido Campo")
-        Catch ex As Exception
-            MsgBox("Error al reservar habitaciones: \n" & ex.Message, MsgBoxStyle.Information, "Advertencia")
-        End Try
-
-    End Sub
-    'METODO PARA MARCAR HABTIACIONES OCUPADAS
-    Public Sub marcarHabitacionOcupada(ByVal listaId_habitaciones As List(Of Integer))
-        Dim strSQL As String
-        Dim xCnx As New Mysql
-        Try
-            If listaId_habitaciones.Count = 0 Then
-                Throw New ArgumentException("Habitaciones ingresadas '0'")
-            End If
-            validarCampos()
-            For Each id_habitacion As Integer In listaId_habitaciones
-                strSQL = String.Format("update habitacion set disponibilidad=0 where No_habitacion={0};", id_habitacion)
-                Try
-                    xCnx.objetoCommand(strSQL)
-                Catch ex As Exception
-                    MsgBox(String.Format("Error al marcar habitacion Ocupada habitacion {0} \n {1}", id_habitacion, ex.Message))
-                End Try
-            Next
-        Catch ex As ArgumentException
-            MsgBox(ex.Message, MsgBoxStyle.Information, "Invalido Campo")
-        Catch ex As Exception
-            MsgBox("Error al marcar habitaciones ocupadas: \n" & ex.Message, MsgBoxStyle.Information, "Advertencia")
-        End Try
-    End Sub
 
     'Metodo para realizar la reservacion de las habitacion, se utilizara transacciones para agrupar todas 
     'las consultas en una sola, en caso de que falle alguna se realizara un rollback
@@ -271,11 +230,6 @@ Public Class Reservaciones
         End Try
     End Function
 
-
-
-
-
-
     'METODO PARA BUSCAR EL ULTIMO ID DE RESERVACION
     Public Sub asignarIdReservacion()
         Dim strSql As String
@@ -288,6 +242,102 @@ Public Class Reservaciones
             id_reservaciones = xDT.Rows(0)("last id") + 1
         End If
 
+    End Sub
+
+
+    'METODO PARA CONSULTAR LAS RESERVACIONES MOSTRANDO COLUMNAS DESCRIPTAS
+
+    Public Function consultaReservacionesDGV() As Object
+
+        Dim strSql As String
+        Dim xCnx As New Mysql
+        strSql = String.Format(" SELECT res.id_reservacion '#', concat_ws(' ', cl.nombre , cl.paterno ,cl.materno ) 'Cliente', fecha_entrada 'Fecha Entrada', fecha_salida 'Fecha Salida', fecha_reservacion 'Fecha reservacion', ht.nombre 'Hotel', no_dias 'Dias' 
+from reservacion res,habitacion hb ,habitacion_has_reservacion hs,hotel ht,cliente cl 
+where ht.id_hotel=hb.id_hotel and hb.no_habitacion=hs.no_habitacion and hs.id_reservacion=res.id_reservacion and cl.id_cliente=res.id_cliente  and res.cancelada=0 
+order by res.id_reservacion")
+
+
+        consultaReservacionesDGV = xCnx.objetoDataAdapter(strSql)
+
+
+    End Function
+
+
+    'METODO PARA POBLAR DGV de reservaciones 
+    Public Sub poblarDGVReservaciones(ByVal dgv_reservaciones As DataGridView)
+
+        dgv_reservaciones.DataSource = consultaReservacionesDGV()
+
+        dgv_reservaciones.Refresh()
+
+        dgv_reservaciones.Columns.Item(1).Width = 200
+
 
     End Sub
+
+
+    'METODO PARA REALIZAR UNA CANCELACION- SE REALIZARA MEDIANTE TRANSACCION
+
+    Public Function cancelacion(ByVal can As Cancelacion) As Boolean
+        Dim command As MySqlCommand = cnx.CreateCommand()
+        Dim Transac As MySqlTransaction
+
+        'CREAMOS LA TRANSACCION
+        Transac = cnx.BeginTransaction()
+        command.Connection = cnx
+        command.Transaction = Transac
+        Try
+            If id_reservaciones = 0 Then
+                Throw New ArgumentException("ID de reservacion invalido")
+            End If
+            'Realizara la actualizacion de habitaciones como disponibles
+            Try
+                command.CommandText = String.Format("update habitacion set disponibilidad=1 where No_habitacion=(select no_habitacion from habitacion_has_reservacion hs where id_reservacion={0})",
+                                                      id_reservaciones)
+                command.ExecuteNonQuery()
+            Catch ex As Exception
+                Throw New Exception("Error al marcar habitacion disponible")
+            End Try
+
+            Try
+                command.CommandText = String.Format("update reservacion set cancelada=1 where id_reservacion={0}",
+                                                      id_reservaciones)
+                command.ExecuteNonQuery()
+            Catch ex As Exception
+                Throw New Exception("Error al marcar reservacion cancelada ")
+            End Try
+
+            If can.getSetIdreservacion = 0 Or can.getSetRembolso = 0 Or can.getSetFecha = "" Then
+                Throw New ArgumentException("La cancelacion tiene campos invalidos")
+            End If
+
+            Try
+                command.CommandText = String.Format("insert into cancelacion (id_reservacion,rembolso,fecha_cancelacion) values ({0},{1},'{2}')",
+                                                      can.getSetIdreservacion, can.getSetRembolso, can.getSetFecha)
+                command.ExecuteNonQuery()
+            Catch ex As Exception
+                Throw New Exception("No se puedo realizar la cancelacion")
+            End Try
+
+
+            'SI TODAS LAS TRANSACCIONES SE REALIZARON SE REALIZA EL COMMIT
+            Transac.Commit()
+            cancelacion = True
+        Catch ex As Exception
+            Console.WriteLine("Error cancelacion:\n Mensaje de error ----> " & ex.Message)
+            cancelacion = False
+
+            Try
+                Transac.Rollback()
+            Catch ex2 As Exception
+                MsgBox("Hubo un erro al realizar la cancelacion de la reservacion, la cancelacion esta incompleta, comunicace con su DBA!" & ex2.Message, MsgBoxStyle.Critical, "Error")
+            End Try
+
+        End Try
+
+    End Function
+
+
+
+
 End Class

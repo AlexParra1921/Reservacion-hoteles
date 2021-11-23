@@ -37,8 +37,7 @@ Partial Class ControlEmpleado
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReservacionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AgregarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BuscarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AdministrarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AgregarClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EliminarClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -239,7 +238,7 @@ Partial Class ControlEmpleado
         '
         'ReservacionesToolStripMenuItem
         '
-        Me.ReservacionesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarToolStripMenuItem, Me.EliminarToolStripMenuItem, Me.BuscarToolStripMenuItem})
+        Me.ReservacionesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarToolStripMenuItem, Me.AdministrarToolStripMenuItem})
         Me.ReservacionesToolStripMenuItem.Name = "ReservacionesToolStripMenuItem"
         Me.ReservacionesToolStripMenuItem.Size = New System.Drawing.Size(93, 20)
         Me.ReservacionesToolStripMenuItem.Text = "Reservaciones"
@@ -247,20 +246,14 @@ Partial Class ControlEmpleado
         'AgregarToolStripMenuItem
         '
         Me.AgregarToolStripMenuItem.Name = "AgregarToolStripMenuItem"
-        Me.AgregarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.AgregarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.AgregarToolStripMenuItem.Text = "Agregar"
         '
-        'EliminarToolStripMenuItem
+        'AdministrarToolStripMenuItem
         '
-        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
-        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
-        Me.EliminarToolStripMenuItem.Text = "Eliminar"
-        '
-        'BuscarToolStripMenuItem
-        '
-        Me.BuscarToolStripMenuItem.Name = "BuscarToolStripMenuItem"
-        Me.BuscarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
-        Me.BuscarToolStripMenuItem.Text = "Buscar"
+        Me.AdministrarToolStripMenuItem.Name = "AdministrarToolStripMenuItem"
+        Me.AdministrarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AdministrarToolStripMenuItem.Text = "Administrar "
         '
         'ClientesToolStripMenuItem
         '
@@ -382,7 +375,7 @@ Partial Class ControlEmpleado
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Margin = New System.Windows.Forms.Padding(4, 2, 4, 2)
-        Me.MaximumSize = New System.Drawing.Size(1020, 680)
+        Me.MaximumSize = New System.Drawing.Size(1080, 680)
         Me.MinimumSize = New System.Drawing.Size(1020, 680)
         Me.Name = "ControlEmpleado"
         Me.ShowIcon = False
@@ -413,8 +406,6 @@ Partial Class ControlEmpleado
     Friend WithEvents SalirToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ReservacionesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AgregarToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents BuscarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ClientesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AgregarClienteToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EliminarClienteToolStripMenuItem As ToolStripMenuItem
@@ -431,4 +422,5 @@ Partial Class ControlEmpleado
     Friend WithEvents CleinteToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents HuespedToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents AdministrarToolStripMenuItem As ToolStripMenuItem
 End Class

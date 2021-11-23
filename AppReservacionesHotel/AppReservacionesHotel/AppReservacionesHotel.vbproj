@@ -100,6 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Accesos\Administrador.vb" />
+    <Compile Include="Accesos\Cancelacion.vb" />
     <Compile Include="Accesos\CategoriaHabitacion.vb" />
     <Compile Include="Accesos\Cliente.vb" />
     <Compile Include="Accesos\Habitaciones.vb" />
@@ -126,6 +127,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Accesos\Huesped.vb" />
+    <Compile Include="Formularios\Form_AdminRese.Designer.vb">
+      <DependentUpon>Form_AdminRese.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Form_AdminRese.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\Form_buscarCliente.Designer.vb">
       <DependentUpon>Form_buscarCliente.vb</DependentUpon>
     </Compile>
@@ -198,6 +205,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\formLogin.resx">
       <DependentUpon>formLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Form_AdminRese.resx">
+      <DependentUpon>Form_AdminRese.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Form_buscarCliente.resx">
       <DependentUpon>Form_buscarCliente.vb</DependentUpon>
