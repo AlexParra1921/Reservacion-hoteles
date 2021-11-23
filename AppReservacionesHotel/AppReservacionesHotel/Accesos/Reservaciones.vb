@@ -190,7 +190,7 @@ Public Class Reservaciones
             End If
 
             Try
-                command.CommandText = String.Format("insert into reservacion values({0},{1},{2},'{3}','{4}','{5}',{6},{7},{8})", id_reservaciones, id_empleado, id_cliente,
+                command.CommandText = String.Format("insert into reservacion values({0},{1},{2},'{3}','{4}','{5}',{6},{7},{8},0)", id_reservaciones, id_empleado, id_cliente,
                                    fechaEntrada.ToString, fechaSalida.ToString, fechaReservacion.ToString, costo, num_dias, no_habitaciones)
                 command.ExecuteNonQuery()
             Catch ex As Exception
