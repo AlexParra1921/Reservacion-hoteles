@@ -17,7 +17,7 @@ Public Class Mysql
         '          User Id=root Es el nombre del usuario creado por system es el dueño de las tablas
         '          Password=159753 Es la contraseña del usuario
 
-        cnx = New MySqlConnection("Server=" + host + ";" + "database=" + database_name + "; user=root" + "; password=159753" + ";")
+        cnx = New MySqlConnection("Server=" + host + ";" + "database=" + database_name + "; user=" + user + "; password=" + password + ";")
 
         If cnx.State <> ConnectionState.Open Then
             Try

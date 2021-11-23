@@ -187,6 +187,7 @@
     <Compile Include="Accesos\Persona.vb" />
     <Compile Include="Accesos\Telefono.vb" />
     <Compile Include="Accesos\Usuario.vb" />
+    <Compile Include="Profile.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Formularios\formCategoriaHabitacion.resx">
