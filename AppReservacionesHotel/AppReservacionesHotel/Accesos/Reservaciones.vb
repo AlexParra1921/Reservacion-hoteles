@@ -239,7 +239,11 @@ Public Class Reservaciones
 
         xDT = xCnx.objetoDataAdapter(strSql)
         If xDT.Rows.Count = 1 Then
-            id_reservaciones = xDT.Rows(0)("last id") + 1
+            If IsDBNull(xDT.Rows(0)("last id")) Then
+                id_reservaciones = 0
+            Else
+                id_reservaciones = xDT.Rows(0)("last id") + 1
+            End If
         End If
 
     End Sub
