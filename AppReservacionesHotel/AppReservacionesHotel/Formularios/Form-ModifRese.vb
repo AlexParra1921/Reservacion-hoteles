@@ -1,5 +1,5 @@
 ﻿Public Class Form_ModifRese
-
+    Private lista_habitacion As New List(Of DataGridViewRow)
     Private Sub Form_ModifRese_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Extraemos del anterior formulario el id de la fila seleccionada del DGV
         Try
@@ -46,6 +46,9 @@
             dgv_habitacionReservadas.Columns.Add(columnaDesocupar)
             dgv_habitacionReservadas.DataSource = hbHasRese.consultarHabitaciones()
             dgv_habitacionReservadas.Columns(6).Width = 170
+            For Each ro As DataGridViewRow In dgv_habitacionReservadas.Rows
+                lista_habitacion.Add(ro)
+            Next
 
         Catch ex As Exception
             Console.WriteLine("Error al consultar todos los datos de la reservacion:" + vbCrLf + ex.Message)
@@ -66,29 +69,79 @@
 
     Private Sub bt_agregarMasHabitaciones_Click(sender As Object, e As EventArgs) Handles bt_agregarMasHabitaciones.Click
         If Form_BuscarHabitaciones.ShowDialog() Then
-            Dim numeroHabitaciones As Integer
-            Dim costo As Decimal
-            Dim costoTotal As Decimal
-            numeroHabitaciones = dgv_habtiacionesAgregadas.Rows.Count
-            For Each row As DataGridViewRow In dgv_habtiacionesAgregadas.Rows.Cast(Of DataGridViewRow)
-                costo += row.Cells(4).Value
-            Next
-            Dim iva = costo * 0.16
-            costoTotal = iva + costo
-            lb_no_habitaciones.Text = String.Format("No. Habitaciones: {0}", numeroHabitaciones)
-            lb_costoTotal.Text = String.Format("$ {0}", costoTotal)
+            'Limpia todo el dataGridView
+            dgv_habtiacionesAgregadas.Rows.Clear()
 
+            'Copia las filas del dataGridView de habitaciones seleccionadas al DGV de formulario de reservaciones
+            For Each row As DataGridViewRow In Form_BuscarHabitaciones.dgv_habitacionSeleccionadas.Rows.Cast(Of DataGridViewRow)().Reverse()
+
+                Dim index As Integer = dgv_habtiacionesAgregadas.Rows.Add(DirectCast(row.Clone(), DataGridViewRow))
+
+                For Each cell As DataGridViewCell In row.Cells
+                    dgv_habtiacionesAgregadas.Rows(index).Cells(cell.ColumnIndex).Value = cell.Value
+                Next
+            Next
+
+
+
+            calcularDatosHabitaciones()
         End If
     End Sub
 
     Private Sub dgv_habitacionReservadas_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_habitacionReservadas.CellContentClick
+        'Verifica si se ha seleccionado el header de la grilla
+        If (e.RowIndex = -1) Then
+            Return
+        End If
+
+        'Si la actual celda modficada esta en la columna de Desocupar
         If dgv_habitacionReservadas.CurrentCell.ColumnIndex = 0 Then
-            Dim cellCheckBox As DataGridViewCheckBoxCell = dgv_habitacionReservadas.CurrentCell
+            'Extraemos la fila
+            Dim row As DataGridViewRow = dgv_habitacionReservadas.Rows(e.RowIndex)
+
+
+            Dim cellCheckBox As DataGridViewCheckBoxCell = row.Cells(0)
+            'Verificamos si ha sido Checked
+
             If Convert.ToBoolean(cellCheckBox.Value) Then
-                Dim id_habitacion = dgv_habitacionReservadas.Rows(dgv_habitacionReservadas.CurrentCellAddress.Y).Cells(1).Value
-                Console.WriteLine(id_habitacion)
+                lista_habitacion.Remove(row)
+            Else
+                lista_habitacion.Add(row)
             End If
+            calcularDatosHabitaciones()
 
         End If
+    End Sub
+
+
+
+    Public Sub calcularDatosHabitaciones()
+        Dim numeroHabitaciones As Integer = 0
+        Dim costo As Decimal = 0
+        Dim costoTotal As Decimal = 0
+        numeroHabitaciones = dgv_habtiacionesAgregadas.Rows.Count + lista_habitacion.Count
+        'Realiza el calculo de las dos lista de costos
+        For Each row As DataGridViewRow In dgv_habtiacionesAgregadas.Rows.Cast(Of DataGridViewRow)
+            costo += row.Cells(4).Value
+        Next
+        For Each row As DataGridViewRow In lista_habitacion
+            costo += row.Cells(5).Value
+        Next
+
+        'Actualiza los datos en el formulario
+        costoTotal = costo + (costo * iva)
+        lb_no_habitaciones.Text = String.Format("No. Habitaciones: {0}", numeroHabitaciones)
+        lb_costoTotal.Text = String.Format("$ {0}", costoTotal)
+    End Sub
+
+
+
+    Private Sub dgv_habitacionReservadas_CurrentCellDirtyStateChanged(sender As Object, e As EventArgs) Handles dgv_habitacionReservadas.CurrentCellDirtyStateChanged
+        'Verifica si hay celdas modifcadas, si lo esta acepta los cambios antes que pierda el foco
+        If (dgv_habitacionReservadas.IsCurrentCellDirty) Then
+            dgv_habitacionReservadas.CommitEdit(DataGridViewDataErrorContexts.Commit)
+        End If
+
+
     End Sub
 End Class

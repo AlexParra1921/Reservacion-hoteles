@@ -17,7 +17,8 @@ Module Globales
     Public micategoria As String
     Public mihabitacion As Integer
 
-
+    'Reservaciones
+    Public iva As Decimal = 0.16
 
 
 

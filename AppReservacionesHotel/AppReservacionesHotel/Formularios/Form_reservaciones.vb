@@ -28,6 +28,22 @@
 
     Private Sub bt_buscarHabitaciones_Click(sender As Object, e As EventArgs) Handles bt_buscarHabitaciones.Click
         If Form_BuscarHabitaciones.ShowDialog() Then
+
+            'Limpia todo el dataGridView
+            dgv_habitacionesCostos.Rows.Clear()
+
+            'Copia las filas del dataGridView de habitaciones seleccionadas al DGV de formulario de reservaciones
+            For Each row As DataGridViewRow In Form_BuscarHabitaciones.dgv_habitacionSeleccionadas.Rows.Cast(Of DataGridViewRow)().Reverse()
+
+                Dim index As Integer = dgv_habitacionesCostos.Rows.Add(DirectCast(row.Clone(), DataGridViewRow))
+
+                For Each cell As DataGridViewCell In row.Cells
+                    dgv_habitacionesCostos.Rows(index).Cells(cell.ColumnIndex).Value = cell.Value
+                Next
+            Next
+
+
+
             Dim numeroHabitaciones As Integer
             Dim costo As Decimal
             Dim costoTotal As Decimal
