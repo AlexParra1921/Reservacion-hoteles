@@ -1,4 +1,5 @@
 ﻿Public Class Form_ModifRese
+
     Private Sub Form_ModifRese_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Extraemos del anterior formulario el id de la fila seleccionada del DGV
         Try
@@ -38,8 +39,13 @@
             txt_dias.Text = reservacion.gs_num_dias
             lb_costoTotal.Text = "$" & reservacion.gs_costo
             '-> RECUPERAR HABITACIONES
-
-
+            Dim hbHasRese As New Habitacion_has_reservacion(reservacion)
+            Dim columnaDesocupar = New DataGridViewCheckBoxColumn()
+            columnaDesocupar.HeaderText = "Desocupar"
+            columnaDesocupar.Width = 70
+            dgv_habitacionReservadas.Columns.Add(columnaDesocupar)
+            dgv_habitacionReservadas.DataSource = hbHasRese.consultarHabitaciones()
+            dgv_habitacionReservadas.Columns(6).Width = 170
 
         Catch ex As Exception
             Console.WriteLine("Error al consultar todos los datos de la reservacion:" + vbCrLf + ex.Message)
@@ -48,11 +54,6 @@
         End Try
 
     End Sub
-
-
-
-
-
 
     'Funcion convierte un string de fecha con formato YYYY/MM/DD a Objecto
     Public Function convertirFecha(ByVal fechaString As String) As Date
@@ -63,5 +64,31 @@
         Return Date.Parse(String.Format("{0}/{1}/{2}", dia, mes, año))
     End Function
 
+    Private Sub bt_agregarMasHabitaciones_Click(sender As Object, e As EventArgs) Handles bt_agregarMasHabitaciones.Click
+        If Form_BuscarHabitaciones.ShowDialog() Then
+            Dim numeroHabitaciones As Integer
+            Dim costo As Decimal
+            Dim costoTotal As Decimal
+            numeroHabitaciones = dgv_habtiacionesAgregadas.Rows.Count
+            For Each row As DataGridViewRow In dgv_habtiacionesAgregadas.Rows.Cast(Of DataGridViewRow)
+                costo += row.Cells(4).Value
+            Next
+            Dim iva = costo * 0.16
+            costoTotal = iva + costo
+            lb_no_habitaciones.Text = String.Format("No. Habitaciones: {0}", numeroHabitaciones)
+            lb_costoTotal.Text = String.Format("$ {0}", costoTotal)
 
+        End If
+    End Sub
+
+    Private Sub dgv_habitacionReservadas_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_habitacionReservadas.CellContentClick
+        If dgv_habitacionReservadas.CurrentCell.ColumnIndex = 0 Then
+            Dim cellCheckBox As DataGridViewCheckBoxCell = dgv_habitacionReservadas.CurrentCell
+            If Convert.ToBoolean(cellCheckBox.Value) Then
+                Dim id_habitacion = dgv_habitacionReservadas.Rows(dgv_habitacionReservadas.CurrentCellAddress.Y).Cells(1).Value
+                Console.WriteLine(id_habitacion)
+            End If
+
+        End If
+    End Sub
 End Class

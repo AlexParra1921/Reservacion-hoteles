@@ -104,8 +104,15 @@
     <Compile Include="Accesos\CategoriaHabitacion.vb" />
     <Compile Include="Accesos\Cliente.vb" />
     <Compile Include="Accesos\Habitaciones.vb" />
+    <Compile Include="Accesos\Habitacion_has_reservacion.vb" />
     <Compile Include="Accesos\Reservaciones.vb" />
     <Compile Include="Conexion\Mysql.vb" />
+    <Compile Include="Formularios\Form-ModifRese.Designer.vb">
+      <DependentUpon>Form-ModifRese.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Form-ModifRese.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\formCategoriaHabitacion.Designer.vb">
       <DependentUpon>formCategoriaHabitacion.vb</DependentUpon>
     </Compile>
@@ -197,6 +204,9 @@
     <Compile Include="Profile.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Formularios\Form-ModifRese.resx">
+      <DependentUpon>Form-ModifRese.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\formCategoriaHabitacion.resx">
       <DependentUpon>formCategoriaHabitacion.vb</DependentUpon>
     </EmbeddedResource>

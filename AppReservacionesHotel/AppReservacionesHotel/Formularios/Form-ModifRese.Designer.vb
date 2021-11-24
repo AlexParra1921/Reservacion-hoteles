@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form_ModifRese
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,10 +20,10 @@ Partial Class Form_ModifRese
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.txt_dias = New System.Windows.Forms.TextBox()
         Me.bt_buscarCliente = New System.Windows.Forms.Button()
         Me.Label13 = New System.Windows.Forms.Label()
@@ -37,13 +37,6 @@ Partial Class Form_ModifRese
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.dgv_habitacionReservadas = New System.Windows.Forms.DataGridView()
-        Me.No_habitacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Capacidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.camas_m = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.camas_i = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Hotel = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Tipo_Habitacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.date_salida = New System.Windows.Forms.DateTimePicker()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -57,7 +50,6 @@ Partial Class Form_ModifRese
         Me.txt_paterno = New System.Windows.Forms.TextBox()
         Me.txt_nombre = New System.Windows.Forms.TextBox()
         Me.panel_habitaciones = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.dgv_habtiacionesAgregadas = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -207,68 +199,20 @@ Partial Class Form_ModifRese
         Me.dgv_habitacionReservadas.AllowUserToDeleteRows = False
         Me.dgv_habitacionReservadas.BackgroundColor = System.Drawing.Color.AliceBlue
         Me.dgv_habitacionReservadas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.ControlLight
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgv_habitacionReservadas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlLight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgv_habitacionReservadas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgv_habitacionReservadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_habitacionReservadas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.No_habitacion, Me.Capacidad, Me.camas_m, Me.camas_i, Me.precio, Me.Hotel, Me.Tipo_Habitacion})
         Me.dgv_habitacionReservadas.Location = New System.Drawing.Point(8, 70)
         Me.dgv_habitacionReservadas.Name = "dgv_habitacionReservadas"
-        Me.dgv_habitacionReservadas.ReadOnly = True
         Me.dgv_habitacionReservadas.RowHeadersVisible = False
         Me.dgv_habitacionReservadas.Size = New System.Drawing.Size(803, 103)
         Me.dgv_habitacionReservadas.TabIndex = 19
-        '
-        'No_habitacion
-        '
-        Me.No_habitacion.HeaderText = "#Habitacion"
-        Me.No_habitacion.Name = "No_habitacion"
-        Me.No_habitacion.ReadOnly = True
-        '
-        'Capacidad
-        '
-        Me.Capacidad.HeaderText = "Capacidad"
-        Me.Capacidad.Name = "Capacidad"
-        Me.Capacidad.ReadOnly = True
-        Me.Capacidad.Width = 120
-        '
-        'camas_m
-        '
-        Me.camas_m.HeaderText = "Camas Matrimoniales"
-        Me.camas_m.Name = "camas_m"
-        Me.camas_m.ReadOnly = True
-        Me.camas_m.Width = 120
-        '
-        'camas_i
-        '
-        Me.camas_i.HeaderText = "Camas Individuales"
-        Me.camas_i.Name = "camas_i"
-        Me.camas_i.ReadOnly = True
-        Me.camas_i.Width = 120
-        '
-        'precio
-        '
-        Me.precio.HeaderText = "Precio"
-        Me.precio.Name = "precio"
-        Me.precio.ReadOnly = True
-        '
-        'Hotel
-        '
-        Me.Hotel.HeaderText = "Hotel"
-        Me.Hotel.Name = "Hotel"
-        Me.Hotel.ReadOnly = True
-        '
-        'Tipo_Habitacion
-        '
-        Me.Tipo_Habitacion.HeaderText = "Tipo Habitacion"
-        Me.Tipo_Habitacion.Name = "Tipo_Habitacion"
-        Me.Tipo_Habitacion.ReadOnly = True
-        Me.Tipo_Habitacion.Width = 140
         '
         'Label5
         '
@@ -403,7 +347,6 @@ Partial Class Form_ModifRese
         '
         'panel_habitaciones
         '
-        Me.panel_habitaciones.Controls.Add(Me.Button1)
         Me.panel_habitaciones.Controls.Add(Me.dgv_habtiacionesAgregadas)
         Me.panel_habitaciones.Controls.Add(Me.Label13)
         Me.panel_habitaciones.Controls.Add(Me.txt_dias)
@@ -424,32 +367,20 @@ Partial Class Form_ModifRese
         Me.panel_habitaciones.Size = New System.Drawing.Size(819, 370)
         Me.panel_habitaciones.TabIndex = 21
         '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button1.Location = New System.Drawing.Point(677, 32)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(5)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(132, 25)
-        Me.Button1.TabIndex = 30
-        Me.Button1.Text = "Desocupar"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
         'dgv_habtiacionesAgregadas
         '
         Me.dgv_habtiacionesAgregadas.AllowUserToAddRows = False
         Me.dgv_habtiacionesAgregadas.AllowUserToDeleteRows = False
         Me.dgv_habtiacionesAgregadas.BackgroundColor = System.Drawing.Color.AliceBlue
         Me.dgv_habtiacionesAgregadas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.ControlLight
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgv_habtiacionesAgregadas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlLight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgv_habtiacionesAgregadas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgv_habtiacionesAgregadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_habtiacionesAgregadas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7})
         Me.dgv_habtiacionesAgregadas.Location = New System.Drawing.Point(8, 214)
@@ -655,13 +586,6 @@ Partial Class Form_ModifRese
     Friend WithEvents Label12 As Label
     Friend WithEvents bt_limpiar As Button
     Friend WithEvents bt_res_guar As Button
-    Friend WithEvents No_habitacion As DataGridViewTextBoxColumn
-    Friend WithEvents Capacidad As DataGridViewTextBoxColumn
-    Friend WithEvents camas_m As DataGridViewTextBoxColumn
-    Friend WithEvents camas_i As DataGridViewTextBoxColumn
-    Friend WithEvents precio As DataGridViewTextBoxColumn
-    Friend WithEvents Hotel As DataGridViewTextBoxColumn
-    Friend WithEvents Tipo_Habitacion As DataGridViewTextBoxColumn
     Friend WithEvents dgv_habtiacionesAgregadas As DataGridView
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
@@ -677,5 +601,4 @@ Partial Class Form_ModifRese
     Friend WithEvents txt_idreservacion As TextBox
     Friend WithEvents Label14 As Label
     Friend WithEvents FileSystemWatcher1 As IO.FileSystemWatcher
-    Friend WithEvents Button1 As Button
 End Class
