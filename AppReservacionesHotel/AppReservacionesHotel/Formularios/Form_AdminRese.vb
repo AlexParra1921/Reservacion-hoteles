@@ -33,7 +33,9 @@
     End Sub
 
     Private Sub bt_modificar_Click(sender As Object, e As EventArgs) Handles bt_modificar.Click
-        'Se envia al formulario de Reservacion de habitaciones
+        'Se abre un formulario parecido al de reservaciones
+        Form_ModifRese.Show()
+
     End Sub
 
     Private Sub bt_cancelar_Click(sender As Object, e As EventArgs) Handles bt_cancelar.Click
