@@ -79,6 +79,11 @@
                 Form_cliente.txtbox_apellidoPaterno.Text = xDT.Rows(0)("apellido paterno")
                 Form_cliente.txtbox_apellidoMaterno.Text = xDT.Rows(0)("apellido materno")
 
+                id_cliente = xDT.Rows(0)("ID")
+                getSetNombre = xDT.Rows(0)("nombre")
+                getSetApellidoPaterno = xDT.Rows(0)("apellido paterno")
+                getSetApellidoMaterno = xDT.Rows(0)("apellido materno")
+
             End If
             consultaCliente = True
         End If
