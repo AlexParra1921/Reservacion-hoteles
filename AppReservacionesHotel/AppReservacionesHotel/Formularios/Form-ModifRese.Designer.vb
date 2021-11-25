@@ -50,6 +50,8 @@ Partial Class Form_ModifRese
         Me.txt_paterno = New System.Windows.Forms.TextBox()
         Me.txt_nombre = New System.Windows.Forms.TextBox()
         Me.panel_habitaciones = New System.Windows.Forms.Panel()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.dgv_habtiacionesAgregadas = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -110,17 +112,18 @@ Partial Class Form_ModifRese
         '
         Me.lb_costoTotal.AutoSize = True
         Me.lb_costoTotal.Font = New System.Drawing.Font("Microsoft YaHei UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lb_costoTotal.Location = New System.Drawing.Point(632, 332)
+        Me.lb_costoTotal.Location = New System.Drawing.Point(656, 332)
         Me.lb_costoTotal.Name = "lb_costoTotal"
-        Me.lb_costoTotal.Size = New System.Drawing.Size(31, 20)
+        Me.lb_costoTotal.Size = New System.Drawing.Size(18, 20)
         Me.lb_costoTotal.TabIndex = 25
-        Me.lb_costoTotal.Text = "$ 0"
+        Me.lb_costoTotal.Text = "0"
+        Me.lb_costoTotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label11
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(524, 332)
+        Me.Label11.Location = New System.Drawing.Point(524, 334)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(102, 18)
         Me.Label11.TabIndex = 23
@@ -130,11 +133,11 @@ Partial Class Form_ModifRese
         '
         Me.lb_no_habitaciones.AutoSize = True
         Me.lb_no_habitaciones.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lb_no_habitaciones.Location = New System.Drawing.Point(8, 332)
+        Me.lb_no_habitaciones.Location = New System.Drawing.Point(158, 336)
         Me.lb_no_habitaciones.Name = "lb_no_habitaciones"
-        Me.lb_no_habitaciones.Size = New System.Drawing.Size(144, 16)
+        Me.lb_no_habitaciones.Size = New System.Drawing.Size(16, 16)
         Me.lb_no_habitaciones.TabIndex = 20
-        Me.lb_no_habitaciones.Text = "No. Habitaciones: 0"
+        Me.lb_no_habitaciones.Text = "0"
         '
         'Label2
         '
@@ -347,6 +350,8 @@ Partial Class Form_ModifRese
         '
         'panel_habitaciones
         '
+        Me.panel_habitaciones.Controls.Add(Me.Label17)
+        Me.panel_habitaciones.Controls.Add(Me.Label10)
         Me.panel_habitaciones.Controls.Add(Me.dgv_habtiacionesAgregadas)
         Me.panel_habitaciones.Controls.Add(Me.Label13)
         Me.panel_habitaciones.Controls.Add(Me.txt_dias)
@@ -366,6 +371,26 @@ Partial Class Form_ModifRese
         Me.panel_habitaciones.Padding = New System.Windows.Forms.Padding(5)
         Me.panel_habitaciones.Size = New System.Drawing.Size(819, 370)
         Me.panel_habitaciones.TabIndex = 21
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Font = New System.Drawing.Font("Microsoft YaHei UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.Location = New System.Drawing.Point(632, 332)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(18, 20)
+        Me.Label17.TabIndex = 31
+        Me.Label17.Text = "$"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(8, 336)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(132, 16)
+        Me.Label10.TabIndex = 30
+        Me.Label10.Text = "No. Habitaciones:"
         '
         'dgv_habtiacionesAgregadas
         '
@@ -456,7 +481,6 @@ Partial Class Form_ModifRese
         '
         'bt_res_guar
         '
-        Me.bt_res_guar.Enabled = False
         Me.bt_res_guar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.bt_res_guar.Location = New System.Drawing.Point(734, 572)
         Me.bt_res_guar.Name = "bt_res_guar"
@@ -489,6 +513,8 @@ Partial Class Form_ModifRese
         '
         'data_reservacion
         '
+        Me.data_reservacion.CustomFormat = "yyyy-MM-dd"
+        Me.data_reservacion.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.data_reservacion.Location = New System.Drawing.Point(559, 24)
         Me.data_reservacion.Name = "data_reservacion"
         Me.data_reservacion.Size = New System.Drawing.Size(188, 20)
@@ -601,4 +627,6 @@ Partial Class Form_ModifRese
     Friend WithEvents txt_idreservacion As TextBox
     Friend WithEvents Label14 As Label
     Friend WithEvents FileSystemWatcher1 As IO.FileSystemWatcher
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Label17 As Label
 End Class

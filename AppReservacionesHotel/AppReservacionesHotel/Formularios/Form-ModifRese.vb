@@ -1,5 +1,7 @@
 ﻿Public Class Form_ModifRese
     Private lista_habitacion As New List(Of DataGridViewRow)
+    Private lista_habitacionDesocupadas As New List(Of DataGridViewRow)
+    Dim reser As New Reservaciones()
     Private Sub Form_ModifRese_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Extraemos del anterior formulario el id de la fila seleccionada del DGV
         Try
@@ -35,9 +37,9 @@
             date_entrada.Value = Date.Parse(reservacion.gs_fechaEntrada)
             date_salida.Value = Date.Parse(reservacion.gs_fechaSalida)
             '->Datos
-            lb_no_habitaciones.Text = "No. Habitaciones: " & reservacion.gs_No_habitaciones
+            lb_no_habitaciones.Text = reservacion.gs_No_habitaciones
             txt_dias.Text = reservacion.gs_num_dias
-            lb_costoTotal.Text = "$" & reservacion.gs_costo
+            lb_costoTotal.Text = reservacion.gs_costo
             '-> RECUPERAR HABITACIONES
             Dim hbHasRese As New Habitacion_has_reservacion(reservacion)
             Dim columnaDesocupar = New DataGridViewCheckBoxColumn()
@@ -105,8 +107,10 @@
 
             If Convert.ToBoolean(cellCheckBox.Value) Then
                 lista_habitacion.Remove(row)
+                lista_habitacionDesocupadas.Add(row)
             Else
                 lista_habitacion.Add(row)
+                lista_habitacionDesocupadas.Remove(row)
             End If
             calcularDatosHabitaciones()
 
@@ -130,8 +134,8 @@
 
         'Actualiza los datos en el formulario
         costoTotal = costo + (costo * iva)
-        lb_no_habitaciones.Text = String.Format("No. Habitaciones: {0}", numeroHabitaciones)
-        lb_costoTotal.Text = String.Format("$ {0}", costoTotal)
+        lb_no_habitaciones.Text = String.Format("{0}", numeroHabitaciones)
+        lb_costoTotal.Text = String.Format("{0}", costoTotal)
     End Sub
 
 
@@ -143,5 +147,73 @@
         End If
 
 
+    End Sub
+
+    Private Sub bt_res_guar_Click(sender As Object, e As EventArgs) Handles bt_res_guar.Click
+        reser.gs_id_reservacion = txt_idreservacion.Text
+
+        '->ID Empleado
+        reser.gs_id_empleado = 1
+        '-> CLIENTE
+        reser.gs_id_cliente = txt_idcliente.Text
+
+        '-> FECHAS 
+        reser.gs_fechaEntrada = date_entrada.Text
+        reser.gs_fechaSalida = date_salida.Text
+        reser.gs_FechaReservacion = data_reservacion.Text
+
+        '-> DATOS
+        reser.gs_No_habitaciones = lb_no_habitaciones.Text
+        reser.gs_num_dias = txt_dias.Text
+        reser.gs_costo = lb_costoTotal.Text
+
+        'Lista de habitaciones
+
+        Dim numsHabitacionesDesocupadas As New List(Of Integer)
+        Dim numsHabitacionesAgregadas As New List(Of Integer)
+        For Each no_habitacionDesocupada As DataGridViewRow In lista_habitacionDesocupadas
+            numsHabitacionesDesocupadas.Add(no_habitacionDesocupada.Cells(1).Value)
+        Next
+        For Each no_habitacionAgregada As DataGridViewRow In dgv_habtiacionesAgregadas.Rows
+            numsHabitacionesAgregadas.Add(no_habitacionAgregada.Cells(1).Value)
+        Next
+
+        If reser.actualizar(numsHabitacionesDesocupadas, numsHabitacionesAgregadas) Then
+            MsgBox("Se ha actualizado correctamente la habitacion", MsgBoxStyle.Information, "Actualizacion de Reservaciones")
+        End If
+
+    End Sub
+
+    Private Sub bt_buscarCliente_Click(sender As Object, e As EventArgs) Handles bt_buscarCliente.Click
+        reser.gs_id_reservacion = txt_idcliente.Text
+    End Sub
+
+
+
+    Private Sub date_entrada_CloseUp(sender As Object, e As EventArgs) Handles date_entrada.CloseUp
+        Dim fecha_entrada As Date = DateTime.Parse(date_entrada.Value)
+        Dim fecha_salida As Date = DateTime.Parse(date_salida.Value)
+        Dim numDias As Integer = fecha_salida.Subtract(fecha_entrada).TotalDays
+        If numDias > 0 Then
+            txt_dias.Text = numDias
+        Else
+            txt_dias.Text = ""
+        End If
+    End Sub
+
+    Private Sub date_salida_CloseUp(sender As Object, e As EventArgs) Handles date_salida.CloseUp
+        Dim fecha_entrada As Date = DateTime.Parse(date_entrada.Value)
+        Dim fecha_salida As Date = DateTime.Parse(date_salida.Value)
+
+        Dim numDias As Integer = fecha_salida.Subtract(fecha_entrada).TotalDays
+        If numDias > 0 Then
+            txt_dias.Text = numDias
+
+        Else
+            MsgBox("La fecha de entrada y la fecha de salida estan incorrectas, la fecha de salida esta atrasada",
+                   MsgBoxStyle.Information, "Advertencia")
+            txt_dias.Text = ""
+
+        End If
     End Sub
 End Class

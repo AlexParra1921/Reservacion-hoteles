@@ -230,6 +230,88 @@ Public Class Reservaciones
         End Try
     End Function
 
+
+    Public Function actualizar(ByVal listaId_habitacionesDesocupadas As List(Of Integer), ByVal listaId_habitacionesAgregadas As List(Of Integer)) As Boolean
+        Dim command As MySqlCommand = cnx.CreateCommand()
+        Dim Transac As MySqlTransaction
+
+        'CREAMOS LA TRANSACCION
+        Transac = cnx.BeginTransaction()
+        command.Connection = cnx
+        command.Transaction = Transac
+
+        Try
+            'VALIDAMOS QUE LOS CAMPOS PARA LA RESERVACION ESTEN CORRECTOS
+            validarCampos()
+
+
+            Try
+                command.CommandText = String.Format("update reservacion set ID_Empleado={0}, ID_Cliente={1}, Fecha_Entrada='{2}', Fecha_Salida='{3}',  Fecha_Reservacion='{4}', costo={5}, No_Dias={6}, No_habitaciones={7} where id_reservacion={8}", id_empleado, id_cliente,
+                                   fechaEntrada.ToString, fechaSalida.ToString, fechaReservacion.ToString, costo.ToString.Replace(",", "."), num_dias, no_habitaciones, id_reservaciones)
+                command.ExecuteNonQuery()
+            Catch ex As Exception
+                Throw New Exception(ex.Message)
+            End Try
+
+            'ESTE QUERY SERA PARA ELIMINAR LAS HABITACIONES DESOCUPADAS DE LA TABLA DE HABITACIONES HAS RESERVACION
+            For Each no_habitacion As Integer In listaId_habitacionesDesocupadas
+                Try
+                    command.CommandText = String.Format("delete from habitacion_has_reservacion where id_reservacion={0} and no_habitacion={1}", id_reservaciones, no_habitacion)
+                    command.ExecuteNonQuery()
+                Catch ex As Exception
+                    Throw New Exception(String.Format("Error al desocupar habitacion {0} \n {1}", no_habitacion, ex.Message))
+                End Try
+                'MARCA LA HABITACION COMO OCUPADA
+                Try
+                    command.CommandText = String.Format("update habitacion set disponibilidad=1 where No_habitacion={0};", no_habitacion)
+                    command.ExecuteNonQuery()
+                Catch ex As Exception
+                    Throw New Exception(String.Format("Error al marcar habitacion Desocupada habitacion {0} \n {1}", no_habitacion, ex.Message))
+                End Try
+            Next
+
+
+
+
+            For Each id_habitacion As Integer In listaId_habitacionesAgregadas
+                'REALIZA LA RESERVACION DE CADA HABITACION INSERTANDO EN LA TABLA UN REGISTRO QUE MARCA QUE HABITACION TIENE RESERVACION 
+                Try
+                    command.CommandText = String.Format("insert into habitacion_has_reservacion values({0},{1})", id_reservaciones, id_habitacion)
+                    command.ExecuteNonQuery()
+                Catch ex As Exception
+                    Throw New Exception(String.Format("Error al reservar habitacion {0} \n {1}", id_habitacion, ex.Message))
+                End Try
+                'MARCA LA HABITACION COMO OCUPADA
+                Try
+                    command.CommandText = String.Format("update habitacion set disponibilidad=0 where No_habitacion={0};", id_habitacion)
+                    command.ExecuteNonQuery()
+                Catch ex As Exception
+                    Throw New Exception(String.Format("Error al marcar habitacion Ocupada habitacion {0} \n {1}", id_habitacion, ex.Message))
+                End Try
+
+            Next
+
+
+
+
+            'SI TODAS LAS TRANSACCIONES SE REALIZARON SE REALIZA EL COMMIT
+            Transac.Commit()
+            actualizar = True
+        Catch ex As Exception
+            Console.WriteLine("Error al actualizar la reservacion \n Mensaje de error ----> " & ex.Message)
+            actualizar = False
+            Try
+                Transac.Rollback()
+            Catch ex2 As Exception
+                MsgBox("Hubo un erro al realizar la actualizcion de la reservacion, la reservacion esta incompleta, comunicace con su DBA!" & ex2.Message, MsgBoxStyle.Critical, "Error")
+            End Try
+
+        End Try
+    End Function
+
+
+
+
     'METODO PARA BUSCAR EL ULTIMO ID DE RESERVACION
     Public Sub asignarIdReservacion()
         Dim strSql As String
@@ -295,6 +377,7 @@ order by res.id_reservacion")
                 Throw New ArgumentException("ID de reservacion invalido")
             End If
             'Realizara la actualizacion de habitaciones como disponibles
+
             Try
                 command.CommandText = String.Format("update habitacion set disponibilidad=1 where No_habitacion=(select no_habitacion from habitacion_has_reservacion hs where id_reservacion={0})",
                                                       id_reservaciones)

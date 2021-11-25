@@ -37,13 +37,39 @@ Public Class Habitacion_has_reservacion
         Dim strSql As New String("")
         Dim xCnx As New Mysql
         Dim xDT As New DataTable
+        If reservacion.gs_id_reservacion <> 0 Then
 
-        strSql = String.Format("select hb.no_habitacion as '#Habitacion',Capacidad, no_camas_m as 'Camas Matrimoniales', no_camas_i as 'Camas Individuales', Precio, nombre as Hotel,descripcion 'Tipo Habitacion' 
+            strSql = String.Format("select hb.no_habitacion as '#Habitacion',Capacidad, no_camas_m as 'Camas Matrimoniales', no_camas_i as 'Camas Individuales', Precio, nombre as Hotel,descripcion 'Tipo Habitacion' 
                                     from categoria as ca, hotel as ht, habitacion as hb, habitacion_has_reservacion hs 
                                     where ht.id_hotel=hb.id_hotel and ca.id_categoria=hb.id_categoria
                                     and hb.no_habitacion=hs.no_habitacion and hs.id_reservacion={0}", reservacion.gs_id_reservacion)
-        consultarHabitaciones = xCnx.objetoDataAdapter(strSql)
+            consultarHabitaciones = xCnx.objetoDataAdapter(strSql)
+        Else
+            Throw New ArgumentException("Habitacion no contiene el id")
+        End If
     End Function
+
+
+    Public Sub eliminarHabitacion_has_reservacion()
+        Dim strSql As New String("")
+        Dim xCnx As New Mysql
+
+        If reservacion.gs_id_reservacion = 0 Then
+            Throw New ArgumentException("La reservacion tiene un ID invalido")
+            Return
+        End If
+        If habitacion.getSetHabitacion = 0 Then
+            Throw New ArgumentException("La habitacion tiene un Numero invalido")
+            Return
+        End If
+
+        strSql = String.Format("delete from habitacion_has_reservacion where id_reservacion={0} and no_habitacion={1}", reservacion.gs_id_reservacion, habitacion.getSetHabitacion)
+
+        xCnx.objetoCommand(strSql)
+
+    End Sub
+
+
 
     Public Function consultarReservaciones() As DataTable
         Dim strSql As New String("")
