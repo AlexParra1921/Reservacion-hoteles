@@ -29,7 +29,6 @@ Partial Class Form_reservaciones
         Me.txt_idcliente = New System.Windows.Forms.TextBox()
         Me.bt_buscarCliente = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.bt_agregarCliente = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -115,7 +114,7 @@ Partial Class Form_reservaciones
         'bt_buscarCliente
         '
         Me.bt_buscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.bt_buscarCliente.Location = New System.Drawing.Point(242, 7)
+        Me.bt_buscarCliente.Location = New System.Drawing.Point(233, 23)
         Me.bt_buscarCliente.Name = "bt_buscarCliente"
         Me.bt_buscarCliente.Size = New System.Drawing.Size(94, 23)
         Me.bt_buscarCliente.TabIndex = 2
@@ -132,17 +131,6 @@ Partial Class Form_reservaciones
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "CLIENTE"
         '
-        'bt_agregarCliente
-        '
-        Me.bt_agregarCliente.Enabled = False
-        Me.bt_agregarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.bt_agregarCliente.Location = New System.Drawing.Point(242, 33)
-        Me.bt_agregarCliente.Name = "bt_agregarCliente"
-        Me.bt_agregarCliente.Size = New System.Drawing.Size(94, 23)
-        Me.bt_agregarCliente.TabIndex = 4
-        Me.bt_agregarCliente.Text = "Agregar"
-        Me.bt_agregarCliente.UseVisualStyleBackColor = True
-        '
         'Panel2
         '
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -155,7 +143,6 @@ Partial Class Form_reservaciones
         Me.Panel2.Controls.Add(Me.txt_paterno)
         Me.Panel2.Controls.Add(Me.txt_nombre)
         Me.Panel2.Controls.Add(Me.Label2)
-        Me.Panel2.Controls.Add(Me.bt_agregarCliente)
         Me.Panel2.Controls.Add(Me.txt_idcliente)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.bt_buscarCliente)
@@ -553,7 +540,6 @@ Partial Class Form_reservaciones
     Friend WithEvents txt_idcliente As TextBox
     Friend WithEvents bt_buscarCliente As Button
     Friend WithEvents Label1 As Label
-    Friend WithEvents bt_agregarCliente As Button
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label2 As Label
     Friend WithEvents txt_nombre As TextBox

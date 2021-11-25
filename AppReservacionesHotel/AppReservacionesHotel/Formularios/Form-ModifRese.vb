@@ -185,7 +185,27 @@
     End Sub
 
     Private Sub bt_buscarCliente_Click(sender As Object, e As EventArgs) Handles bt_buscarCliente.Click
-        reser.gs_id_reservacion = txt_idcliente.Text
+        Dim Cliente As New Cliente
+        If Form_buscarCliente.ShowDialog() = DialogResult.OK Then
+            'Si se realiza la seleccion del cliente entonces se guardara su informacion 
+            ' y se realizara la busqueda del telefono 
+            Cliente = Form_buscarCliente.cliente
+            txt_idcliente.Text = Cliente.getSetidCliente
+            txt_nombre.Text = Cliente.getSetNombre
+            txt_paterno.Text = Cliente.getSetApellidoPaterno
+            txt_materno.Text = Cliente.getSetApellidoMaterno
+
+            Dim telefono As New Telefono()
+            telefono.getSetIdDueño = Cliente.getSetidCliente
+            telefono.getSetTipoDueño = Persona.tipoPersona.Cliente
+
+            If telefono.consultaTel_tel Then
+                txt_telefono.Text = telefono.getSetNumero
+            End If
+
+            panel_habitaciones.Enabled = True
+
+        End If
     End Sub
 
 

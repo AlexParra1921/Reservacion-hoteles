@@ -34,7 +34,9 @@
 
     Private Sub bt_modificar_Click(sender As Object, e As EventArgs) Handles bt_modificar.Click
         'Se abre un formulario parecido al de reservaciones
-        Form_ModifRese.Show()
+        Form_ModifRese.ShowDialog()
+        Dim reservacion As New Reservaciones
+        reservacion.poblarDGVReservaciones(dgv_reservaciones)
 
     End Sub
 
@@ -62,6 +64,10 @@
 
 
 
+
+    End Sub
+
+    Private Sub dgv_reservaciones_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_reservaciones.CellContentClick
 
     End Sub
 End Class
