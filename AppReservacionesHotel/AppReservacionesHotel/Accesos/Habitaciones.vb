@@ -96,6 +96,47 @@ Public Class Habitaciones
         End If
     End Function
 
+    'Metodo para insertar las Habitaciones
+    Public Sub insertarHabitacion()
+        Dim strSql As New String("")
+        Dim xCnx As New Mysql
+
+        If no_habitacion <> 0 And getSetIdCategoria <> 0 And getSetIdHotel <> 0 And getSetDisponible <> False And getSetCapacidad <> 0 Then
+            strSql = "INSERT INTO habitacion values(" & no_habitacion & "," & getSetIdCategoria & "," &
+                getSetIdHotel & ", " & getSetDisponible & ", " & getSetCapacidad & ")"
+            xCnx.objetoCommand(strSql)
+        Else
+            MsgBox("¡Faltan datos para registrar la habitacion!", MsgBoxStyle.Critical, "¡¡ATENCION!!")
+        End If
+    End Sub
+
+    'Metodo para actualizar Habitacion
+    Public Sub actualizarHabitacion()
+        Dim strSql As New String("")
+        Dim xCnx As New Mysql
+
+        If no_habitacion <> 0 And getSetIdCategoria <> 0 And getSetIdHotel <> 0 And getSetDisponible <> False And getSetCapacidad <> 0 Then
+            strSql = "UPDATE Habitacion set No_Habitacion=" & no_habitacion & "," & getSetIdCategoria & "," &
+                getSetIdHotel & ", " & getSetDisponible & ", " & getSetCapacidad & " WHERE No_Habitacion=" & no_habitacion
+
+            xCnx.objetoCommand(strSql)
+        Else
+            MsgBox("¡Faltan datos para actualizar la habitacion!", MsgBoxStyle.Critical, "¡¡ATENCION!!")
+        End If
+    End Sub
+
+    Public Sub eliminarHabitacion()
+        Dim strSql As String
+        Dim xCnx As New Mysql
+
+        If no_habitacion <> 0 And getSetIdCategoria <> 0 And getSetIdHotel <> 0 And getSetDisponible <> False And getSetCapacidad <> 0 Then
+            strSql = "DELETE FROM Habitacion where No_Habitacion=" & no_habitacion
+            xCnx.objetoCommand(strSql)
+        Else
+            MsgBox("¡Faltan datos para eliminar la categoria!", MsgBoxStyle.Critical, "¡¡ATENCION!!")
+        End If
+    End Sub
+
     'METODO PARA CONSULTAR HABITACION
     Public Function consultarHabitacion() As Boolean
         Dim strSql As String
@@ -118,8 +159,6 @@ Public Class Habitaciones
             End If
             consultarHabitacion = True
         End If
-
-
     End Function
 
 
@@ -229,7 +268,7 @@ Public Class Habitaciones
 
         Dim strSQL As String
         Dim xCnx As New Mysql
-        strSQL = String.Format("select no_habitacion,capacidad, no_camas_m as 'Camas Matrimoniales', no_camas_i as 'Camas Individuales', precio, nombre as Hotel,descripcion 'Tipo Habitacion' 
+        strSQL = String.Format("select no_habitacion as '#Habitacion',capacidad as 'Capacidad', no_camas_m as 'Camas Matrimoniales', no_camas_i as 'Camas Individuales', precio as 'Precio', nombre as 'Hotel',descripcion as 'Tipo Habitacion' 
                                     from categoria as ca, hotel as ht, habitacion as hb 
                                     where ht.id_hotel=hb.id_hotel and ca.id_categoria=hb.id_categoria 
                                     and hb.id_hotel={0} and hb.id_categoria={1}", id_hotel, id_categoria)
@@ -242,7 +281,7 @@ Public Class Habitaciones
     Private Function consultarTodasLasHabitacionesDisponibles() As Object
         Dim strSQL As String
         Dim xCnx As New Mysql
-        strSQL = String.Format("select no_habitacion,capacidad, no_camas_m as 'Camas Matrimoniales', no_camas_i as 'Camas Individuales', precio, nombre as Hotel,descripcion 'Tipo Habitacion' 
+        strSQL = String.Format("select no_habitacion as '#Habitacion',capacidad as 'Capacidad', no_camas_m as 'Camas Matrimoniales', no_camas_i as 'Camas Individuales', precio 'Precio', nombre as 'Hotel',descripcion as 'Tipo Habitacion' 
                                     from categoria as ca, hotel as ht, habitacion as hb 
                                     where ht.id_hotel=hb.id_hotel and ca.id_categoria=hb.id_categoria and hb.disponibilidad=1 
                                     and hb.id_hotel={0} and hb.id_categoria={1};", id_hotel, id_categoria)

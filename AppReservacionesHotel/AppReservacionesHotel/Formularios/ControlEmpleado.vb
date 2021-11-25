@@ -59,6 +59,10 @@
     Private Sub bt_habitaciones_Click(sender As Object, e As EventArgs) Handles bt_habitaciones.Click
         lb_ventana.Text = ""
         lb_ventana.Text = "Habitaciones"
+        FormHabitacion.MdiParent = Me
+        panel_main.Controls.Add(FormHabitacion)
+        FormHabitacion.Show()
+        FormHabitacion.WindowState = FormWindowState.Maximized
     End Sub
 
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
@@ -68,5 +72,9 @@
     Private Sub AdministrarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AdministrarToolStripMenuItem.Click
 
         Form_AdminRese.Show()
+    End Sub
+
+    Private Sub AgregarCategoriasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgregarCategoriasToolStripMenuItem.Click
+        formCategoriaHabitacion.Show()
     End Sub
 End Class

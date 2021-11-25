@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Categoria
+Partial Class formCategoriaHabitacion
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -26,17 +26,19 @@ Partial Class Categoria
         Me.CamasMatri = New System.Windows.Forms.Label()
         Me.CamasIndiv = New System.Windows.Forms.Label()
         Me.Precio = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextBoxPrecio = New System.Windows.Forms.TextBox()
         Me.Eliminar = New System.Windows.Forms.Button()
-        Me.Salir = New System.Windows.Forms.Button()
+        Me.Limpiar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Nuevo = New System.Windows.Forms.Button()
+        Me.TextBoxCM = New System.Windows.Forms.TextBox()
+        Me.TextBoxCI = New System.Windows.Forms.TextBox()
+        Me.TextBoxCat = New System.Windows.Forms.TextBox()
+        Me.dgvCat = New System.Windows.Forms.DataGridView()
+        Me.Buscar = New System.Windows.Forms.Button()
         Me.Guardar = New System.Windows.Forms.Button()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TextBoxBusca = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        CType(Me.dgvCat, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'NumCat
@@ -79,33 +81,33 @@ Partial Class Categoria
         Me.Precio.TabIndex = 6
         Me.Precio.Text = "Precio Total:"
         '
-        'TextBox1
+        'TextBoxPrecio
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(474, 83)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(129, 24)
-        Me.TextBox1.TabIndex = 7
+        Me.TextBoxPrecio.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxPrecio.Location = New System.Drawing.Point(474, 83)
+        Me.TextBoxPrecio.Name = "TextBoxPrecio"
+        Me.TextBoxPrecio.Size = New System.Drawing.Size(129, 24)
+        Me.TextBoxPrecio.TabIndex = 7
         '
         'Eliminar
         '
         Me.Eliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Eliminar.Location = New System.Drawing.Point(480, 285)
+        Me.Eliminar.Location = New System.Drawing.Point(480, 323)
         Me.Eliminar.Name = "Eliminar"
         Me.Eliminar.Size = New System.Drawing.Size(90, 30)
         Me.Eliminar.TabIndex = 8
         Me.Eliminar.Text = "Eliminar"
         Me.Eliminar.UseVisualStyleBackColor = True
         '
-        'Salir
+        'Limpiar
         '
-        Me.Salir.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Salir.Location = New System.Drawing.Point(576, 285)
-        Me.Salir.Name = "Salir"
-        Me.Salir.Size = New System.Drawing.Size(90, 30)
-        Me.Salir.TabIndex = 9
-        Me.Salir.Text = "Salir"
-        Me.Salir.UseVisualStyleBackColor = True
+        Me.Limpiar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Limpiar.Location = New System.Drawing.Point(576, 323)
+        Me.Limpiar.Name = "Limpiar"
+        Me.Limpiar.Size = New System.Drawing.Size(90, 30)
+        Me.Limpiar.TabIndex = 9
+        Me.Limpiar.Text = "Limpiar"
+        Me.Limpiar.UseVisualStyleBackColor = True
         '
         'Label1
         '
@@ -117,80 +119,100 @@ Partial Class Categoria
         Me.Label1.TabIndex = 10
         Me.Label1.Text = "Datos de Categoría"
         '
-        'TextBox2
+        'TextBoxCM
         '
-        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(208, 86)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(129, 24)
-        Me.TextBox2.TabIndex = 12
+        Me.TextBoxCM.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxCM.Location = New System.Drawing.Point(208, 86)
+        Me.TextBoxCM.Name = "TextBoxCM"
+        Me.TextBoxCM.Size = New System.Drawing.Size(129, 24)
+        Me.TextBoxCM.TabIndex = 12
         '
-        'TextBox3
+        'TextBoxCI
         '
-        Me.TextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.Location = New System.Drawing.Point(530, 45)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(129, 24)
-        Me.TextBox3.TabIndex = 13
+        Me.TextBoxCI.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxCI.Location = New System.Drawing.Point(530, 45)
+        Me.TextBoxCI.Name = "TextBoxCI"
+        Me.TextBoxCI.Size = New System.Drawing.Size(129, 24)
+        Me.TextBoxCI.TabIndex = 13
         '
-        'TextBox4
+        'TextBoxCat
         '
-        Me.TextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.Location = New System.Drawing.Point(170, 48)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(129, 24)
-        Me.TextBox4.TabIndex = 14
+        Me.TextBoxCat.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxCat.Location = New System.Drawing.Point(170, 48)
+        Me.TextBoxCat.Name = "TextBoxCat"
+        Me.TextBoxCat.Size = New System.Drawing.Size(129, 24)
+        Me.TextBoxCat.TabIndex = 14
         '
-        'DataGridView1
+        'dgvCat
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(31, 127)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(628, 150)
-        Me.DataGridView1.TabIndex = 15
+        Me.dgvCat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvCat.Location = New System.Drawing.Point(31, 165)
+        Me.dgvCat.Name = "dgvCat"
+        Me.dgvCat.Size = New System.Drawing.Size(628, 150)
+        Me.dgvCat.TabIndex = 15
         '
-        'Nuevo
+        'Buscar
         '
-        Me.Nuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Nuevo.Location = New System.Drawing.Point(288, 283)
-        Me.Nuevo.Name = "Nuevo"
-        Me.Nuevo.Size = New System.Drawing.Size(90, 30)
-        Me.Nuevo.TabIndex = 16
-        Me.Nuevo.Text = "Nuevo"
-        Me.Nuevo.UseVisualStyleBackColor = True
+        Me.Buscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Buscar.Location = New System.Drawing.Point(288, 321)
+        Me.Buscar.Name = "Buscar"
+        Me.Buscar.Size = New System.Drawing.Size(90, 30)
+        Me.Buscar.TabIndex = 16
+        Me.Buscar.Text = "Buscar"
+        Me.Buscar.UseVisualStyleBackColor = True
         '
         'Guardar
         '
         Me.Guardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guardar.Location = New System.Drawing.Point(384, 284)
+        Me.Guardar.Location = New System.Drawing.Point(384, 322)
         Me.Guardar.Name = "Guardar"
         Me.Guardar.Size = New System.Drawing.Size(90, 30)
         Me.Guardar.TabIndex = 17
         Me.Guardar.Text = "Guardar"
         Me.Guardar.UseVisualStyleBackColor = True
         '
-        'Categoria
+        'TextBoxBusca
+        '
+        Me.TextBoxBusca.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxBusca.Location = New System.Drawing.Point(530, 135)
+        Me.TextBoxBusca.Name = "TextBoxBusca"
+        Me.TextBoxBusca.Size = New System.Drawing.Size(129, 24)
+        Me.TextBoxBusca.TabIndex = 18
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(382, 135)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(133, 18)
+        Me.Label2.TabIndex = 19
+        Me.Label2.Text = "Busca el N° de Cat"
+        '
+        'formCategoriaHabitacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(684, 321)
+        Me.ClientSize = New System.Drawing.Size(683, 356)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.TextBoxBusca)
         Me.Controls.Add(Me.Guardar)
-        Me.Controls.Add(Me.Nuevo)
-        Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.Buscar)
+        Me.Controls.Add(Me.dgvCat)
+        Me.Controls.Add(Me.TextBoxCat)
+        Me.Controls.Add(Me.TextBoxCI)
+        Me.Controls.Add(Me.TextBoxCM)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Salir)
+        Me.Controls.Add(Me.Limpiar)
         Me.Controls.Add(Me.Eliminar)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.TextBoxPrecio)
         Me.Controls.Add(Me.Precio)
         Me.Controls.Add(Me.CamasIndiv)
         Me.Controls.Add(Me.CamasMatri)
         Me.Controls.Add(Me.NumCat)
-        Me.Name = "Categoria"
+        Me.Name = "formCategoriaHabitacion"
         Me.Text = "Categoría de Habitación"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvCat, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -199,14 +221,16 @@ Partial Class Categoria
     Friend WithEvents CamasMatri As Label
     Friend WithEvents CamasIndiv As Label
     Friend WithEvents Precio As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TextBoxPrecio As TextBox
     Friend WithEvents Eliminar As Button
-    Friend WithEvents Salir As Button
+    Friend WithEvents Limpiar As Button
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents Nuevo As Button
+    Friend WithEvents TextBoxCM As TextBox
+    Friend WithEvents TextBoxCI As TextBox
+    Friend WithEvents TextBoxCat As TextBox
+    Friend WithEvents dgvCat As DataGridView
+    Friend WithEvents Buscar As Button
     Friend WithEvents Guardar As Button
+    Friend WithEvents TextBoxBusca As TextBox
+    Friend WithEvents Label2 As Label
 End Class
