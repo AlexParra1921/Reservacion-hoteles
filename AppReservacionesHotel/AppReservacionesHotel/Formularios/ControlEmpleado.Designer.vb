@@ -65,7 +65,7 @@ Partial Class ControlEmpleado
         Me.bt_huesped.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.bt_huesped.Cursor = System.Windows.Forms.Cursors.Hand
         Me.bt_huesped.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.bt_huesped.Font = New System.Drawing.Font("Lato Black", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.bt_huesped.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.bt_huesped.ForeColor = System.Drawing.Color.LightSlateGray
         Me.bt_huesped.Location = New System.Drawing.Point(6, 369)
         Me.bt_huesped.Margin = New System.Windows.Forms.Padding(1)
@@ -84,7 +84,7 @@ Partial Class ControlEmpleado
         Me.bt_habitaciones.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.bt_habitaciones.Cursor = System.Windows.Forms.Cursors.Hand
         Me.bt_habitaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.bt_habitaciones.Font = New System.Drawing.Font("Lato Black", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.bt_habitaciones.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.bt_habitaciones.ForeColor = System.Drawing.Color.LightSlateGray
         Me.bt_habitaciones.Location = New System.Drawing.Point(6, 248)
         Me.bt_habitaciones.Margin = New System.Windows.Forms.Padding(1)
@@ -103,7 +103,7 @@ Partial Class ControlEmpleado
         Me.bt_reservaciones.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.bt_reservaciones.Cursor = System.Windows.Forms.Cursors.Hand
         Me.bt_reservaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.bt_reservaciones.Font = New System.Drawing.Font("Lato Black", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.bt_reservaciones.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.bt_reservaciones.ForeColor = System.Drawing.Color.LightSlateGray
         Me.bt_reservaciones.Location = New System.Drawing.Point(6, 6)
         Me.bt_reservaciones.Margin = New System.Windows.Forms.Padding(1)
@@ -143,7 +143,7 @@ Partial Class ControlEmpleado
         Me.bt_clientes.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.bt_clientes.Cursor = System.Windows.Forms.Cursors.Hand
         Me.bt_clientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.bt_clientes.Font = New System.Drawing.Font("Lato Black", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.bt_clientes.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.bt_clientes.ForeColor = System.Drawing.Color.LightSlateGray
         Me.bt_clientes.Location = New System.Drawing.Point(6, 127)
         Me.bt_clientes.Margin = New System.Windows.Forms.Padding(1)
@@ -162,7 +162,7 @@ Partial Class ControlEmpleado
         Me.bt_salir.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.bt_salir.Cursor = System.Windows.Forms.Cursors.Hand
         Me.bt_salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.bt_salir.Font = New System.Drawing.Font("Lato Black", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.bt_salir.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.bt_salir.ForeColor = System.Drawing.Color.LightSlateGray
         Me.bt_salir.Location = New System.Drawing.Point(6, 490)
         Me.bt_salir.Margin = New System.Windows.Forms.Padding(1)
@@ -189,10 +189,10 @@ Partial Class ControlEmpleado
         'lb_ventana
         '
         Me.lb_ventana.AutoSize = True
-        Me.lb_ventana.Font = New System.Drawing.Font("Lato Black", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lb_ventana.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lb_ventana.Location = New System.Drawing.Point(296, 10)
         Me.lb_ventana.Name = "lb_ventana"
-        Me.lb_ventana.Size = New System.Drawing.Size(0, 33)
+        Me.lb_ventana.Size = New System.Drawing.Size(0, 31)
         Me.lb_ventana.TabIndex = 0
         Me.lb_ventana.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
@@ -246,13 +246,13 @@ Partial Class ControlEmpleado
         'AgregarToolStripMenuItem
         '
         Me.AgregarToolStripMenuItem.Name = "AgregarToolStripMenuItem"
-        Me.AgregarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AgregarToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
         Me.AgregarToolStripMenuItem.Text = "Agregar"
         '
         'AdministrarToolStripMenuItem
         '
         Me.AdministrarToolStripMenuItem.Name = "AdministrarToolStripMenuItem"
-        Me.AdministrarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AdministrarToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
         Me.AdministrarToolStripMenuItem.Text = "Administrar "
         '
         'ClientesToolStripMenuItem
@@ -322,20 +322,20 @@ Partial Class ControlEmpleado
         'AgregarUbicacionToolStripMenuItem
         '
         Me.AgregarUbicacionToolStripMenuItem.Name = "AgregarUbicacionToolStripMenuItem"
-        Me.AgregarUbicacionToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
+        Me.AgregarUbicacionToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.AgregarUbicacionToolStripMenuItem.Text = "Agregar Ubicacion"
         '
         'AgregarCategoriasToolStripMenuItem
         '
         Me.AgregarCategoriasToolStripMenuItem.Name = "AgregarCategoriasToolStripMenuItem"
-        Me.AgregarCategoriasToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
+        Me.AgregarCategoriasToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.AgregarCategoriasToolStripMenuItem.Text = "Agregar categorias"
         '
         'BuscarTelefonoToolStripMenuItem
         '
         Me.BuscarTelefonoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CleinteToolStripMenuItem, Me.HuespedToolStripMenuItem1})
         Me.BuscarTelefonoToolStripMenuItem.Name = "BuscarTelefonoToolStripMenuItem"
-        Me.BuscarTelefonoToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
+        Me.BuscarTelefonoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.BuscarTelefonoToolStripMenuItem.Text = "Buscar telefono"
         '
         'CleinteToolStripMenuItem
@@ -361,7 +361,7 @@ Partial Class ControlEmpleado
         '
         'ControlEmpleado
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
@@ -371,7 +371,7 @@ Partial Class ControlEmpleado
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.FlowLayoutPanel1)
         Me.Controls.Add(Me.MenuStrip1)
-        Me.Font = New System.Drawing.Font("Lato", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Margin = New System.Windows.Forms.Padding(4, 2, 4, 2)
