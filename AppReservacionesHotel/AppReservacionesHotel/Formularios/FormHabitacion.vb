@@ -66,13 +66,21 @@
 
         If TextBoxBuscar.Text <> "" Then
             habitacion.getSetHabitacion = CInt(TextBoxBuscar.Text)
+            Dim id As Integer = TextBoxBuscar.Text
+            Dim founded = False
+            For Each row As DataGridViewRow In dgv_hab.Rows
+                If id = row.Cells(0).Value Then
+                    dgv_hab.CurrentCell = dgv_hab.Item(0, row.Index)
+                    dgv_hab.Rows(row.Index).Selected = True
+                    founded = True
+                End If
+            Next
+            If founded = False Then
+                MsgBox("Reservacion  no encontrada", MsgBoxStyle.Information, "Busqueda De Reservacion")
+            End If
         End If
 
-        If habitacion.consultarHabitacion() Then
-            MsgBox("Categoria encontrada!")
-        Else
-            MsgBox("Categoria no encontrada!")
-        End If
+
 
     End Sub
 
@@ -116,5 +124,15 @@
             habitacion.poblarDGVBusquedaHabitacion(dgv_hab)
         End If
 
+    End Sub
+
+    Private Sub dgv_hab_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_hab.CellClick
+        Dim renglon As Integer
+
+
+        renglon = dgv_hab.CurrentCellAddress.Y
+
+        TextBoxHab.Text = dgv_hab.Rows(renglon).Cells(0).Value
+        TextBoxDisponibilidad.Text = 1
     End Sub
 End Class
