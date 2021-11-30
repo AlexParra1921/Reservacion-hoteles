@@ -114,43 +114,6 @@
 
     End Sub
 
-    Private Sub dgv_cliente_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_cliente.CellContentClick
-        Dim renglon As Integer
-        'Con éste código podemos seleccionar los datos que están mostrados
-        'en un DGV, la variable renglón no sirve para saber en qué renglón se da clic
-
-        renglon = dgv_cliente.CurrentCellAddress.Y
-
-        'Al darle clic al renglón mostramos los datos en las cajas de texto
-        'DGVclientes.Rows(renglon) nos dice cual renglón se ha dado clic
-        'Cells(0).Value recupera el DATO de la celda o columna del DGV y lo 
-        'dejamos en la caja de texto correspondiente
-
-        txtbox_id.Text = dgv_cliente.Rows(renglon).Cells(0).Value
-        txt_nombre.Text = dgv_cliente.Rows(renglon).Cells(1).Value
-        txtbox_apellidoPaterno.Text = dgv_cliente.Rows(renglon).Cells(2).Value
-        txtbox_apellidoMaterno.Text = dgv_cliente.Rows(renglon).Cells(3).Value
-
-        Dim telefono As New Telefono
-        If txtbox_id.Text <> "" Then
-
-            telefono.getSetIdDueño = txtbox_id.Text
-            telefono.getSetTipoDueño = Persona.tipoPersona.Cliente
-
-            If telefono.consultaTel_tel() Then
-                txt_numero.Text = telefono.getSetNumero
-            Else
-                txt_numero.Text = ""
-            End If
-        End If
-
-
-
-
-    End Sub
-
-
-
 
     'Realiza una busqueda en la base de datos y si encuentra el cliente con ese id rellena los campos y muestra el me
     'mensaje de que se ha encontrado
@@ -213,5 +176,36 @@
 
     Private Sub txtbox_apellidoMaterno_TextChanged(sender As Object, e As EventArgs) Handles txtbox_apellidoMaterno.TextChanged
 
+    End Sub
+
+    Private Sub dgv_cliente_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_cliente.CellClick
+        Dim renglon As Integer
+        'Con éste código podemos seleccionar los datos que están mostrados
+        'en un DGV, la variable renglón no sirve para saber en qué renglón se da clic
+
+        renglon = dgv_cliente.CurrentCellAddress.Y
+
+        'Al darle clic al renglón mostramos los datos en las cajas de texto
+        'DGVclientes.Rows(renglon) nos dice cual renglón se ha dado clic
+        'Cells(0).Value recupera el DATO de la celda o columna del DGV y lo 
+        'dejamos en la caja de texto correspondiente
+
+        txtbox_id.Text = dgv_cliente.Rows(renglon).Cells(0).Value
+        txt_nombre.Text = dgv_cliente.Rows(renglon).Cells(1).Value
+        txtbox_apellidoPaterno.Text = dgv_cliente.Rows(renglon).Cells(2).Value
+        txtbox_apellidoMaterno.Text = dgv_cliente.Rows(renglon).Cells(3).Value
+
+        Dim telefono As New Telefono
+        If txtbox_id.Text <> "" Then
+
+            telefono.getSetIdDueño = txtbox_id.Text
+            telefono.getSetTipoDueño = Persona.tipoPersona.Cliente
+
+            If telefono.consultaTel_tel() Then
+                txt_numero.Text = telefono.getSetNumero
+            Else
+                txt_numero.Text = ""
+            End If
+        End If
     End Sub
 End Class
