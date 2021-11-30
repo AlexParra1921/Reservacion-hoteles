@@ -128,4 +128,18 @@
             reservacion.gs_num_dias = 0
         End If
     End Sub
+
+    Private Sub bt_limpiar_Click(sender As Object, e As EventArgs) Handles bt_limpiar.Click
+        txt_idcliente.Text = ""
+        txt_nombre.Text = ""
+        txt_paterno.Text = ""
+        txt_materno.Text = ""
+        txt_telefono.Text = ""
+        txt_dias.Text = ""
+        lb_costo.Text = ""
+        lb_costoTotal.Text = ""
+        lb_no_habitaciones.Text = ""
+        dgv_habitacionesCostos.Rows.Clear()
+        lb_costIva.Text = ""
+    End Sub
 End Class
